@@ -1,3 +1,3 @@
 # MiniGames
 
-**Projet de Cyrile GoldenSchue et Ilan Ruiz de Porras
+**Projet de Cyril GoldenSchue et Ilan Ruiz de Porras**
