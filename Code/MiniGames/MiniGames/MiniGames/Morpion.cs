@@ -26,6 +26,9 @@ namespace MiniGames
             G = e.Graphics;
 
             G.DrawLine(P, (Distance * 2), (Distance * 6), (Distance * 14), (Distance * 6));
+            G.DrawLine(P, (Distance * 2), (Distance * 10), (Distance * 14), (Distance * 10));
+            G.DrawLine(P, (Distance * 6), (Distance * 2), (Distance * 6), (Distance * 14));
+            G.DrawLine(P, (Distance * 10), (Distance * 2), (Distance * 10), (Distance * 14));
         }
     }
 }
