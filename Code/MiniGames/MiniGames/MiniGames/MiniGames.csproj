@@ -52,6 +52,7 @@
     <Compile Include="Bataille.Designer.cs">
       <DependentUpon>Bataille.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectionDB.cs" />
     <Compile Include="MiniGames.cs">
       <SubType>Form</SubType>
     </Compile>

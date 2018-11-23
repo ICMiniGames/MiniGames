@@ -14,8 +14,7 @@ namespace MiniGames
     public partial class Morpion : Form
     {
         public Morpion()
-        {
-            InitializeComponent();
+        {          InitializeComponent();
             this.Paint += new PaintEventHandler(MyPaint);
         }
         private void MyPaint(object sender, PaintEventArgs e)
