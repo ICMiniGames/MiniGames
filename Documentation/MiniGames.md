@@ -1,12 +1,13 @@
 # MiniGames
 
+# Table des matières
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [MiniGames](#minigames)
+- [Table des matières](#table-des-matires)
 - [1	Introduction](#1-introduction)
 	- [1.1	Cadre et Description](#11-cadre-et-description)
 	- [1.2	Organisation](#12-organisation)
-	- [1.3	Planification initiale](#13-planification-initiale)
 - [2	Analyse](#2-analyse)
 	- [2.1	Cahier des charges détaillé](#21-cahier-des-charges-dtaill)
 	- [2.2	Stratégie de test](#22-stratgie-de-test)
@@ -15,14 +16,17 @@
 		- [2.2.3	Test de Validation](#223-test-de-validation)
 	- [2.3	Planification](#23-planification)
 	- [2.4 Explication des jeux](#24-explication-des-jeux)
-	- [2.4.1 Bataille](#241-bataille)
-	- [2.4.2 Solitaire](#242-solitaire)
-	- [2.4.3 Morpion / Tic-Tac-Toe](#243-morpion-tic-tac-toe)
+		- [2.4.1 Bataille](#241-bataille)
+		- [2.4.2 Solitaire](#242-solitaire)
+		- [2.4.3 Morpion / Tic-Tac-Toe](#243-morpion-tic-tac-toe)
 	- [2.5 Analyse concurentiel](#25-analyse-concurentiel)
-	- [2.5.1 Tic-tac-toe](#251-tic-tac-toe)
-	- [2.5.2 Le solitaire](#252-le-solitaire)
-	- [2.5.3 La bataille](#253-la-bataille)
+		- [2.5.1 Tic-tac-toe](#251-tic-tac-toe)
+			- [2.5.1.1 Conclusion Tic-tac-toe](#2511-conclusion-tic-tac-toe)
+		- [2.5.2 Le solitaire](#252-le-solitaire)
+			- [2.5.2.1 Conclusion du solitaire](#2521-conclusion-du-solitaire)
+		- [2.5.3 La bataille](#253-la-bataille)
 - [3 Conception](#3-conception)
+- [4 jeas](#4-jeas)
 
 <!-- /TOC -->
 
@@ -36,15 +40,13 @@ Notre application est un regroupement de mini-jeux. De base l’application cont
 
 ## 1.2	Organisation
 
-| Nom        | Fonction          | Mail  |
+| Nom        | Rôle        | Mail  |
 | :-------------: |:-------------:| :-----:|
 |Ilan Ruiz De Porras | Eleve | Ilan.ruiz-de-porras@cpnv.ch|
 |Cyril Goldenschue | Eleve | Cyrile.Goldenschue@cpnv.ch |
-|Julien Ithurbide | Expert | Julien.Ithurbide@cpnv.ch |
+|Julien Ithurbide | Chef de projet | Julien.Ithurbide@cpnv.ch |
 |Frederique Andolfatto | Expert | Frederique.Andolfatto@cpnv.ch |
 
-
-## 1.3	Planification initiale
 
 # 2	Analyse
 ## 2.1	Cahier des charges détaillé
@@ -96,7 +98,7 @@ La planification se trouve sur github, dans le répertoire du projet:
 
 ## 2.4 Explication des jeux
 
-## 2.4.1 Bataille
+### 2.4.1 Bataille
 
 ![](Images/Bataille.jpg)
 
@@ -106,7 +108,7 @@ les règles sont assez simple. On divise un paquet de 52 cartes en deux et on di
 
 Pour plus d'information : https://fr.wikipedia.org/wiki/Bataille_(jeu)
 
-## 2.4.2 Solitaire
+### 2.4.2 Solitaire
 
 ![](Images/solitaire.png)
 
@@ -116,9 +118,9 @@ Le but est de formé ce qui s'appel des familles. Une famile est composé de tou
 
 Pour plus d'information : https://fr.wikipedia.org/wiki/Solitaire_(patience)
 
-## 2.4.3 Morpion / Tic-Tac-Toe
+### 2.4.3 Morpion / Tic-Tac-Toe
 
-![](Images/tic-tac-toe.png)
+![](Images/morpion.png)
 
 Le morpion aussi applé le Tic-Tac-Toe, est un jeux très basique se jouant a deux.
 
@@ -130,16 +132,60 @@ Pour plus d'information : https://fr.wikipedia.org/wiki/Tic-tac-toe
 
 La plus part des jeux proposé par notre application se trouve sur navigateur web tel que **Chrome**. La bataille est le seul jeu de la liste n'y figurant pas.
 
-## 2.5.1 Tic-tac-toe
+### 2.5.1 Tic-tac-toe
 
 il existe un tic-tac-toe sur google. il suffit simplement de tapper **tic tac toe** dans la barre de recherche google pour y accèder. il se présente sous cette forme:
 
 ![](Images/tic-google.png)
 
-## 2.5.2 Le solitaire
+Le gros avantage de cette version du tic-tac-toe est qu'il est accesible directement via navigateur. L'acces est donc direct et il n'y a pas besoin de telechargement.
+
+La partie graphique est basic mais pour un jeu aussi simple que celui ci on a pas besoin d'un designe complex.
+
+Une des fonctionnalité intéresante de cette version c'est la possibilité de jouer contre une inteligence artificiel. Il est meme possible de choisir le niveau de difficulté. La possibilité de jouer contre un autre joueur est aussi possible. Parcontre on ne peut pas jouer d'une machine à l'autre.
+
+#### 2.5.1.1 Conclusion Tic-tac-toe
+
+| Avantage | Inconvéniant |
+| -------- | ------------ |
+|possibilité de jouer contre un bot|besoin d'une connexion a internet pour y jouer|
+|plusieur niveau de difficulté|pas de multijoueur sur réseau|
+|Acces direct par navigateur| - |
+|Multijoueur local| - |
+
+Les fonctionnalité que cette version ne possède pas vont être implémenter dans notre version.
+
+### 2.5.2 Le solitaire
+
+Tout comme le Tic-tac-Toe, le solitaire est disponible via le moteur de recherche google et aussi via les jeux de Windows. Ici nous analyson la version de google.
+
+Pour commencer, il est accesible directement via google donc pas besoin de telechargement pour pouvoir y jouer. Il s'agit d'une fenetre pop-up qui sert d'interface de jeu.
+
+Le style des carte et l'interface est graphiquement épuré. c'est fluide et on a la possibilité de déplacer les cartes. Ce n'est pas just "je clique et ca apparait ou j'ai cliquer".
 
 ![](Images/solitaire-google.png)
 
-## 2.5.3 La bataille
+Le hud (Head up display) est simple et affiche le score, le nombre de déplacement et le temps que vous mettez pour finir le jeu.
+
+Il est également possible de choisir sa difficulté. on a le choix entre facile et difficile. La différence entre les deux c'est que lorsque on pioche une carte en difficile, on en tire trois et non une.
+
+#### 2.5.2.1 Conclusion du solitaire
+
+| Avantage | Inconvéniant |
+| -------- | ------------ |
+|Choix de difficulté|une connexion a internet est requis|
+|acces direct via navigateur|-|
+|beau graphiquement|-|
+|hud et options bien pensé|-|
+
+Nous nous inspirons du hud de cette version et nous aurons la possibilité de pouvoir jouer en hors-ligne grace à notre version.
+
+### 2.5.3 La bataille
+
+Nous n'avons pas trouver d'application de jeu sur la bataille. En même temps il s'agit d'un jeu tres simpliste et le seul facteur possible pour gagner est la chance.
+
+Nous intoduirons un systeme de paris qui n'existe pas dans le jeu de base. Nous resterons simple dans l'interface graphique et nous réspecterons les régles de cette version du jeu.
 
 # 3 Conception
+
+# 4 jeas
