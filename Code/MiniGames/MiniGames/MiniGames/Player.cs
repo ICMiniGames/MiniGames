@@ -60,10 +60,10 @@ namespace MiniGames
         {
             switch (Checked)
             {
-                case 1: txtNameUser2.Visible = false; txtNameUser3.Visible = false; txtNameUser4.Visible = false; break; //ajouter l'affichage des labels
-                case 2: txtNameUser2.Visible = true; txtNameUser3.Visible = false; txtNameUser4.Visible = false; break;
-                case 3: txtNameUser2.Visible = true; txtNameUser3.Visible = true; txtNameUser4.Visible = false; break;
-                case 4: txtNameUser2.Visible = true; txtNameUser3.Visible = true; txtNameUser4.Visible = true; break;
+                case 1: lblNewUser2.Visible = false; lblNewUser3.Visible = false; lblNewUser4.Visible = false; txtNameUser2.Visible = false; txtNameUser3.Visible = false; txtNameUser4.Visible = false; break; //ajouter l'affichage des labels
+                case 2: lblNewUser2.Visible = true; lblNewUser3.Visible = false; lblNewUser4.Visible = false; txtNameUser2.Visible = true; txtNameUser3.Visible = false; txtNameUser4.Visible = false; break;
+                case 3: lblNewUser2.Visible = true; lblNewUser3.Visible = true; lblNewUser4.Visible = false; txtNameUser2.Visible = true; txtNameUser3.Visible = true; txtNameUser4.Visible = false; break;
+                case 4: lblNewUser2.Visible = true; lblNewUser3.Visible = true; lblNewUser4.Visible = true; txtNameUser2.Visible = true; txtNameUser3.Visible = true; txtNameUser4.Visible = true; break;
             }
         }
 
