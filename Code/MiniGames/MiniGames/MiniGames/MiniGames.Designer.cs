@@ -31,6 +31,7 @@
             this.CmdBataille = new System.Windows.Forms.Button();
             this.CmdMorpion = new System.Windows.Forms.Button();
             this.CmdSolitaire = new System.Windows.Forms.Button();
+            this.CmdProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdBataille
@@ -39,7 +40,7 @@
             this.CmdBataille.BackgroundImage = global::MiniGames.Properties.Resources.Bataille;
             this.CmdBataille.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CmdBataille.ForeColor = System.Drawing.Color.White;
-            this.CmdBataille.Location = new System.Drawing.Point(429, 13);
+            this.CmdBataille.Location = new System.Drawing.Point(429, 47);
             this.CmdBataille.Name = "CmdBataille";
             this.CmdBataille.Size = new System.Drawing.Size(192, 233);
             this.CmdBataille.TabIndex = 2;
@@ -54,7 +55,7 @@
             this.CmdMorpion.BackgroundImage = global::MiniGames.Properties.Resources.Morpion;
             this.CmdMorpion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CmdMorpion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CmdMorpion.Location = new System.Drawing.Point(220, 12);
+            this.CmdMorpion.Location = new System.Drawing.Point(220, 46);
             this.CmdMorpion.Name = "CmdMorpion";
             this.CmdMorpion.Size = new System.Drawing.Size(192, 233);
             this.CmdMorpion.TabIndex = 1;
@@ -69,7 +70,7 @@
             this.CmdSolitaire.BackgroundImage = global::MiniGames.Properties.Resources.solitaire;
             this.CmdSolitaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CmdSolitaire.ForeColor = System.Drawing.Color.White;
-            this.CmdSolitaire.Location = new System.Drawing.Point(12, 12);
+            this.CmdSolitaire.Location = new System.Drawing.Point(12, 46);
             this.CmdSolitaire.Name = "CmdSolitaire";
             this.CmdSolitaire.Size = new System.Drawing.Size(192, 233);
             this.CmdSolitaire.TabIndex = 0;
@@ -78,11 +79,22 @@
             this.CmdSolitaire.UseVisualStyleBackColor = false;
             this.CmdSolitaire.Click += new System.EventHandler(this.CmdSolitaire_Click);
             // 
+            // CmdProfile
+            // 
+            this.CmdProfile.Location = new System.Drawing.Point(546, 12);
+            this.CmdProfile.Name = "CmdProfile";
+            this.CmdProfile.Size = new System.Drawing.Size(75, 23);
+            this.CmdProfile.TabIndex = 3;
+            this.CmdProfile.Text = "Profile";
+            this.CmdProfile.UseVisualStyleBackColor = true;
+            this.CmdProfile.Click += new System.EventHandler(this.CmdProfile_Click);
+            // 
             // MiniGames
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(633, 258);
+            this.ClientSize = new System.Drawing.Size(633, 292);
+            this.Controls.Add(this.CmdProfile);
             this.Controls.Add(this.CmdBataille);
             this.Controls.Add(this.CmdMorpion);
             this.Controls.Add(this.CmdSolitaire);
@@ -97,6 +109,7 @@
         private System.Windows.Forms.Button CmdSolitaire;
         private System.Windows.Forms.Button CmdMorpion;
         private System.Windows.Forms.Button CmdBataille;
+        private System.Windows.Forms.Button CmdProfile;
     }
 }
 

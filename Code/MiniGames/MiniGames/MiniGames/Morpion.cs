@@ -13,8 +13,12 @@ namespace MiniGames
 {
     public partial class Morpion : Form
     {
+        Player player;
         public Morpion()
-        {          InitializeComponent();
+        {
+            player = new Player(2, 2);
+            InitializeComponent();
+            player.ShowDialog();
             this.Paint += new PaintEventHandler(MyPaint);
         }
         private void MyPaint(object sender, PaintEventArgs e)

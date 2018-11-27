@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace MiniGames
 {
-    public partial class Bataille : Form
+    public partial class ChoixBataille : Form
     {
-        Player player;
-        ChoixBataille choixBataille = new ChoixBataille();
-
-        public Bataille()
+        public ChoixBataille()
         {
-            player = new Player(1, 4);
             InitializeComponent();
-            player.ShowDialog();
-            choixBataille.ShowDialog();
         }
     }
 }

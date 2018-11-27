@@ -10,3 +10,7 @@ C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.exe
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.pdb
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.Bataille.resources
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.Morpion.resources
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.Solitaire.resources
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.ChoixBataille.resources
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.Player.resources
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\MiniGames\obj\Debug\MiniGames.Profile.resources

@@ -19,7 +19,8 @@ namespace MiniGames
 
         private void CmdSolitaire_Click(object sender, EventArgs e)
         {
-
+            Solitaire solitaire = new Solitaire();
+            solitaire.ShowDialog();
         }
 
         private void CmdMorpion_Click(object sender, EventArgs e)
@@ -30,7 +31,14 @@ namespace MiniGames
 
         private void CmdBataille_Click(object sender, EventArgs e)
         {
+            Bataille bataille = new Bataille();
+            bataille.ShowDialog();
+        }
 
+        private void CmdProfile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.ShowDialog();
         }
     }
 }
