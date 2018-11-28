@@ -21,6 +21,9 @@ namespace MiniGames
         Pen PG = new Pen(Color.Black, 10);
         float X;
         float Y;
+        bool start = true;
+        bool cross = false;
+        bool circle = false;
 
         public Morpion()
         {
@@ -33,63 +36,18 @@ namespace MiniGames
         }
         private void MyPaint(object sender, PaintEventArgs e)
         {
-            Graphics G;
-            G = e.Graphics;
-            G.DrawLine(P, (Distance * 2), (Distance * 6), (Distance * 14), (Distance * 6));
-            G.DrawLine(P, (Distance * 2), (Distance * 10), (Distance * 14), (Distance * 10));
-            G.DrawLine(P, (Distance * 6), (Distance * 2), (Distance * 6), (Distance * 14));
-            G.DrawLine(P, (Distance * 10), (Distance * 2), (Distance * 10), (Distance * 14));
+            if (start)
+            {
+                Graphics G;
+                G = e.Graphics;
+                G.DrawLine(P, (Distance * 2), (Distance * 6), (Distance * 14), (Distance * 6));
+                G.DrawLine(P, (Distance * 2), (Distance * 10), (Distance * 14), (Distance * 10));
+                G.DrawLine(P, (Distance * 6), (Distance * 2), (Distance * 6), (Distance * 14));
+                G.DrawLine(P, (Distance * 10), (Distance * 2), (Distance * 10), (Distance * 14));
+                start = false;
+            }
         }
-
-        private void cmdCase1_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase2_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase3_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase4_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase5_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase6_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase7_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase8_Click(object sender, EventArgs e)
-        {
-            Control button = (Control)sender;
-            Choice(button);
-        }
-
-        private void cmdCase9_Click(object sender, EventArgs e)
+        private void Clicker(object sender, EventArgs e)
         {
             Control button = (Control)sender;
             Choice(button);
@@ -105,32 +63,32 @@ namespace MiniGames
 
             switch (playplayer)
             {
-                case 1: this.Paint += new PaintEventHandler(MyPaintCross); playplayer = 2; break;
-                case 2: this.Paint += new PaintEventHandler(MyPaintEllipse); playplayer = 1;  break;
+                case 1: cross = true; this.Paint += new PaintEventHandler(MyPaintCross); playplayer = 2; break;
+                case 2: circle = true; this.Paint += new PaintEventHandler(MyPaintEllipse); playplayer = 1;  break;
             }
-
-
-
-
-
-
-
-
 
         }
 
         private void MyPaintCross(object sender, PaintEventArgs e)
         {
-            Graphics GM;
-            GM = e.Graphics;
-            GM.DrawLine(PG, X, Y, X + 64, Y + 64);
-            GM.DrawLine(PG, X, Y + 64, X + 64, Y);
+            if (cross)
+            {
+                Graphics GM;
+                GM = e.Graphics;
+                GM.DrawLine(PG, X, Y, X + 64, Y + 64);
+                GM.DrawLine(PG, X, Y + 64, X + 64, Y);
+                cross = false;
+            }
         }
         private void MyPaintEllipse(object sender, PaintEventArgs e)
         {
-            Graphics GM;
-            GM = e.Graphics;
-            GM.DrawEllipse(PG, X+5, Y+5, 53, 53);
+            if (circle)
+            {
+                Graphics GM;
+                GM = e.Graphics;
+                GM.DrawEllipse(PG, X + 5, Y + 5, 53, 53);
+                circle = false;
+            }
         }
     }
 }

@@ -48,7 +48,7 @@
             this.cmdCase1.Size = new System.Drawing.Size(64, 64);
             this.cmdCase1.TabIndex = 0;
             this.cmdCase1.UseVisualStyleBackColor = true;
-            this.cmdCase1.Click += new System.EventHandler(this.cmdCase1_Click);
+            this.cmdCase1.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase2
             // 
@@ -57,7 +57,7 @@
             this.cmdCase2.Size = new System.Drawing.Size(64, 64);
             this.cmdCase2.TabIndex = 1;
             this.cmdCase2.UseVisualStyleBackColor = true;
-            this.cmdCase2.Click += new System.EventHandler(this.cmdCase2_Click);
+            this.cmdCase2.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase3
             // 
@@ -66,7 +66,7 @@
             this.cmdCase3.Size = new System.Drawing.Size(64, 64);
             this.cmdCase3.TabIndex = 2;
             this.cmdCase3.UseVisualStyleBackColor = true;
-            this.cmdCase3.Click += new System.EventHandler(this.cmdCase3_Click);
+            this.cmdCase3.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase4
             // 
@@ -75,7 +75,7 @@
             this.cmdCase4.Size = new System.Drawing.Size(64, 64);
             this.cmdCase4.TabIndex = 3;
             this.cmdCase4.UseVisualStyleBackColor = true;
-            this.cmdCase4.Click += new System.EventHandler(this.cmdCase4_Click);
+            this.cmdCase4.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase5
             // 
@@ -84,7 +84,7 @@
             this.cmdCase5.Size = new System.Drawing.Size(64, 64);
             this.cmdCase5.TabIndex = 4;
             this.cmdCase5.UseVisualStyleBackColor = true;
-            this.cmdCase5.Click += new System.EventHandler(this.cmdCase5_Click);
+            this.cmdCase5.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase6
             // 
@@ -93,7 +93,7 @@
             this.cmdCase6.Size = new System.Drawing.Size(64, 64);
             this.cmdCase6.TabIndex = 5;
             this.cmdCase6.UseVisualStyleBackColor = true;
-            this.cmdCase6.Click += new System.EventHandler(this.cmdCase6_Click);
+            this.cmdCase6.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase7
             // 
@@ -102,7 +102,7 @@
             this.cmdCase7.Size = new System.Drawing.Size(64, 64);
             this.cmdCase7.TabIndex = 6;
             this.cmdCase7.UseVisualStyleBackColor = true;
-            this.cmdCase7.Click += new System.EventHandler(this.cmdCase7_Click);
+            this.cmdCase7.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase8
             // 
@@ -111,7 +111,7 @@
             this.cmdCase8.Size = new System.Drawing.Size(64, 64);
             this.cmdCase8.TabIndex = 7;
             this.cmdCase8.UseVisualStyleBackColor = true;
-            this.cmdCase8.Click += new System.EventHandler(this.cmdCase8_Click);
+            this.cmdCase8.Click += new System.EventHandler(this.Clicker);
             // 
             // cmdCase9
             // 
@@ -120,7 +120,7 @@
             this.cmdCase9.Size = new System.Drawing.Size(64, 64);
             this.cmdCase9.TabIndex = 8;
             this.cmdCase9.UseVisualStyleBackColor = true;
-            this.cmdCase9.Click += new System.EventHandler(this.cmdCase9_Click);
+            this.cmdCase9.Click += new System.EventHandler(this.Clicker);
             // 
             // lblPlayer1
             // 
