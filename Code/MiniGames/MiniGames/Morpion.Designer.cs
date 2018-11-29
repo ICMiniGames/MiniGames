@@ -39,6 +39,8 @@
             this.cmdCase9 = new System.Windows.Forms.Button();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
+            this.lblCross = new System.Windows.Forms.Label();
+            this.lblCircle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmdCase1
@@ -140,11 +142,32 @@
             this.lblPlayer2.TabIndex = 10;
             this.lblPlayer2.Text = "Joueur 2";
             // 
+            // lblCross
+            // 
+            this.lblCross.AutoSize = true;
+            this.lblCross.Location = new System.Drawing.Point(27, 26);
+            this.lblCross.Name = "lblCross";
+            this.lblCross.Size = new System.Drawing.Size(14, 13);
+            this.lblCross.TabIndex = 11;
+            this.lblCross.Text = "X";
+            // 
+            // lblCircle
+            // 
+            this.lblCircle.AutoSize = true;
+            this.lblCircle.Location = new System.Drawing.Point(449, 26);
+            this.lblCircle.Name = "lblCircle";
+            this.lblCircle.Size = new System.Drawing.Size(15, 13);
+            this.lblCircle.TabIndex = 12;
+            this.lblCircle.Text = "O";
+            // 
             // Morpion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 473);
+            this.Controls.Add(this.lblCircle);
+            this.Controls.Add(this.lblCross);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.cmdCase9);
@@ -176,5 +199,7 @@
         private System.Windows.Forms.Button cmdCase9;
         private System.Windows.Forms.Label lblPlayer1;
         private System.Windows.Forms.Label lblPlayer2;
+        private System.Windows.Forms.Label lblCross;
+        private System.Windows.Forms.Label lblCircle;
     }
 }
