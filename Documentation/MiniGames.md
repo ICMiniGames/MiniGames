@@ -203,7 +203,22 @@ Nous intoduirons un systeme de paris qui n'existe pas dans le jeu de base. Nous 
 
 ## 3.2 Maquettes graphiques
 
+Menu de l'application:
+![](ImageMaquette/Menu.png)
+
+Interface du morpion:
+![](ImageMaquette/Morpion.png)
+
+Interface de la bataille:
+![](ImageMaquette/Bataille.png)
+
+Interface du solitaire:
+![](ImageMaquette/Solitaire.png)
+
 ## 3.3 MCD et MLD
+
+MLD:
+![](../BDD/MLD.png)
 
 ## 3.4 Diagramme de classe
 
