@@ -1,10 +1,8 @@
 # MiniGames
 
-# Table des matières
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [MiniGames](#minigames)
-- [Table des matières](#table-des-matires)
 - [1	Introduction](#1-introduction)
 	- [1.1	Cadre et Description](#11-cadre-et-description)
 	- [1.2	Organisation](#12-organisation)
@@ -26,7 +24,21 @@
 			- [2.5.2.1 Conclusion du solitaire](#2521-conclusion-du-solitaire)
 		- [2.5.3 La bataille](#253-la-bataille)
 - [3 Conception](#3-conception)
-- [4 jeas](#4-jeas)
+	- [3.1 Dossier de Conception](#31-dossier-de-conception)
+	- [3.2 Maquettes graphiques](#32-maquettes-graphiques)
+	- [3.3 MCD et MLD](#33-mcd-et-mld)
+	- [3.4 Diagramme de classe](#34-diagramme-de-classe)
+	- [3.5 Réalisation](#35-ralisation)
+		- [3.5.1 Morpion](#351-morpion)
+			- [3.5.1.1 Use case et Sénarios.](#3511-use-case-et-snarios)
+			- [3.5.1.2 Listes des tests.](#3512-listes-des-tests)
+		- [3.5.2 Bataille](#352-bataille)
+			- [3.5.2.1 Use case et Sénarios.](#3521-use-case-et-snarios)
+			- [3.5.2.2 Listes des tests.](#3522-listes-des-tests)
+		- [3.5.3 Solitaire](#353-solitaire)
+			- [3.5.3.1 Use case et Sénarios.](#3531-use-case-et-snarios)
+			- [3.5.3.2 Listes des tests.](#3532-listes-des-tests)
+- [4 Réalisation](#4-ralisation)
 
 <!-- /TOC -->
 
@@ -187,5 +199,31 @@ Nous n'avons pas trouver d'application de jeu sur la bataille. En même temps il
 Nous intoduirons un systeme de paris qui n'existe pas dans le jeu de base. Nous resterons simple dans l'interface graphique et nous réspecterons les régles de cette version du jeu.
 
 # 3 Conception
+## 3.1 Dossier de Conception
 
-# 4 jeas
+## 3.2 Maquettes graphiques
+
+## 3.3 MCD et MLD
+
+## 3.4 Diagramme de classe
+
+## 3.5 Réalisation
+### 3.5.1 Morpion
+
+#### 3.5.1.1 Use case et Sénarios.
+
+#### 3.5.1.2 Listes des tests.
+
+### 3.5.2 Bataille
+
+#### 3.5.2.1 Use case et Sénarios.
+
+#### 3.5.2.2 Listes des tests.
+
+### 3.5.3 Solitaire
+
+#### 3.5.3.1 Use case et Sénarios.
+
+#### 3.5.3.2 Listes des tests.
+
+# 4 Réalisation
