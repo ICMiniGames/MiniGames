@@ -16,7 +16,7 @@ namespace MiniGames
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MiniGames());
+            Application.Run(new Form1());
         }
     }
 }
