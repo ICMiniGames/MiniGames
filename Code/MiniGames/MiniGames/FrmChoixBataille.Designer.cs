@@ -1,6 +1,6 @@
 ﻿namespace MiniGames
 {
-    partial class ChoixBataille
+    partial class FrmChoixBataille
     {
         /// <summary>
         /// Required designer variable.

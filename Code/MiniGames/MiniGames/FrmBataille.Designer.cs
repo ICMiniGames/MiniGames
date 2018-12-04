@@ -1,6 +1,6 @@
 ﻿namespace MiniGames
 {
-    partial class Bataille
+    partial class FrmBataille
     {
         /// <summary>
         /// Required designer variable.

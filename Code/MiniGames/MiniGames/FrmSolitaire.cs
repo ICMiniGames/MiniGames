@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace MiniGames
 {
-    public partial class Solitaire : Form
+    public partial class FrmSolitaire : Form
     {
-        Player player;
-        public Solitaire()
+        FrmPlayers player;
+        public FrmSolitaire()
         {
-            player = new Player(1, 1);
+            player = new FrmPlayers(1, 1);
             InitializeComponent();
             player.ShowDialog();
         }
