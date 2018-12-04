@@ -30,6 +30,7 @@ C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmMorpion.reso
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmPlayers.resources
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmProfile.resources
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmSolitaire.resources
+<<<<<<< HEAD
 C:\GIT\MiniGames\Code\MiniGames\MiniGames\bin\Debug\MiniGames.exe.config
 C:\GIT\MiniGames\Code\MiniGames\MiniGames\bin\Debug\MiniGames.exe
 C:\GIT\MiniGames\Code\MiniGames\MiniGames\bin\Debug\MiniGames.pdb
@@ -50,3 +51,9 @@ C:\GIT\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.csproj.CoreCompile
 C:\GIT\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.csproj.CopyComplete
 C:\GIT\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.exe
 C:\GIT\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.pdb
+=======
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\bin\Debug\System.Data.SQLite.dll
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\bin\Debug\System.Data.SQLite.xml
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\bin\Debug\System.Data.SQLite.dll.config
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.csproj.CopyComplete
+>>>>>>> Cyril_branch

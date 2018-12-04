@@ -89,6 +89,7 @@ namespace MiniGames
                 case 1: break; //Solitaire
                 case 2:
                     if (NbUserMax == 2 && NbUserBase == 2)
+<<<<<<< HEAD
                     {
                         if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
                         {
@@ -110,6 +111,24 @@ namespace MiniGames
                         this.Close();
                     }
                     break; //bataille
+=======
+                    {
+                        if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            if (Same)
+                            {
+                                MessageBox.Show("Vous devez mettre des noms dans les cases visible");
+                            }
+                        }
+                    }
+                    break; //Morpion
+                case 3: break; //rien
+                case 4: break; //bataille
+>>>>>>> Cyril_branch
             }
             
         }
