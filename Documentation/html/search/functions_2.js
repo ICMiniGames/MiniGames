@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['dispose',['Dispose',['../class_mini_games_1_1_form1.html#af88d8b360f54c3dde0816ccbb00db43d',1,'MiniGames.Form1.Dispose()'],['../class_mini_games_1_1_bataille.html#a20ef6f050d7876b78109b24b77c405b0',1,'MiniGames.Bataille.Dispose()'],['../class_mini_games_1_1_choix_bataille.html#a781807bcbfcdbfbea7fa1d2985365716',1,'MiniGames.ChoixBataille.Dispose()'],['../class_mini_games_1_1_mini_games.html#a91e0352c781b4017f0362a7195050bb4',1,'MiniGames.MiniGames.Dispose()'],['../class_mini_games_1_1_morpion.html#a68b26fcda5efacaf569c27a581187ae5',1,'MiniGames.Morpion.Dispose()'],['../class_mini_games_1_1_player.html#a9df8d442ed8af9204ed8d6af1c8cb836',1,'MiniGames.Player.Dispose()'],['../class_mini_games_1_1_profile.html#add9800585e0a22b124cdd10bdf1e6fc5',1,'MiniGames.Profile.Dispose()'],['../class_mini_games_1_1_solitaire.html#a307d051e148c294aa9b652099a06eedd',1,'MiniGames.Solitaire.Dispose()']]]
+];
