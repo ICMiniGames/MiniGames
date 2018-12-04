@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolitaire));
             this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -435,11 +436,11 @@
             this.pictureBox37.TabIndex = 82;
             this.pictureBox37.TabStop = false;
             // 
-            // Solitaire
+            // FrmSolitaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.ForestGreen;
+            this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1371, 619);
             this.Controls.Add(this.pictureBox37);
             this.Controls.Add(this.pictureBox36);
@@ -474,7 +475,8 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox31);
-            this.Name = "Solitaire";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmSolitaire";
             this.Text = "Solitaire";
             this.Load += new System.EventHandler(this.Solitaire_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
