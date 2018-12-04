@@ -13,26 +13,24 @@ namespace MiniGames
 {
     public partial class FrmMorpion : Form
     {
-        int CurrentPlayer = 0;
-        float Distance = 32;
-        int NbTour = 0;
-        Pen P = new Pen(Color.Black, 5);
-        Pen PG = new Pen(Color.Black, 10);
-        Pen PGC = new Pen(Color.White, 10);
-        float X;
-        float Y;
-        bool cross = false;
-        bool circle = false;
-        bool clear = false;
-        string[] TabMorpion = new string[9];
-        int[,] TabButtonMorpion = new int[9,2];
-        bool Winner = false;
-        bool Win = false;
-        float XWin = 32;
-        float YWin = 32;
-        float XWin2 = 32;
-        float YWin2 = 32;
-        int NbCaseUsed = 0;
+        #region Variable
+        int CurrentPlayer = 0;                  //Variable to know which player plays.
+        float Distance = 32;                    //Variable containing the general distance for the grid.
+        int NbTour = 0;                         //Variable used to count the number of turns that are playing.
+        Pen P = new Pen(Color.Black, 5);        //Variable containing the color and the size of the pencil.
+        Pen PG = new Pen(Color.Black, 10);      //Variable containing the color and the size of the pencil.
+        Pen PGC = new Pen(Color.White, 10);     //Variable containing the color and the size of the pencil.
+        float X;                                //Variable containing a horizontal coordinate.
+        float Y;                                //Variable containing a vertical coordinate.
+        bool cross = false;                     //Variable to avoid drawing crosses if the circles have already been drawn.
+        bool circle = false;                    //Variable to avoid drawing circles if the crosses have already been drawn.
+        bool clear = false;                     //Variable to avoid cleaning the ground if the game is not over.
+        string[] TabMorpion = new string[9];    //Variable containing, in the same place, the characters equivalent to the symbol of the players.
+        int[,] TabButtonMorpion = new int[9,2]; //Variable containing the location on the X and Y axis of the PictureBox.
+        bool Winner = false;                    //Variable to know if there is a winner.
+        bool Win = false;                       //Variable to know if there is a winner.
+        int NbCaseUsed = 0;                     //Variable containing the number of boxes that already have a character to know if there is a draw or not.
+        #endregion Variable
 
         #region constructors
         /// <summary>
@@ -123,7 +121,7 @@ namespace MiniGames
         }
 
         /// <summary>
-        /// 
+        /// Method for choosing the location of the player's symbol.
         /// </summary>
         /// <param name="button"></param>
         private void ChoicePosition(Control button)
@@ -140,6 +138,11 @@ namespace MiniGames
             }
         }
 
+        /// <summary>
+        /// Switch method to put the characters equivalent to the playing field in a table.
+        /// </summary>
+        /// <param name="caract"></param>
+        /// <param name="button"></param>
         private void Switcher(string caract, Control button)
         {
             switch(Convert.ToInt16(button.Name.Substring(7)))
@@ -157,7 +160,7 @@ namespace MiniGames
         }
 
         /// <summary>
-        /// 
+        /// Victory case verification method.
         /// </summary>
         private void VerifyWinner()
         {
@@ -176,81 +179,49 @@ namespace MiniGames
             if ((Case1 == "X" || Case1 == "O" || Case2 == "X" || Case2 == "O" || Case3 == "X" || Case3 == "O") && (Case1 == Case2 && Case2 == Case3 && Case1 == Case3))
             {
                 Win = true;
-                XWin *= 2;
-                YWin *= 4;
-                XWin2 *= 14;
-                YWin2 *= 4;
                 MessageWin();
             }
             if ((Case4 == "X" || Case4 == "O" || Case5 == "X" || Case5 == "O" || Case6 == "X" || Case6 == "O") && (Case4 == Case5 && Case5 == Case6 && Case4 == Case6))
             {
                 Win = true;
-                XWin *= 2;
-                YWin *= 8;
-                XWin2 *= 14;
-                YWin2 *= 8;
                 MessageWin();
             }
             if ((Case7 == "X" || Case7 == "O" || Case8 == "X" || Case8 == "O" || Case9 == "X" || Case9 == "O") && (Case7 == Case8 && Case8 == Case9 && Case7 == Case9))
             {
                 Win = true;
-                XWin *= 2;
-                YWin *= 12;
-                XWin2 *= 14;
-                YWin2 *= 12;
                 MessageWin();
             }
             //vertical
             if ((Case1 == "X" || Case1 == "O" || Case4 == "X" || Case4 == "O" || Case7 == "X" || Case7 == "O") && (Case1 == Case4 && Case4 == Case7 && Case1 == Case7))
             {
                 Win = true;
-                XWin *= 4;
-                YWin *= 2;
-                XWin2 *= 4;
-                YWin2 *= 14;
                 MessageWin();
             }
             if ((Case2 == "X" || Case2 == "O" || Case5 == "X" || Case5 == "O" || Case8 == "X" || Case8 == "O") && (Case2 == Case5 && Case5 == Case8 && Case2 == Case8))
             {
                 Win = true;
-                XWin *= 8;
-                YWin *= 2;
-                XWin2 *= 8;
-                YWin2 *= 14;
                 MessageWin();
             }
             if ((Case3 == "X" || Case3 == "O" || Case6 == "X" || Case6 == "O" || Case9 == "X" || Case9 == "O") && (Case3 == Case6 && Case6 == Case9 && Case3 == Case9))
             {
                 Win = true;
-                XWin *= 12;
-                YWin *= 2;
-                XWin2 *= 12;
-                YWin2 *= 14;
                 MessageWin();
             }
             //diagonal
             if ((Case1 == "X" || Case1 == "O" || Case5 == "X" || Case5 == "O" || Case9 == "X" || Case9 == "O") && (Case1 == Case5 && Case5 == Case9 && Case1 == Case9))
             {
                 Win = true;
-                XWin *= 2;
-                YWin *= 2;
-                XWin2 *= 14;
-                YWin2 *= 14;
                 MessageWin();
             }
             if ((Case3 == "X" || Case3 == "O" || Case5 == "X" || Case5 == "O" || Case7 == "X" || Case7 == "O") && (Case3 == Case5 && Case5 == Case7 && Case3 == Case7))
             {
                 Win = true;
-                XWin *= 14;
-                YWin *= 2;
-                XWin2 *= 2;
-                YWin2 *= 14;
                 MessageWin();
             }            
         }
 
         /// <summary>
-        /// 
+        /// Send a match message and call the method to clear the playing field if the players want to keep playing.
         /// </summary>
         private void MessageNull()
         {
@@ -264,8 +235,9 @@ namespace MiniGames
             }
 
         }
+
         /// <summary>
-        /// 
+        /// Send a victory message and call the method to clear the playing field if the players want to keep playing.
         /// </summary>
         private void MessageWin()
         {
@@ -297,8 +269,9 @@ namespace MiniGames
                 this.Close();
             }
         }
+
         /// <summary>
-        /// 
+        /// Reset the game except the number of each player and their name.
         /// </summary>
         private void ClearedGround()
         {
@@ -319,12 +292,6 @@ namespace MiniGames
             {
                 TabMorpion[i] = null;
             }
-
-
-            XWin = 32;
-            YWin = 32;
-            XWin2 = 32;
-            YWin2 = 32;
 
             for (int i = 1; i <= 9; i++)
             {
@@ -349,8 +316,9 @@ namespace MiniGames
             this.Refresh();
             this.Paint += new PaintEventHandler(MyPaint);
         }
+
         /// <summary>
-        /// 
+        /// Draws the crosses for the player one.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -365,6 +333,7 @@ namespace MiniGames
                 cross = false;
             }
         }
+
         /// <summary>
         /// Draws the circles for the player two.
         /// </summary>
@@ -380,6 +349,7 @@ namespace MiniGames
                 circle = false;
             }
         }
+
         /// <summary>
         /// Clears crosses and circles to replay.
         /// </summary>
@@ -394,11 +364,10 @@ namespace MiniGames
                 GM.DrawLine(PGC, X+ 32, Y+ 32, X + 32, Y + 32);
                 GM.DrawLine(PGC, X+32, Y + 32, X + 32, Y+ 32);
                 GM.DrawEllipse(PGC, X + 32, Y + 32, 64, 64);
-                GM.DrawLine(PGC, XWin, YWin, XWin2, YWin2);
                 clear = false;
             }
         }
-        
+            
         /// <summary>
         /// Draws the grid of the Morpion.
         /// </summary>

@@ -30,3 +30,7 @@ C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmMorpion.reso
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmPlayers.resources
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmProfile.resources
 C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.FrmSolitaire.resources
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\bin\Debug\System.Data.SQLite.dll
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\bin\Debug\System.Data.SQLite.xml
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\bin\Debug\System.Data.SQLite.dll.config
+C:\Projet\MiniGames\Code\MiniGames\MiniGames\obj\Debug\MiniGames.csproj.CopyComplete
