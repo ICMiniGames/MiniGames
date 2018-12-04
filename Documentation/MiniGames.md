@@ -203,7 +203,22 @@ Nous intoduirons un systeme de paris qui n'existe pas dans le jeu de base. Nous 
 
 ## 3.2 Maquettes graphiques
 
+Menu de l'application:
+![](ImageMaquette/Menu.png)
+
+Interface du morpion:
+![](ImageMaquette/Morpion.png)
+
+Interface de la bataille:
+![](ImageMaquette/Bataille.png)
+
+Interface du solitaire:
+![](ImageMaquette/Solitaire.png)
+
 ## 3.3 MCD et MLD
+
+MLD:
+![](../BDD/MLD.png)
 
 ## 3.4 Diagramme de classe
 
@@ -212,7 +227,29 @@ Nous intoduirons un systeme de paris qui n'existe pas dans le jeu de base. Nous 
 
 #### 3.5.1.1 Use case et Sénarios.
 
+Action de base:
+
+|Action|Résultat|
+|-----------------|
+|Le joueur 1 clique sur une case| - La case est remplacé par le symbole du joueur 1 **-** Au tour du deuxieme joueur|
+|Le joueur 2 clique sur une case|- La case est remplacé par le symbole du joueur 2 **-** Au tour du joueur 1|
+|Le joueur 1 clique sur une case déjà prise par le joueur 2| - Rien ne se passe **-** Le tour du joueur 1 continue tant qu'il n'a pas cliquer sur une case libre|
+|Le joueur 2 clique sur une case déjà prise par le joueur 1| - Rien ne se passe **-** Le tour du joueur 2 continue tant qu'il n'a pas cliquer sur une case libre|
+|Le joueur 1 clique sur une case déjà prise par lui-meme| - Rien ne se passe **-** Le tour du joueur 1 continue tant qu'il n'a pas cliquer sur une case libre|
+|Le joueur 2 clique sur une case déjà prise par lui-meme| - Rien ne se passe **-** Le tour du joueur 2 continue tant qu'il n'a pas cliquer sur une case libre|
+
+Victoire:
+
+|Action|Résultat|
+|---------------|
+|Un des deux joueurs forme une ligne avec ses symboles|Le jeu s'arrete et annonce qui est le gagnant **-** Le jeu propose au joueur si il veut rejouer ou quitter.|
+|Tout les case on été remplie mais pas de gagnant|Le jeu annonce qu'il y a égalité et propose de rejouer ou quitter|
+|Un joueur clique sur Continuer|Le jeu recommence|
+|Un joueur clique sur Quitter|Le jeu s'arrete et retour au menu|
+
 #### 3.5.1.2 Listes des tests.
+
+
 
 ### 3.5.2 Bataille
 
@@ -226,4 +263,4 @@ Nous intoduirons un systeme de paris qui n'existe pas dans le jeu de base. Nous 
 
 #### 3.5.3.2 Listes des tests.
 
-# 4 Réalisation
+# 4 Conclusion
