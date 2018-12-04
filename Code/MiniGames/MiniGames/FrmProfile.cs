@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MiniGames
 {
-    public partial class Profile : Form
+    public partial class FrmProfile : Form
     {
-        public Profile()
+        public FrmProfile()
         {
             InitializeComponent();
         }

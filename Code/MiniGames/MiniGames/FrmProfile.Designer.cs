@@ -1,6 +1,6 @@
 ﻿namespace MiniGames
 {
-    partial class Profile
+    partial class FrmProfile
     {
         /// <summary>
         /// Required designer variable.

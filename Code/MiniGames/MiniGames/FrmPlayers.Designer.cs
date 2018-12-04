@@ -1,6 +1,6 @@
 ﻿namespace MiniGames
 {
-    partial class Player
+    partial class FrmPlayers
     {
         /// <summary>
         /// Required designer variable.
@@ -184,12 +184,14 @@
             this.cmdFinish.TabIndex = 13;
             this.cmdFinish.Text = "Confirmer";
             this.cmdFinish.UseVisualStyleBackColor = true;
+            this.cmdFinish.Click += new System.EventHandler(this.cmdFinish_Click);
             // 
-            // Player
+            // FrmPlayers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 191);
+            this.ControlBox = false;
             this.Controls.Add(this.cmdFinish);
             this.Controls.Add(this.lblNewUser2);
             this.Controls.Add(this.lblNewUser3);
@@ -200,7 +202,7 @@
             this.Controls.Add(this.txtNameUser3);
             this.Controls.Add(this.txtNameUser4);
             this.Controls.Add(this.txtNameUser1);
-            this.Name = "Player";
+            this.Name = "FrmPlayers";
             this.Text = "Player";
             this.gpbNbUsers.ResumeLayout(false);
             this.gpbNbUsers.PerformLayout();

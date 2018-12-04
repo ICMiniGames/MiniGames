@@ -11,9 +11,8 @@ using System.Windows.Forms;
 
 namespace MiniGames
 {
-    public partial class Morpion : Form
+    public partial class FrmMorpion : Form
     {
-        Player player;
         int CurrentPlayer = 0;
         float Distance = 32;
         int NbTour = 0;
@@ -33,23 +32,33 @@ namespace MiniGames
         float YWin = 32;
         float XWin2 = 32;
         float YWin2 = 32;
+        int NbCaseUsed = 0;
 
-        public Morpion()
+        #region constructors
+        /// <summary>
+        /// This constructor initializes a new instance of the form of Morpion.
+        /// </summary>
+        public FrmMorpion()
         {
-           
             CurrentPlayer = 1;
-            player = new Player(2, 2);
-            InitializeComponent();
+
+            FrmPlayers player = new FrmPlayers(2, 2);
             player.ShowDialog();
+
+            InitializeComponent();
+            
+            List<string> listNamePlayer = player.NamePlayer();
+            lblPlayer1.Text = listNamePlayer[0];
+            lblPlayer2.Text = listNamePlayer[1];
 
             TabButtonMorpion[0, 0] = cmdCase1.Location.X;
             TabButtonMorpion[0, 1] = cmdCase1.Location.Y;
             TabButtonMorpion[1, 0] = cmdCase2.Location.X;
             TabButtonMorpion[1, 1] = cmdCase2.Location.Y;
-            TabButtonMorpion[2, 0] = cmdCase3.Location.X;
-            TabButtonMorpion[2, 1] = cmdCase3.Location.Y;
-            TabButtonMorpion[3, 0] = cmdCase4.Location.X;
-            TabButtonMorpion[3, 1] = cmdCase4.Location.Y;
+            TabButtonMorpion[2, 0] = cmdCase4.Location.X;
+            TabButtonMorpion[2, 1] = cmdCase4.Location.Y;
+            TabButtonMorpion[3, 0] = cmdCase3.Location.X;
+            TabButtonMorpion[3, 1] = cmdCase3.Location.Y;
             TabButtonMorpion[4, 0] = cmdCase5.Location.X;
             TabButtonMorpion[4, 1] = cmdCase5.Location.Y;
             TabButtonMorpion[5, 0] = cmdCase6.Location.X;
@@ -65,15 +74,14 @@ namespace MiniGames
             lblPlayer1.ForeColor = Color.White;
             this.Paint += new PaintEventHandler(MyPaint);
         }
-        private void MyPaint(object sender, PaintEventArgs e)
-        {
-            Graphics G;
-            G = e.Graphics;
-            G.DrawLine(P, (Distance * 2), (Distance * 6), (Distance * 14), (Distance * 6));
-            G.DrawLine(P, (Distance * 2), (Distance * 10), (Distance * 14), (Distance * 10));
-            G.DrawLine(P, (Distance * 6), (Distance * 2), (Distance * 6), (Distance * 14));
-            G.DrawLine(P, (Distance * 10), (Distance * 2), (Distance * 10), (Distance * 14));
-        }
+        #endregion constructors
+
+        #region private methods
+        /// <summary>
+        /// Method used for when we click in a box, it allows to put the symbol in the report of the player.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Clicker(object sender, EventArgs e)
         {
             Control button = (Control)sender;
@@ -91,23 +99,45 @@ namespace MiniGames
                 {
                     VerifyWinner();
                 }
+
+                if (Win == false)
+                {
+
+                    for (int i = 0; i < TabMorpion.Count(); i++)
+                    {
+                        if (TabMorpion[i] != null)
+                        {
+                            NbCaseUsed++;
+                        }
+                    }
+                    if (NbCaseUsed == 9)
+                    {
+                        MessageNull();
+                    }
+                    else
+                    {
+                        NbCaseUsed = 0;
+                    }
+                }
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="button"></param>
         private void ChoicePosition(Control button)
         {
             button.Visible = false;
 
             X = button.Location.X;
             Y = button.Location.Y;
-
-
+            
             switch (CurrentPlayer)
             {
                 case 1: cross = true; this.Paint += new PaintEventHandler(MyPaintCross); CurrentPlayer = 2; lblPlayer2.BackColor = Color.Black; lblPlayer2.ForeColor = Color.White; lblPlayer1.BackColor = Color.White; lblPlayer1.ForeColor = Color.Black; break;
                 case 2: circle = true; this.Paint += new PaintEventHandler(MyPaintEllipse); CurrentPlayer = 1; lblPlayer1.BackColor = Color.Black; lblPlayer1.ForeColor = Color.White; lblPlayer2.BackColor = Color.White; lblPlayer2.ForeColor = Color.Black; break;
             }
-
         }
 
         private void Switcher(string caract, Control button)
@@ -126,6 +156,9 @@ namespace MiniGames
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void VerifyWinner()
         {
             string Case1 = TabMorpion[0];
@@ -213,149 +246,174 @@ namespace MiniGames
                 XWin2 *= 2;
                 YWin2 *= 14;
                 MessageWin();
-            }
+            }            
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private void MessageNull()
+        {
+            if (MessageBox.Show("Bravo à vous deux mais c'est un match null\nVoulez-vous continuer ?", "Message de confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ClearedGround();
+            }
+            else
+            {
+                this.Close();
+            }
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private void MessageWin()
         {
-            int Player = 0;
+            string Player = "";
             cmdCase1.Visible = false;
             cmdCase2.Visible = false;
-            cmdCase3.Visible = false;
             cmdCase4.Visible = false;
+            cmdCase3.Visible = false;
             cmdCase5.Visible = false;
             cmdCase6.Visible = false;
             cmdCase7.Visible = false;
             cmdCase8.Visible = false;
             cmdCase9.Visible = false;
 
-            this.Paint += new PaintEventHandler(LineWin);
-
-           /* for(int x = 0; x<9; x++)
-            {
-                for (int y = 0; y < 2; y++) {
-                    if (y == 0)
-                    {
-                        X = TabButtonMorpion[x, y];
-                    }
-                    else
-                    {
-                        Y = TabButtonMorpion[x, y];
-                    }
-                }
-                switch (TabMorpion[x])
-                {
-                    case "X": this.Paint += new PaintEventHandler(MyPaintCross); break;
-                    case "O": this.Paint += new PaintEventHandler(MyPaintEllipse); break;
-                    case "": break;
-                }
-            }*/
-            //this.Refresh();
             switch (CurrentPlayer)
             {
-                case 1: Player = 2; break;
-                case 2: Player = 1; break;
+                case 1: Player = lblPlayer2.Text; int Point1 = Convert.ToInt16(lblScoreJ2.Text); lblScoreJ2.Text = (Point1+1).ToString(); break;
+                case 2: Player = lblPlayer1.Text; int Point2 = Convert.ToInt16(lblScoreJ1.Text); lblScoreJ1.Text = (Point2 + 1).ToString(); break;
             }
             
             Winner = true;
-            if (MessageBox.Show("Bravo joueur " + Player + " tu as gagné \nVoulez-vous quitter le jeu ?", "Message de confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bravo joueur " + Player + " tu as gagné \nVoulez-vous continuer ?", "Message de confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.Close();
+                ClearedGround();
+                
             }
             else
             {
-                clear = true;
-                cmdCase1.Visible = true;
-                cmdCase2.Visible = true;
-                cmdCase3.Visible = true;
-                cmdCase4.Visible = true;
-                cmdCase5.Visible = true;
-                cmdCase6.Visible = true;
-                cmdCase7.Visible = true;
-                cmdCase8.Visible = true;
-                cmdCase9.Visible = true;
-
-                XWin = 32;
-                YWin = 32;
-                XWin2 = 32;
-                YWin2 = 32;
-
-                for (int i = 1; i <= 9; i++)
-                {
-                    clear = true;
-                    switch (i)
-                    {
-                        case 1: X = cmdCase1.Location.X; Y = cmdCase1.Location.Y; break;
-                        case 2: X = cmdCase2.Location.X; Y = cmdCase2.Location.Y; break;
-                        case 3: X = cmdCase3.Location.X; Y = cmdCase3.Location.Y; break;
-                        case 4: X = cmdCase4.Location.X; Y = cmdCase4.Location.Y; break;
-                        case 5: X = cmdCase5.Location.X; Y = cmdCase5.Location.Y; break;
-                        case 6: X = cmdCase6.Location.X; Y = cmdCase6.Location.Y; break;
-                        case 7: X = cmdCase7.Location.X; Y = cmdCase7.Location.Y; break;
-                        case 8: X = cmdCase8.Location.X; Y = cmdCase8.Location.Y; break;
-                        case 9: X = cmdCase9.Location.X; Y = cmdCase9.Location.Y; break;
-                    }
-                    this.Paint += new PaintEventHandler(Clear);
-                }
-
-                for(int x = 0; x < 9; x++)
-                {
-                    TabMorpion[x] = "";
-                }
-
-                NbTour = 0;
-                Winner = false;
+                this.Close();
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ClearedGround()
+        {
+            clear = true;
+            cmdCase1.Visible = true;
+            cmdCase2.Visible = true;
+            cmdCase4.Visible = true;
+            cmdCase3.Visible = true;
+            cmdCase5.Visible = true;
+            cmdCase6.Visible = true;
+            cmdCase7.Visible = true;
+            cmdCase8.Visible = true;
+            cmdCase9.Visible = true;
+            Win = false;
+            NbCaseUsed = 0;
 
+            for(int i = 0; i < TabMorpion.Count(); i++)
+            {
+                TabMorpion[i] = null;
+            }
+
+
+            XWin = 32;
+            YWin = 32;
+            XWin2 = 32;
+            YWin2 = 32;
+
+            for (int i = 1; i <= 9; i++)
+            {
+                clear = true;
+                switch (i)
+                {
+                    case 1: X = cmdCase1.Location.X; Y = cmdCase1.Location.Y; break;
+                    case 2: X = cmdCase2.Location.X; Y = cmdCase2.Location.Y; break;
+                    case 3: X = cmdCase4.Location.X; Y = cmdCase4.Location.Y; break;
+                    case 4: X = cmdCase3.Location.X; Y = cmdCase3.Location.Y; break;
+                    case 5: X = cmdCase5.Location.X; Y = cmdCase5.Location.Y; break;
+                    case 6: X = cmdCase6.Location.X; Y = cmdCase6.Location.Y; break;
+                    case 7: X = cmdCase7.Location.X; Y = cmdCase7.Location.Y; break;
+                    case 8: X = cmdCase8.Location.X; Y = cmdCase8.Location.Y; break;
+                    case 9: X = cmdCase9.Location.X; Y = cmdCase9.Location.Y; break;
+                }
+                this.Paint += new PaintEventHandler(Clear);
+            }
+
+            NbTour = 0;
+            Winner = false;
+            this.Refresh();
+            this.Paint += new PaintEventHandler(MyPaint);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyPaintCross(object sender, PaintEventArgs e)
         {
             if (cross)
             {
                 Graphics GM;
                 GM = e.Graphics;
-                GM.DrawLine(PG, X, Y, X + 64, Y + 64);
-                GM.DrawLine(PG, X, Y + 64, X + 64, Y);
+                GM.DrawLine(PG, X+32, Y+32, X + 96, Y + 96);
+                GM.DrawLine(PG, X+32, Y + 96, X + 96, Y+32);
                 cross = false;
             }
         }
+        /// <summary>
+        /// Draws the circles for the player two.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyPaintEllipse(object sender, PaintEventArgs e)
         {
             if (circle)
             {
                 Graphics GM;
                 GM = e.Graphics;
-                GM.DrawEllipse(PG, X + 5, Y + 5, 53, 53);
+                GM.DrawEllipse(PG, X + 32, Y + 32, 64, 64);
                 circle = false;
             }
         }
-
+        /// <summary>
+        /// Clears crosses and circles to replay.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Clear(object sender, PaintEventArgs e)
         {
             if (clear)
             {
                 Graphics GM;
                 GM = e.Graphics;
-                GM.DrawLine(PGC, X, Y, X + 64, Y + 64);
-                GM.DrawLine(PGC, X, Y + 64, X + 64, Y);
-                GM.DrawEllipse(PGC, X + 5, Y + 5, 53, 53);
+                GM.DrawLine(PGC, X+ 32, Y+ 32, X + 32, Y + 32);
+                GM.DrawLine(PGC, X+32, Y + 32, X + 32, Y+ 32);
+                GM.DrawEllipse(PGC, X + 32, Y + 32, 64, 64);
                 GM.DrawLine(PGC, XWin, YWin, XWin2, YWin2);
                 clear = false;
             }
         }
-        private void LineWin(object sender, PaintEventArgs e)
+        
+        /// <summary>
+        /// Draws the grid of the Morpion.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MyPaint(object sender, PaintEventArgs e)
         {
-            if (Win)
-            {
-                Graphics GM;
-                GM = e.Graphics;
-                GM.DrawLine(PG, 64, 128, 448, 128);
-                
-                Win = false;
-            }
+            Graphics G;
+            G = e.Graphics;
+            G.DrawLine(P, (Distance * 2), (Distance * 6), (Distance * 14), (Distance * 6));
+            G.DrawLine(P, (Distance * 2), (Distance * 10), (Distance * 14), (Distance * 10));
+            G.DrawLine(P, (Distance * 6), (Distance * 2), (Distance * 6), (Distance * 14));
+            G.DrawLine(P, (Distance * 10), (Distance * 2), (Distance * 10), (Distance * 14));
         }
-
-
+        #endregion private methods
 
     }
 }
