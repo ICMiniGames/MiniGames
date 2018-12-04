@@ -2,46 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Data.SQLite;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MiniGames
 {
+    /// <summary>
+    /// Utilisé pour intéragire pour avec la base de données
+    /// </summary>
     class ConnectionDB
     {
-       /* //connection to the database
+        
         private SQLiteConnection m_dbConnection;
         public int NumberPlayer;
-        int NumberForget = 0;
+
         /// <summary>
-        /// constructor : creates the connection to the database SQLite
+        /// Utilise le fichier sqlite si il existe / le crée si il n'existe pas
         /// </summary>
         public ConnectionDB()
         {
-            if (File.Exists("Splendor.sqlite"))
+            //Verifie que le fichier existe
+            if (File.Exists("MiniGames.sqlite"))
             {
-                m_dbConnection = new SQLiteConnection("Data Source=Splendor.sqlite;Version=3;");
+                //ouvre une connextion à la base de données
+                m_dbConnection = new SQLiteConnection("Data Source=MiniGames.sqlite;Version=3;");
                 m_dbConnection.Open();
-                //NumberPlayer = GetCountPlayer();
-
             }
             else
             {
-                SQLiteConnection.CreateFile("Splendor.sqlite");
-                m_dbConnection = new SQLiteConnection("Data Source=Splendor.sqlite;Version=3;");
+                //Crée le fichier et ouvre une connexion à la base de données
+                SQLiteConnection.CreateFile("MiniGames.sqlite");
+                m_dbConnection = new SQLiteConnection("Data Source=MiniGames.sqlite;Version=3;");
                 m_dbConnection.Open();
-                //create and insert players
-                //modifier après rendu
-                CreateInsertPlayer();
-                //
-                //Create and insert cards
-                CreateInsertCards();
-                //Create and insert ressources
-                CreateInsertRessources();
             }
-        }*/
 
-
-
+        }
     }
 }
