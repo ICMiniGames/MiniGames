@@ -12,14 +12,13 @@ namespace MiniGames
 {
     public partial class FrmBataille : Form
     {
-        FrmPlayers player;
+        FrmPlayers player = new FrmPlayers(1, 4);
         FrmChoixBataille choixBataille = new FrmChoixBataille();
 
         public FrmBataille()
         {
-            player = new FrmPlayers(1, 4);
+            
             InitializeComponent();
-            player.ShowDialog();
             choixBataille.ShowDialog();
         }
     }

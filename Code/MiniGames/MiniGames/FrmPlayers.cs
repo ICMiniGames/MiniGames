@@ -87,24 +87,31 @@ namespace MiniGames
             switch (NbUserMax)
             {
                 case 1: break; //Solitaire
-                case 2: break; //Morpion
-                case 3: break; //rien
-                case 4: break; //bataille
-            }
-            if (NbUserMax == 2 && NbUserBase == 2)
-            {
-                if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
-                {
-                    this.Close();
-                }
-                else
-                {
-                    if (Same)
+                case 2:
+                    if (NbUserMax == 2 && NbUserBase == 2)
                     {
-                        MessageBox.Show("Vous devez mettre des noms dans les cases visible");
+                        if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            if (Same)
+                            {
+                                MessageBox.Show("Vous devez mettre des noms dans les cases visible");
+                            }
+                        }
                     }
-                }
+                    break; //Morpion
+                case 3: break; //rien
+                case 4:
+                    if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
+                    {
+                        this.Close();
+                    }
+                    break; //bataille
             }
+            
         }
 
         private bool VerifyNamePlayers()

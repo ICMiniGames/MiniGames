@@ -52,6 +52,7 @@
             this.cmdChoiceBot1.TabIndex = 2;
             this.cmdChoiceBot1.Text = "Bot 1";
             this.cmdChoiceBot1.UseVisualStyleBackColor = true;
+            this.cmdChoiceBot1.Click += new System.EventHandler(this.cmdChoiceBot1_Click);
             // 
             // cmdChoiceBot2
             // 
@@ -62,8 +63,9 @@
             this.cmdChoiceBot2.TabIndex = 3;
             this.cmdChoiceBot2.Text = "Bot 2";
             this.cmdChoiceBot2.UseVisualStyleBackColor = true;
+            this.cmdChoiceBot2.Click += new System.EventHandler(this.cmdChoiceBot2_Click);
             // 
-            // ChoixBataille
+            // FrmChoixBataille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,7 +73,7 @@
             this.Controls.Add(this.cmdChoiceBot2);
             this.Controls.Add(this.cmdChoiceBot1);
             this.Controls.Add(this.lblPlayer);
-            this.Name = "ChoixBataille";
+            this.Name = "FrmChoixBataille";
             this.Text = "Sélection du bot gagnant";
             this.ResumeLayout(false);
             this.PerformLayout();
