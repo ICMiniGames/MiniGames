@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MiniGames;
 
 namespace MiniGames
 {
@@ -9,10 +10,8 @@ namespace MiniGames
     public class UnitTestPlayers
     {
         #region private attributes
-        //private FrmPlayers 
-        //private List<Artist> listOfArtists = null;
-        //private String testJsonFileName = "store.json";
-        //private StreamWriter strWriter = null;
+        MiniGames.FrmPlayers players;
+       
         #endregion private attributes
 
         /// <summary>
@@ -32,24 +31,92 @@ namespace MiniGames
         [TestMethod]
         public void TestMethodNbUserVisible()
         {
-            int Number = 3;
-
+            int expectedAmountOfUserBoxEnabled = 3;
+            int actualAmountOfUserBoxEnabled = 0;
             //given
-            this.strWriter = new StreamWriter(this.testJsonFileName);
-            strWriter.Write("[{\"pictureName\":\"Pic1.png\",\"name\":\"Artiste1\",\"listOfSongs\":[{\"title\":\"SongA1\",\"duration\":1},{\"title\":\"SongA2\",\"duration\":2}]},{\"pictureName\":\"Pic2.png\",\"name\":\"Artiste1\",\"listOfSongs\":[{\"title\":\"SongB1\",\"duration\":3},{\"title\":\"SongB2\",\"duration\":4}]}]");
-            strWriter.Close();
-            this.testJsonConnector = new JsonConnector(this.testJsonFileName);
+            players = new FrmPlayers(1, expectedAmountOfUserBoxEnabled);
 
             //then
-            this.listOfArtists = this.testJsonConnector.ListOfArtists();
-            actualAmountOfArtists = this.listOfArtists.Count;
+            actualAmountOfUserBoxEnabled = players.NbUserVisible(expectedAmountOfUserBoxEnabled);
 
             //when
-            Assert.AreEqual(expectedAmountOfArtists, actualAmountOfArtists);
-        }
-    }
 
-    internal class FrmPlayers
-    {
+            Assert.AreEqual(expectedAmountOfUserBoxEnabled, actualAmountOfUserBoxEnabled);
+
+        }
+        
+        /// <summary>
+        /// This test method is designed to test the json connector when the json file
+        /// to read is correctly filled.
+        /// </summary>
+        [TestMethod]
+        public void TestMethodTxtBoxEmpty()
+        {
+            int expectedAmountOfUserBoxEnabled = 1;
+            string actualAmountOfUserBoxEnabled = "";
+            //given
+            players = new FrmPlayers(1, expectedAmountOfUserBoxEnabled);
+
+            //then
+            string TextBox1 = players.txtNameUser1.Text;
+
+
+            //when
+
+            Assert.AreEqual(TextBox1, actualAmountOfUserBoxEnabled);
+
+
+        }
+        
+        /// <summary>
+        /// This test method is designed to test the json connector when the json file
+        /// to read is correctly filled.
+        /// </summary>
+        [TestMethod]
+        public void TestMethodTxtBoxFull()
+        {
+            int expectedAmountOfUserBoxEnabled = 1;
+            string actualAmountOfUserBoxEnabled = "";
+            string TextToTextBox1 = "Salut";
+            //given
+            players = new FrmPlayers(1, expectedAmountOfUserBoxEnabled);
+            players.txtNameUser1.Text = TextToTextBox1;
+            //then
+            string TextBox1 = players.txtNameUser1.Text;
+
+
+            //when
+
+            Assert.AreNotEqual(TextBox1, actualAmountOfUserBoxEnabled);
+
+
+
+        }
+        /// <summary>
+        /// This test method is designed to test the json connector when the json file
+        /// to read is correctly filled.
+        /// </summary>
+        [TestMethod]
+        public void TestMethodTxtBoxTextDifferent()
+        {
+            int expectedAmountOfUserBoxEnabled = 1;
+            string TextToTextBox1 = "Salut";
+            string TextToTextBox2 = "yi";
+            //given
+            players = new FrmPlayers(1, expectedAmountOfUserBoxEnabled);
+            players.txtNameUser1.Text = TextToTextBox1;
+            players.txtNameUser2.Text = TextToTextBox2;
+            //then
+            string TextBox1 = players.txtNameUser1.Text;
+            string TextBox2 = players.txtNameUser2.Text;
+
+
+            //when
+
+            Assert.AreNotEqual(TextBox1, TextBox2);
+
+
+
+        }
     }
 }

@@ -13,24 +13,27 @@ namespace MiniGames
 {
     public partial class FrmMorpion : Form
     {
-        #region Variable
-        int CurrentPlayer = 0;                  //Variable to know which player plays.
-        float Distance = 32;                    //Variable containing the general distance for the grid.
-        int NbTour = 0;                         //Variable used to count the number of turns that are playing.
-        Pen P = new Pen(Color.Black, 5);        //Variable containing the color and the size of the pencil.
-        Pen PG = new Pen(Color.Black, 10);      //Variable containing the color and the size of the pencil.
-        Pen PGC = new Pen(Color.White, 10);     //Variable containing the color and the size of the pencil.
-        float X;                                //Variable containing a horizontal coordinate.
-        float Y;                                //Variable containing a vertical coordinate.
-        bool cross = false;                     //Variable to avoid drawing crosses if the circles have already been drawn.
-        bool circle = false;                    //Variable to avoid drawing circles if the crosses have already been drawn.
-        bool clear = false;                     //Variable to avoid cleaning the ground if the game is not over.
-        string[] TabMorpion = new string[9];    //Variable containing, in the same place, the characters equivalent to the symbol of the players.
-        int[,] TabButtonMorpion = new int[9,2]; //Variable containing the location on the X and Y axis of the PictureBox.
-        bool Winner = false;                    //Variable to know if there is a winner.
-        bool Win = false;                       //Variable to know if there is a winner.
-        int NbCaseUsed = 0;                     //Variable containing the number of boxes that already have a character to know if there is a draw or not.
-        #endregion Variable
+        #region private attribute
+        int CurrentPlayer = 0;                          //Variable to know which player plays.
+        float Distance = 32;                            //Variable containing the general distance for the grid.
+        int NbTour = 0;                                 //Variable used to count the number of turns that are playing.
+        Pen P = new Pen(Color.Black, 5);                //Variable containing the color and the size of the pencil.
+        Pen PG = new Pen(Color.Black, 10);              //Variable containing the color and the size of the pencil.
+        Pen PGC = new Pen(Color.White, 10);             //Variable containing the color and the size of the pencil.
+        float X;                                        //Variable containing a horizontal coordinate.
+        float Y;                                        //Variable containing a vertical coordinate.
+        bool cross = false;                             //Variable to avoid drawing crosses if the circles have already been drawn.
+        bool circle = false;                            //Variable to avoid drawing circles if the crosses have already been drawn.
+        bool clear = false;                             //Variable to avoid cleaning the ground if the game is not over.
+        int NbCaseUsed = 0;                             //Variable containing the number of boxes that already have a character to know if there is a draw or not.
+        int[,] TabButtonMorpion = new int[9, 2];        //Variable containing the location on the X and Y axis of the PictureBox.
+        #endregion private attribute
+
+        #region public attribute
+        public string[] TabMorpion = new string[9];    //Variable containing, in the same place, the characters equivalent to the symbol of the players.
+        public bool Winner = false;                    //Variable to know if there is a winner.
+        public bool Win = false;                       //Variable to know if there is a winner.
+        #endregion public attribute
 
         #region constructors
         /// <summary>
@@ -74,13 +77,13 @@ namespace MiniGames
         }
         #endregion constructors
 
-        #region private methods
+        #region public methods
         /// <summary>
         /// Method used for when we click in a box, it allows to put the symbol in the report of the player.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Clicker(object sender, EventArgs e)
+        public void Clicker(object sender, EventArgs e)
         {
             Control button = (Control)sender;
             NbTour++;
@@ -120,6 +123,70 @@ namespace MiniGames
             }
         }
 
+
+        #endregion public methods
+        #region private methods
+
+        /// <summary>
+        /// Victory case verification method.
+        /// </summary>
+        public void VerifyWinner()
+        {
+
+            string Case1 = TabMorpion[0];
+            string Case2 = TabMorpion[1];
+            string Case3 = TabMorpion[2];
+            string Case4 = TabMorpion[3];
+            string Case5 = TabMorpion[4];
+            string Case6 = TabMorpion[5];
+            string Case7 = TabMorpion[6];
+            string Case8 = TabMorpion[7];
+            string Case9 = TabMorpion[8];
+            //vérifier chaque case
+            //horizontal
+            if ((Case1 == "X" || Case1 == "O" || Case2 == "X" || Case2 == "O" || Case3 == "X" || Case3 == "O") && (Case1 == Case2 && Case2 == Case3 && Case1 == Case3))
+            {
+                Win = true;
+                MessageWin();
+            }
+            else if ((Case4 == "X" || Case4 == "O" || Case5 == "X" || Case5 == "O" || Case6 == "X" || Case6 == "O") && (Case4 == Case5 && Case5 == Case6 && Case4 == Case6))
+            {
+                Win = true;
+                MessageWin();
+            }
+            else if ((Case7 == "X" || Case7 == "O" || Case8 == "X" || Case8 == "O" || Case9 == "X" || Case9 == "O") && (Case7 == Case8 && Case8 == Case9 && Case7 == Case9))
+            {
+                Win = true;
+                MessageWin();
+            }
+            //vertical
+            else if ((Case1 == "X" || Case1 == "O" || Case4 == "X" || Case4 == "O" || Case7 == "X" || Case7 == "O") && (Case1 == Case4 && Case4 == Case7 && Case1 == Case7))
+            {
+                Win = true;
+                MessageWin();
+            }
+            else if ((Case2 == "X" || Case2 == "O" || Case5 == "X" || Case5 == "O" || Case8 == "X" || Case8 == "O") && (Case2 == Case5 && Case5 == Case8 && Case2 == Case8))
+            {
+                Win = true;
+                MessageWin();
+            }
+            else if ((Case3 == "X" || Case3 == "O" || Case6 == "X" || Case6 == "O" || Case9 == "X" || Case9 == "O") && (Case3 == Case6 && Case6 == Case9 && Case3 == Case9))
+            {
+                Win = true;
+                MessageWin();
+            }
+            //diagonal
+            else if ((Case1 == "X" || Case1 == "O" || Case5 == "X" || Case5 == "O" || Case9 == "X" || Case9 == "O") && (Case1 == Case5 && Case5 == Case9 && Case1 == Case9))
+            {
+                Win = true;
+                MessageWin();
+            }
+            else if ((Case3 == "X" || Case3 == "O" || Case5 == "X" || Case5 == "O" || Case7 == "X" || Case7 == "O") && (Case3 == Case5 && Case5 == Case7 && Case3 == Case7))
+            {
+                Win = true;
+                MessageWin();
+            }
+        }
         /// <summary>
         /// Method for choosing the location of the player's symbol.
         /// </summary>
@@ -157,67 +224,6 @@ namespace MiniGames
                 case 8: TabMorpion[7] = caract; break;
                 case 9: TabMorpion[8] = caract; break;
             }
-        }
-
-        /// <summary>
-        /// Victory case verification method.
-        /// </summary>
-        private void VerifyWinner()
-        {
-            string Case1 = TabMorpion[0];
-            string Case2 = TabMorpion[1];
-            string Case3 = TabMorpion[2];
-            string Case4 = TabMorpion[3];
-            string Case5 = TabMorpion[4];
-            string Case6 = TabMorpion[5];
-            string Case7 = TabMorpion[6];
-            string Case8 = TabMorpion[7];
-            string Case9 = TabMorpion[8];
-            
-            //vérifier chaque case
-            //horizontal
-            if ((Case1 == "X" || Case1 == "O" || Case2 == "X" || Case2 == "O" || Case3 == "X" || Case3 == "O") && (Case1 == Case2 && Case2 == Case3 && Case1 == Case3))
-            {
-                Win = true;
-                MessageWin();
-            }
-            if ((Case4 == "X" || Case4 == "O" || Case5 == "X" || Case5 == "O" || Case6 == "X" || Case6 == "O") && (Case4 == Case5 && Case5 == Case6 && Case4 == Case6))
-            {
-                Win = true;
-                MessageWin();
-            }
-            if ((Case7 == "X" || Case7 == "O" || Case8 == "X" || Case8 == "O" || Case9 == "X" || Case9 == "O") && (Case7 == Case8 && Case8 == Case9 && Case7 == Case9))
-            {
-                Win = true;
-                MessageWin();
-            }
-            //vertical
-            if ((Case1 == "X" || Case1 == "O" || Case4 == "X" || Case4 == "O" || Case7 == "X" || Case7 == "O") && (Case1 == Case4 && Case4 == Case7 && Case1 == Case7))
-            {
-                Win = true;
-                MessageWin();
-            }
-            if ((Case2 == "X" || Case2 == "O" || Case5 == "X" || Case5 == "O" || Case8 == "X" || Case8 == "O") && (Case2 == Case5 && Case5 == Case8 && Case2 == Case8))
-            {
-                Win = true;
-                MessageWin();
-            }
-            if ((Case3 == "X" || Case3 == "O" || Case6 == "X" || Case6 == "O" || Case9 == "X" || Case9 == "O") && (Case3 == Case6 && Case6 == Case9 && Case3 == Case9))
-            {
-                Win = true;
-                MessageWin();
-            }
-            //diagonal
-            if ((Case1 == "X" || Case1 == "O" || Case5 == "X" || Case5 == "O" || Case9 == "X" || Case9 == "O") && (Case1 == Case5 && Case5 == Case9 && Case1 == Case9))
-            {
-                Win = true;
-                MessageWin();
-            }
-            if ((Case3 == "X" || Case3 == "O" || Case5 == "X" || Case5 == "O" || Case7 == "X" || Case7 == "O") && (Case3 == Case5 && Case5 == Case7 && Case3 == Case7))
-            {
-                Win = true;
-                MessageWin();
-            }            
         }
 
         /// <summary>

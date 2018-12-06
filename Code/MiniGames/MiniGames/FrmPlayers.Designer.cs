@@ -214,20 +214,19 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNameUser1;
-        private System.Windows.Forms.TextBox txtNameUser4;
         private System.Windows.Forms.RadioButton cmdrUser4;
         private System.Windows.Forms.RadioButton cmdrUser1;
         private System.Windows.Forms.RadioButton cmdrUser2;
         private System.Windows.Forms.RadioButton cmdrUser3;
         private System.Windows.Forms.GroupBox gpbNbUsers;
         private System.Windows.Forms.Label lblNewUser1;
-        private System.Windows.Forms.TextBox txtNameUser3;
-        private System.Windows.Forms.TextBox txtNameUser2;
         private System.Windows.Forms.Label lblNewUser4;
         private System.Windows.Forms.Label lblNewUser3;
         private System.Windows.Forms.Label lblNewUser2;
         private System.Windows.Forms.Button cmdFinish;
+        public System.Windows.Forms.TextBox txtNameUser1;
+        public System.Windows.Forms.TextBox txtNameUser4;
+        public System.Windows.Forms.TextBox txtNameUser3;
+        public System.Windows.Forms.TextBox txtNameUser2;
     }
 }
