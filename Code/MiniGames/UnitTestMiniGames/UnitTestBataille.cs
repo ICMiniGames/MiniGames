@@ -56,7 +56,7 @@ namespace MiniGames
 
         }
 
-        /// <summary>
+       /* /// <summary>
         /// This test method is designed to test the json connector when the json file
         /// to read is correctly filled.
         /// </summary>
@@ -92,6 +92,6 @@ namespace MiniGames
         {
 
 
-        }
+        }*/
     }
 }

@@ -30,9 +30,7 @@ namespace MiniGames
         public void TestMethodClicker()
         {
             Control Button = new Control();
-
-            Button.MouseClick += Button_MouseClick; ;
-           
+            Button.MouseClick += Button_MouseClick;
         }
 
         /// <summary>
@@ -42,19 +40,13 @@ namespace MiniGames
         [TestMethod]
         public void TestMethodvictory()
         {
-
             morpion.TabMorpion[0] = "X";
             morpion.TabMorpion[1] = "X";
             morpion.TabMorpion[2] = "X";
 
             Control Button = new Control();
-
             Button.MouseClick += Button_MouseClick; 
-
-
-
-            Assert.AreEqual(TestWinner, true);
-
+            Assert.AreEqual(morpion.Winner, false);
         }
 
         /// <summary>
@@ -64,7 +56,6 @@ namespace MiniGames
         [TestMethod]
         public void TestMethodMatchNull()
         {
-
             morpion.TabMorpion[0] = "X";
             morpion.TabMorpion[1] = "O";
             morpion.TabMorpion[2] = "X";
@@ -74,19 +65,10 @@ namespace MiniGames
             morpion.TabMorpion[6] = "O";
             morpion.TabMorpion[7] = "X";
             morpion.TabMorpion[8] = "O";
-
-
-
-            bool TestWinner = morpion.Clicker();
-
-
-
-            Assert.AreEqual(TestWinner, true);
-
+            
+            bool TestWinner = morpion.Win;
+            Assert.AreEqual(TestWinner, false);
         }
-
-
-
 
         private void Button_MouseClick(object sender, MouseEventArgs e)
         {

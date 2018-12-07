@@ -123,7 +123,6 @@ namespace MiniGames
             }
         }
 
-
         #endregion public methods
         #region private methods
 
