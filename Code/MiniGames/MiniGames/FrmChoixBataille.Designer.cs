@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChoixBataille));
             this.lblPlayer = new System.Windows.Forms.Label();
             this.cmdChoiceBot1 = new System.Windows.Forms.Button();
             this.cmdChoiceBot2 = new System.Windows.Forms.Button();
@@ -73,6 +74,10 @@
             this.Controls.Add(this.cmdChoiceBot2);
             this.Controls.Add(this.cmdChoiceBot1);
             this.Controls.Add(this.lblPlayer);
+<<<<<<< HEAD
+=======
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+>>>>>>> Cyril_branch
             this.Name = "FrmChoixBataille";
             this.Text = "Sélection du bot gagnant";
             this.ResumeLayout(false);

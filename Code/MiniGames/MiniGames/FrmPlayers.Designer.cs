@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlayers));
             this.txtNameUser1 = new System.Windows.Forms.TextBox();
             this.txtNameUser4 = new System.Windows.Forms.TextBox();
             this.cmdrUser4 = new System.Windows.Forms.RadioButton();
@@ -70,7 +71,7 @@
             this.cmdrUser4.TabIndex = 4;
             this.cmdrUser4.Text = "4 utilisateurs";
             this.cmdrUser4.UseVisualStyleBackColor = true;
-            this.cmdrUser4.CheckedChanged += new System.EventHandler(this.cmdrUser4_CheckedChanged_1);
+            this.cmdrUser4.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmdrUser1
             // 
@@ -82,7 +83,7 @@
             this.cmdrUser1.TabIndex = 5;
             this.cmdrUser1.Text = "1 utilisateur";
             this.cmdrUser1.UseVisualStyleBackColor = true;
-            this.cmdrUser1.CheckedChanged += new System.EventHandler(this.cmdrUser1_CheckedChanged);
+            this.cmdrUser1.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmdrUser2
             // 
@@ -94,7 +95,7 @@
             this.cmdrUser2.TabIndex = 6;
             this.cmdrUser2.Text = "2 utilisateurs";
             this.cmdrUser2.UseVisualStyleBackColor = true;
-            this.cmdrUser2.CheckedChanged += new System.EventHandler(this.cmdrUser2_CheckedChanged_1);
+            this.cmdrUser2.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmdrUser3
             // 
@@ -106,7 +107,7 @@
             this.cmdrUser3.TabIndex = 7;
             this.cmdrUser3.Text = "3 utilisateurs";
             this.cmdrUser3.UseVisualStyleBackColor = true;
-            this.cmdrUser3.CheckedChanged += new System.EventHandler(this.cmdrUser3_CheckedChanged_1);
+            this.cmdrUser3.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // gpbNbUsers
             // 
@@ -202,6 +203,7 @@
             this.Controls.Add(this.txtNameUser3);
             this.Controls.Add(this.txtNameUser4);
             this.Controls.Add(this.txtNameUser1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPlayers";
             this.Text = "Player";
             this.gpbNbUsers.ResumeLayout(false);
@@ -212,20 +214,19 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNameUser1;
-        private System.Windows.Forms.TextBox txtNameUser4;
         private System.Windows.Forms.RadioButton cmdrUser4;
         private System.Windows.Forms.RadioButton cmdrUser1;
         private System.Windows.Forms.RadioButton cmdrUser2;
         private System.Windows.Forms.RadioButton cmdrUser3;
         private System.Windows.Forms.GroupBox gpbNbUsers;
         private System.Windows.Forms.Label lblNewUser1;
-        private System.Windows.Forms.TextBox txtNameUser3;
-        private System.Windows.Forms.TextBox txtNameUser2;
         private System.Windows.Forms.Label lblNewUser4;
         private System.Windows.Forms.Label lblNewUser3;
         private System.Windows.Forms.Label lblNewUser2;
         private System.Windows.Forms.Button cmdFinish;
+        public System.Windows.Forms.TextBox txtNameUser1;
+        public System.Windows.Forms.TextBox txtNameUser4;
+        public System.Windows.Forms.TextBox txtNameUser3;
+        public System.Windows.Forms.TextBox txtNameUser2;
     }
 }

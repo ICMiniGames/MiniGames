@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMiniGames));
             this.CmdBataille = new System.Windows.Forms.Button();
             this.CmdMorpion = new System.Windows.Forms.Button();
             this.CmdSolitaire = new System.Windows.Forms.Button();
@@ -89,7 +90,7 @@
             this.CmdProfile.UseVisualStyleBackColor = true;
             this.CmdProfile.Click += new System.EventHandler(this.CmdProfile_Click);
             // 
-            // MiniGames
+            // FrmMiniGames
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
@@ -98,7 +99,8 @@
             this.Controls.Add(this.CmdBataille);
             this.Controls.Add(this.CmdMorpion);
             this.Controls.Add(this.CmdSolitaire);
-            this.Name = "MiniGames";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmMiniGames";
             this.Text = " Mini-Jeux";
             this.ResumeLayout(false);
 

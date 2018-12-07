@@ -31,8 +31,6 @@ namespace MiniGames
         private void CmdMorpion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            /*FrmPlayers player = new FrmPlayers(2, 2);
-            player.Show();*/
             FrmMorpion morpion = new FrmMorpion();
             morpion.Show();
 
@@ -62,11 +60,5 @@ namespace MiniGames
         {
             this.Show();
         }
-
-        private void troll(object sender, FormClosingEventArgs e)
-        {
-            
-        }
-
     }
 }

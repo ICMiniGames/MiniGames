@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBataille));
             this.txtBot1 = new System.Windows.Forms.TextBox();
             this.txtBot2 = new System.Windows.Forms.TextBox();
             this.pcbBot2 = new System.Windows.Forms.PictureBox();
@@ -179,11 +180,11 @@
             this.lblNbWin2.TabIndex = 13;
             this.lblNbWin2.Text = "Victoire : 0";
             // 
-            // Bataille
+            // FrmBataille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.ForestGreen;
+            this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(856, 590);
             this.Controls.Add(this.lblNbWin2);
             this.Controls.Add(this.lblNbWin3);
@@ -198,7 +199,8 @@
             this.Controls.Add(this.pcbBot2);
             this.Controls.Add(this.txtBot2);
             this.Controls.Add(this.txtBot1);
-            this.Name = "Bataille";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmBataille";
             this.Text = "Bataille";
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot1)).EndInit();
