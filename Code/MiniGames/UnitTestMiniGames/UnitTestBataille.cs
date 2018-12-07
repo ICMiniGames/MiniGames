@@ -21,7 +21,7 @@ namespace MiniGames
         /// to read is correctly filled.
         /// </summary>
         [TestMethod]
-        public void TestMethodShuffle()
+        public void TestMethodShuffleCard()
         {
            
         }

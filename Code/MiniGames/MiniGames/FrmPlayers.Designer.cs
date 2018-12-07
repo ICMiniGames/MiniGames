@@ -71,7 +71,7 @@
             this.cmdrUser4.TabIndex = 4;
             this.cmdrUser4.Text = "4 utilisateurs";
             this.cmdrUser4.UseVisualStyleBackColor = true;
-            this.cmdrUser4.CheckedChanged += new System.EventHandler(this.cmdrUser4_CheckedChanged_1);
+            this.cmdrUser4.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmdrUser1
             // 
@@ -83,7 +83,7 @@
             this.cmdrUser1.TabIndex = 5;
             this.cmdrUser1.Text = "1 utilisateur";
             this.cmdrUser1.UseVisualStyleBackColor = true;
-            this.cmdrUser1.CheckedChanged += new System.EventHandler(this.cmdrUser1_CheckedChanged);
+            this.cmdrUser1.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmdrUser2
             // 
@@ -95,7 +95,7 @@
             this.cmdrUser2.TabIndex = 6;
             this.cmdrUser2.Text = "2 utilisateurs";
             this.cmdrUser2.UseVisualStyleBackColor = true;
-            this.cmdrUser2.CheckedChanged += new System.EventHandler(this.cmdrUser2_CheckedChanged_1);
+            this.cmdrUser2.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // cmdrUser3
             // 
@@ -107,7 +107,7 @@
             this.cmdrUser3.TabIndex = 7;
             this.cmdrUser3.Text = "3 utilisateurs";
             this.cmdrUser3.UseVisualStyleBackColor = true;
-            this.cmdrUser3.CheckedChanged += new System.EventHandler(this.cmdrUser3_CheckedChanged_1);
+            this.cmdrUser3.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // gpbNbUsers
             // 

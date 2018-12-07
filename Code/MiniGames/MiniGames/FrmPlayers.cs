@@ -14,7 +14,11 @@ namespace MiniGames
     {
         int NbUserBase;
         int NbUserMax;
-
+        /// <summary>
+        /// This constructor initializes a new instance of the form of Players.
+        /// </summary>
+        /// <param name="NbUserBase"></param>
+        /// <param name="NbUserMax"></param>
         public FrmPlayers(int NbUserBase, int NbUserMax)
         {
             InitializeComponent();
@@ -42,6 +46,10 @@ namespace MiniGames
             }
         }
 
+        /// <summary>
+        /// List of the names of the players who play the game.
+        /// </summary>
+        /// <returns></returns>
         public List<string> NamePlayer()
         {
             List<string> listNamePlayers = new List<string>();
@@ -50,26 +58,22 @@ namespace MiniGames
             return listNamePlayers;
         }
 
-        private void cmdrUser1_CheckedChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Method to change the number of users when the radio button changes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckedChanged(object sender, EventArgs e)
         {
-            NbUserVisible(1);
+            Control control = (Control)sender;
+            NbUserVisible(Convert.ToInt16(control.Name.Substring(8)));
         }
 
-        private void cmdrUser2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            NbUserVisible(2);
-        }
-
-        private void cmdrUser3_CheckedChanged_1(object sender, EventArgs e)
-        {
-            NbUserVisible(3);
-        }
-
-        private void cmdrUser4_CheckedChanged_1(object sender, EventArgs e)
-        {
-            NbUserVisible(4);
-        }
-
+        /// <summary>
+        /// Method to display the number of users requested by the radio buttons.
+        /// </summary>
+        /// <param name="Checked"></param>
+        /// <returns></returns>
         public int NbUserVisible(int Checked)
         {
             int NbEnabled = 0;
@@ -80,10 +84,14 @@ namespace MiniGames
                 case 3: NbEnabled = 3; lblNewUser2.Visible = true; lblNewUser3.Visible = true; lblNewUser4.Visible = false; txtNameUser2.Visible = true; txtNameUser3.Visible = true; txtNameUser4.Visible = false; break;
                 case 4: NbEnabled = 4; lblNewUser2.Visible = true; lblNewUser3.Visible = true; lblNewUser4.Visible = true; txtNameUser2.Visible = true; txtNameUser3.Visible = true; txtNameUser4.Visible = true; break;
             }
-
             return NbEnabled;
         }
 
+        /// <summary>
+        /// Event for the confirmation button when we have finished entering the names of the players.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmdFinish_Click(object sender, EventArgs e)
         {
             bool Same = VerifyNamePlayers();
@@ -111,7 +119,10 @@ namespace MiniGames
             }
             
         }
-
+        /// <summary>
+        /// Check the names of the players for the games.
+        /// </summary>
+        /// <returns></returns>
         private bool VerifyNamePlayers()
         {
             List<string> NamePlayers = new List<string>();
