@@ -51,68 +51,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bataille.cs">
+    <Compile Include="FrmBataille.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bataille.Designer.cs">
-      <DependentUpon>Bataille.cs</DependentUpon>
+    <Compile Include="FrmBataille.Designer.cs">
+      <DependentUpon>FrmBataille.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChoixBataille.cs">
+    <Compile Include="FrmChoixBataille.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChoixBataille.Designer.cs">
-      <DependentUpon>ChoixBataille.cs</DependentUpon>
+    <Compile Include="FrmChoixBataille.Designer.cs">
+      <DependentUpon>FrmChoixBataille.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionDB.cs" />
-    <Compile Include="MiniGames.cs">
+    <Compile Include="FrmMiniGames.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MiniGames.Designer.cs">
-      <DependentUpon>MiniGames.cs</DependentUpon>
+    <Compile Include="FrmMiniGames.Designer.cs">
+      <DependentUpon>FrmMiniGames.cs</DependentUpon>
     </Compile>
-    <Compile Include="Morpion.cs">
+    <Compile Include="FrmMorpion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Morpion.Designer.cs">
-      <DependentUpon>Morpion.cs</DependentUpon>
+    <Compile Include="FrmMorpion.Designer.cs">
+      <DependentUpon>FrmMorpion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player.cs">
+    <Compile Include="FrmPlayers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Player.Designer.cs">
-      <DependentUpon>Player.cs</DependentUpon>
+    <Compile Include="FrmPlayers.Designer.cs">
+      <DependentUpon>FrmPlayers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
+    <Compile Include="FrmProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="FrmProfile.Designer.cs">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solitaire.cs">
+    <Compile Include="FrmSolitaire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Solitaire.Designer.cs">
-      <DependentUpon>Solitaire.cs</DependentUpon>
+    <Compile Include="FrmSolitaire.Designer.cs">
+      <DependentUpon>FrmSolitaire.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Bataille.resx">
-      <DependentUpon>Bataille.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBataille.resx">
+      <DependentUpon>FrmBataille.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChoixBataille.resx">
-      <DependentUpon>ChoixBataille.cs</DependentUpon>
+    <EmbeddedResource Include="FrmChoixBataille.resx">
+      <DependentUpon>FrmChoixBataille.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiniGames.resx">
-      <DependentUpon>MiniGames.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMiniGames.resx">
+      <DependentUpon>FrmMiniGames.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Morpion.resx">
-      <DependentUpon>Morpion.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMorpion.resx">
+      <DependentUpon>FrmMorpion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Player.resx">
-      <DependentUpon>Player.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPlayers.resx">
+      <DependentUpon>FrmPlayers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="FrmProfile.resx">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,8 +124,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Solitaire.resx">
-      <DependentUpon>Solitaire.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSolitaire.resx">
+      <DependentUpon>FrmSolitaire.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,6 +1,6 @@
 ﻿namespace MiniGames
 {
-    partial class Solitaire
+    partial class FrmSolitaire
     {
         /// <summary>
         /// Required designer variable.

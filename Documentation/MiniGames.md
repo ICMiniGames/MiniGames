@@ -249,8 +249,16 @@ Victoire:
 
 #### 3.5.1.2 Listes des tests.
 
-
-
+|Action|Resultat|Description suplémentaire|
+|-----------------------------------------|
+|Les joueurs ne peuvent pas séléctionné une case déja prise|-|-|
+|Le jeu se termine quand les trois symboles sont alignés (Dans toutes les directions possible)|-|-|
+|Le jeu se termine quand il y a match nul (Aucune ligne formée par les symboles)|-|-|
+|Le menu de fin de partie s'affiche|-|-|
+|Le choix continue remet à zéro le plateau|-|-|
+|Le joueur gagnant obtient un point à son score|-|-|
+|Le choix quitter le jeu ferme la fenetre du morpion|-|-|
+|Le nom des joueurs est affiché vers les bords supérieur de la fenetre|-|-|
 ### 3.5.2 Bataille
 
 #### 3.5.2.1 Use case et Sénarios.

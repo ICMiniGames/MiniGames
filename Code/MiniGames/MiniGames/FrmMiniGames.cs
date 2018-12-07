@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MiniGames
 {
-    public partial class MiniGames : Form
+    public partial class FrmMiniGames : Form
     {
-        public MiniGames()
+        public FrmMiniGames()
         {
             InitializeComponent();
         }
@@ -20,45 +20,52 @@ namespace MiniGames
         private void CmdSolitaire_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Solitaire solitaire = new Solitaire();
+            FrmSolitaire solitaire = new FrmSolitaire();
             solitaire.Show();
             
 
             //Evenement actif lors de la fermeture de jeu
-            Solitaire.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
+            FrmSolitaire.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
 
         private void CmdMorpion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Morpion morpion = new Morpion();
+            /*FrmPlayers player = new FrmPlayers(2, 2);
+            player.Show();*/
+            FrmMorpion morpion = new FrmMorpion();
             morpion.Show();
 
-            Morpion.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
+            FrmMorpion.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
 
         private void CmdBataille_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Bataille bataille = new Bataille();
+            FrmBataille bataille = new FrmBataille();
             bataille.Show();
 
-            Bataille.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
+            FrmBataille.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
 
         private void CmdProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Profile profile = new Profile();
+            FrmProfile profile = new FrmProfile();
             profile.Show();
 
-            Profile.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
+            FrmProfile.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
 
         //Affiche le menu a nouveau lorsque le jeu se ferme
         private void FrmJeu_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Show();
+        }
+
+        private void troll(object sender, FormClosingEventArgs e)
+        {
+            
         }
 
     }

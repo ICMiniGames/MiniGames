@@ -1,6 +1,6 @@
 ﻿namespace MiniGames
 {
-    partial class MiniGames
+    partial class FrmMiniGames
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
