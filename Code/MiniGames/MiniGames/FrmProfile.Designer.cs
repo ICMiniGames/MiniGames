@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
             this.lstUser = new System.Windows.Forms.ListBox();
             this.txtBestTime = new System.Windows.Forms.TextBox();
             this.txtNbWinSolitaire = new System.Windows.Forms.TextBox();
@@ -259,7 +260,7 @@
             this.lblNameUser.TabIndex = 29;
             this.lblNameUser.Text = "Nom du joueur";
             // 
-            // Profile
+            // FrmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,7 +270,8 @@
             this.Controls.Add(this.grbBataille);
             this.Controls.Add(this.grbSolitaire);
             this.Controls.Add(this.lstUser);
-            this.Name = "Profile";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmProfile";
             this.Text = "Profile";
             this.grbSolitaire.ResumeLayout(false);
             this.grbSolitaire.PerformLayout();

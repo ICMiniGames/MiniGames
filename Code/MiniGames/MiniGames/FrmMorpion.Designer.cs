@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMorpion));
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblCross = new System.Windows.Forms.Label();
@@ -212,6 +213,7 @@
             this.Controls.Add(this.lblCross);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMorpion";
             this.Text = "Morpion";
             ((System.ComponentModel.ISupportInitialize)(this.cmdCase1)).EndInit();
