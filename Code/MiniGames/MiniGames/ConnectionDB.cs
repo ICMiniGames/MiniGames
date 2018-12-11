@@ -208,7 +208,7 @@ namespace MiniGames
         /// <param name="NameLoser3"></param>
         /// <param name="NbUsers"></param>
         /// <param name="NbMinBet"></param>
-        public void InsertScoreBataille(string NameWinner, string NameLoser1, string NameLoser2, string NameLoser3, int NbUsers, int NbMinBet)
+        public void InsertScoreBataille(string NameWinner, string NameLoser1, string NameLoser2, string NameLoser3, int NbUsers, int NbBet)
         {
             string sqlWinner = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameWinner + "'";
             SQLiteCommand commandWinner = new SQLiteCommand(sqlWinner, m_dbConnection);
@@ -219,7 +219,7 @@ namespace MiniGames
                 IdWinner = Convert.ToInt16(readerWinner["IdPlayer"]);
             }
 
-            string sqlScoreWinner = "UPDATE Score SET NbWinBataille = NbWinBataille + 1 WHERE FkPlayer = " + IdWinner;
+            string sqlScoreWinner = "UPDATE Score SET NbWinBataille = NbWinBataille + 1, NbBetBataille = " + NbBet + " WHERE FkPlayer = " + IdWinner;
             SQLiteCommand commandScoreWinner = new SQLiteCommand(sqlScoreWinner, m_dbConnection);
             commandScoreWinner.ExecuteNonQuery();
 
@@ -234,7 +234,7 @@ namespace MiniGames
                     IdLoser1 = Convert.ToInt16(readerLoser1["IdPlayer"]);
                 }
 
-                string sqlScoreLoser1 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1  WHERE FkPlayer = " + IdLoser1;
+                string sqlScoreLoser1 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBet + "  WHERE FkPlayer = " + IdLoser1;
                 SQLiteCommand commandScoreLoser1 = new SQLiteCommand(sqlScoreLoser1, m_dbConnection);
                 commandScoreLoser1.ExecuteNonQuery();
 
@@ -250,7 +250,7 @@ namespace MiniGames
                         IdLoser2 = Convert.ToInt16(readerLoser2["IdPlayer"]);
                     }
 
-                    string sqlScoreLoser2 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1  WHERE FkPlayer = " + IdLoser2;
+                    string sqlScoreLoser2 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBet + "  WHERE FkPlayer = " + IdLoser2;
                     SQLiteCommand commandScoreLoser2 = new SQLiteCommand(sqlScoreLoser2, m_dbConnection);
                     commandScoreLoser2.ExecuteNonQuery();
 
@@ -265,7 +265,7 @@ namespace MiniGames
                             IdLoser3 = Convert.ToInt16(readerLoser3["IdPlayer"]);
                         }
 
-                        string sqlScoreLoser3 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1  WHERE FkPlayer = " + IdLoser3;
+                        string sqlScoreLoser3 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBet + "  WHERE FkPlayer = " + IdLoser3;
                         SQLiteCommand commandScoreLoser3 = new SQLiteCommand(sqlScoreLoser3, m_dbConnection);
                         commandScoreLoser3.ExecuteNonQuery();
                     }
