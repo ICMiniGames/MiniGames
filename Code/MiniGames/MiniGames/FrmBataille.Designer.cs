@@ -42,8 +42,16 @@
             this.lblNbWin4 = new System.Windows.Forms.Label();
             this.lblNbWin3 = new System.Windows.Forms.Label();
             this.lblNbWin2 = new System.Windows.Forms.Label();
+            this.grpUser2 = new System.Windows.Forms.GroupBox();
+            this.grpUser3 = new System.Windows.Forms.GroupBox();
+            this.grpUser4 = new System.Windows.Forms.GroupBox();
+            this.grpUser1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot1)).BeginInit();
+            this.grpUser2.SuspendLayout();
+            this.grpUser3.SuspendLayout();
+            this.grpUser4.SuspendLayout();
+            this.grpUser1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBot1
@@ -104,7 +112,7 @@
             // 
             this.lblPlayerChoice2.AutoSize = true;
             this.lblPlayerChoice2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerChoice2.Location = new System.Drawing.Point(22, 374);
+            this.lblPlayerChoice2.Location = new System.Drawing.Point(10, 30);
             this.lblPlayerChoice2.Name = "lblPlayerChoice2";
             this.lblPlayerChoice2.Size = new System.Drawing.Size(425, 25);
             this.lblPlayerChoice2.TabIndex = 6;
@@ -114,7 +122,7 @@
             // 
             this.lblPlayerChoice1.AutoSize = true;
             this.lblPlayerChoice1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerChoice1.Location = new System.Drawing.Point(22, 327);
+            this.lblPlayerChoice1.Location = new System.Drawing.Point(10, 27);
             this.lblPlayerChoice1.Name = "lblPlayerChoice1";
             this.lblPlayerChoice1.Size = new System.Drawing.Size(425, 25);
             this.lblPlayerChoice1.TabIndex = 7;
@@ -124,7 +132,7 @@
             // 
             this.lblPlayerChoice4.AutoSize = true;
             this.lblPlayerChoice4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerChoice4.Location = new System.Drawing.Point(22, 474);
+            this.lblPlayerChoice4.Location = new System.Drawing.Point(6, 26);
             this.lblPlayerChoice4.Name = "lblPlayerChoice4";
             this.lblPlayerChoice4.Size = new System.Drawing.Size(425, 25);
             this.lblPlayerChoice4.TabIndex = 8;
@@ -134,7 +142,7 @@
             // 
             this.lblPlayerChoice3.AutoSize = true;
             this.lblPlayerChoice3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerChoice3.Location = new System.Drawing.Point(22, 425);
+            this.lblPlayerChoice3.Location = new System.Drawing.Point(10, 26);
             this.lblPlayerChoice3.Name = "lblPlayerChoice3";
             this.lblPlayerChoice3.Size = new System.Drawing.Size(425, 25);
             this.lblPlayerChoice3.TabIndex = 9;
@@ -144,7 +152,7 @@
             // 
             this.lblNbWin1.AutoSize = true;
             this.lblNbWin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbWin1.Location = new System.Drawing.Point(453, 327);
+            this.lblNbWin1.Location = new System.Drawing.Point(441, 27);
             this.lblNbWin1.Name = "lblNbWin1";
             this.lblNbWin1.Size = new System.Drawing.Size(114, 25);
             this.lblNbWin1.TabIndex = 10;
@@ -154,7 +162,7 @@
             // 
             this.lblNbWin4.AutoSize = true;
             this.lblNbWin4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbWin4.Location = new System.Drawing.Point(453, 474);
+            this.lblNbWin4.Location = new System.Drawing.Point(437, 26);
             this.lblNbWin4.Name = "lblNbWin4";
             this.lblNbWin4.Size = new System.Drawing.Size(114, 25);
             this.lblNbWin4.TabIndex = 11;
@@ -164,7 +172,7 @@
             // 
             this.lblNbWin3.AutoSize = true;
             this.lblNbWin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbWin3.Location = new System.Drawing.Point(453, 425);
+            this.lblNbWin3.Location = new System.Drawing.Point(441, 26);
             this.lblNbWin3.Name = "lblNbWin3";
             this.lblNbWin3.Size = new System.Drawing.Size(114, 25);
             this.lblNbWin3.TabIndex = 12;
@@ -174,11 +182,55 @@
             // 
             this.lblNbWin2.AutoSize = true;
             this.lblNbWin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbWin2.Location = new System.Drawing.Point(453, 374);
+            this.lblNbWin2.Location = new System.Drawing.Point(441, 30);
             this.lblNbWin2.Name = "lblNbWin2";
             this.lblNbWin2.Size = new System.Drawing.Size(114, 25);
             this.lblNbWin2.TabIndex = 13;
             this.lblNbWin2.Text = "Victoire : 0";
+            // 
+            // grpUser2
+            // 
+            this.grpUser2.Controls.Add(this.lblPlayerChoice2);
+            this.grpUser2.Controls.Add(this.lblNbWin2);
+            this.grpUser2.Location = new System.Drawing.Point(12, 356);
+            this.grpUser2.Name = "grpUser2";
+            this.grpUser2.Size = new System.Drawing.Size(746, 70);
+            this.grpUser2.TabIndex = 15;
+            this.grpUser2.TabStop = false;
+            this.grpUser2.Text = "J 2";
+            // 
+            // grpUser3
+            // 
+            this.grpUser3.Controls.Add(this.lblPlayerChoice3);
+            this.grpUser3.Controls.Add(this.lblNbWin3);
+            this.grpUser3.Location = new System.Drawing.Point(12, 432);
+            this.grpUser3.Name = "grpUser3";
+            this.grpUser3.Size = new System.Drawing.Size(746, 70);
+            this.grpUser3.TabIndex = 15;
+            this.grpUser3.TabStop = false;
+            this.grpUser3.Text = "J 3";
+            // 
+            // grpUser4
+            // 
+            this.grpUser4.Controls.Add(this.lblPlayerChoice4);
+            this.grpUser4.Controls.Add(this.lblNbWin4);
+            this.grpUser4.Location = new System.Drawing.Point(12, 508);
+            this.grpUser4.Name = "grpUser4";
+            this.grpUser4.Size = new System.Drawing.Size(746, 70);
+            this.grpUser4.TabIndex = 15;
+            this.grpUser4.TabStop = false;
+            this.grpUser4.Text = "J 4";
+            // 
+            // grpUser1
+            // 
+            this.grpUser1.Controls.Add(this.lblPlayerChoice1);
+            this.grpUser1.Controls.Add(this.lblNbWin1);
+            this.grpUser1.Location = new System.Drawing.Point(12, 279);
+            this.grpUser1.Name = "grpUser1";
+            this.grpUser1.Size = new System.Drawing.Size(746, 71);
+            this.grpUser1.TabIndex = 16;
+            this.grpUser1.TabStop = false;
+            this.grpUser1.Text = "J 1";
             // 
             // FrmBataille
             // 
@@ -186,14 +238,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(856, 590);
-            this.Controls.Add(this.lblNbWin2);
-            this.Controls.Add(this.lblNbWin3);
-            this.Controls.Add(this.lblNbWin4);
-            this.Controls.Add(this.lblNbWin1);
-            this.Controls.Add(this.lblPlayerChoice3);
-            this.Controls.Add(this.lblPlayerChoice4);
-            this.Controls.Add(this.lblPlayerChoice1);
-            this.Controls.Add(this.lblPlayerChoice2);
+            this.Controls.Add(this.grpUser1);
+            this.Controls.Add(this.grpUser2);
+            this.Controls.Add(this.grpUser3);
+            this.Controls.Add(this.grpUser4);
             this.Controls.Add(this.lblWinner);
             this.Controls.Add(this.pcbBot1);
             this.Controls.Add(this.pcbBot2);
@@ -204,6 +252,14 @@
             this.Text = "Bataille";
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot1)).EndInit();
+            this.grpUser2.ResumeLayout(false);
+            this.grpUser2.PerformLayout();
+            this.grpUser3.ResumeLayout(false);
+            this.grpUser3.PerformLayout();
+            this.grpUser4.ResumeLayout(false);
+            this.grpUser4.PerformLayout();
+            this.grpUser1.ResumeLayout(false);
+            this.grpUser1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +280,9 @@
         private System.Windows.Forms.Label lblNbWin4;
         private System.Windows.Forms.Label lblNbWin3;
         private System.Windows.Forms.Label lblNbWin2;
+        private System.Windows.Forms.GroupBox grpUser2;
+        private System.Windows.Forms.GroupBox grpUser3;
+        private System.Windows.Forms.GroupBox grpUser4;
+        private System.Windows.Forms.GroupBox grpUser1;
     }
 }

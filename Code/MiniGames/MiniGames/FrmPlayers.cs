@@ -15,6 +15,7 @@ namespace MiniGames
         ConnectionDB connection = new ConnectionDB();
         int NbUserBase;
         int NbUserMax;
+        public int NbNamePlayers;
         /// <summary>
         /// This constructor initializes a new instance of the form of Players.
         /// </summary>
@@ -180,7 +181,7 @@ namespace MiniGames
             NamePlayers.Add(txtNameUser3.Text);
             NamePlayers.Add(txtNameUser4.Text);
 
-            int NbNamePlayers = NamePlayers.Count();
+            NbNamePlayers = NamePlayers.Count();
             string Name1 = txtNameUser1.Text;
             string Name2 = txtNameUser2.Text;
             string Name3 = txtNameUser3.Text;

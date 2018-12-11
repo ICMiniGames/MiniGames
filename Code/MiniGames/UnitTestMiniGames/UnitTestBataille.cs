@@ -6,6 +6,11 @@ namespace MiniGames
     [TestClass]
     public class UnitTestBataille
     {
+        #region private attributes
+
+        private string testSqliteFileName = "TestMiniGames.sqlite";
+        #endregion private attributes
+
         /// <summary>
         /// This test method initializes variables and objects needed for the next test session.
         /// Run before each test method.
@@ -23,7 +28,15 @@ namespace MiniGames
         [TestMethod]
         public void TestMethodShuffleCard()
         {
-           
+            
+
+
+
+
+
+
+
+
         }
 
         /// <summary>

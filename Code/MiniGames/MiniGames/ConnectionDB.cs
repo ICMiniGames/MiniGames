@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MiniGames
 {
-    class ConnectionDB
+    public class ConnectionDB
     {
         List<string> NamesPlayer = new List<string>();
         private SQLiteConnection m_dbConnection;
@@ -18,21 +18,24 @@ namespace MiniGames
         /// </summary>
         public ConnectionDB()
         {
-            if (File.Exists("MiniGames.sqlite"))
+            VerifyFileOpen("MiniGames.sqlite");
+        }
+
+        public void VerifyFileOpen(string FileSqlite)
+        {
+            if (File.Exists(FileSqlite))
             {
-                m_dbConnection = new SQLiteConnection("Data Source=MiniGames.sqlite;Version=3;");
+                m_dbConnection = new SQLiteConnection("Data Source="+ FileSqlite + ";Version=3;");
                 m_dbConnection.Open();
-                //NumberPlayer = GetCountPlayer();
                 ListPlayerAlreadyExist();
 
             }
             else
             {
-                SQLiteConnection.CreateFile("MiniGames.sqlite");
-                m_dbConnection = new SQLiteConnection("Data Source=MiniGames.sqlite;Version=3;");
+                SQLiteConnection.CreateFile(FileSqlite);
+                m_dbConnection = new SQLiteConnection("Data Source="+ FileSqlite + "; Version=3;");
                 m_dbConnection.Open();
 
-               
                 //Create a table in the Data Base for players, Scores and Cards.
                 CreateTablePlayer();
                 CreateTableScore();
@@ -143,7 +146,7 @@ namespace MiniGames
                    IdPlayer  = Convert.ToInt16(readerIdPlayer["IdPlayer"]);
                 }
 
-                string sqlScore = "INSERT INTO Score (FkPlayer, BestTimeSolitaire, NbWinSolitaire, NbDefeatSolitaire, NbWinBataille, NbDefeatBataille, NbBetBataille, NbWinMorpion, NbDefeatMorpion) VALUES (" + IdPlayer + ", 100000, 0, 0, 0, 0, 1000, 0, 0)";
+                string sqlScore = "INSERT INTO Score (FkPlayer, BestTimeSolitaire, NbWinSolitaire, NbDefeatSolitaire, NbWinBataille, NbDefeatBataille, NbBetBataille, NbWinMorpion, NbDefeatMorpion) VALUES (" + IdPlayer + ", 1000, 0, 0, 0, 0, 1000, 0, 0)";
                 SQLiteCommand commandScore = new SQLiteCommand(sqlScore, m_dbConnection);
                 commandScore.ExecuteNonQuery();
 

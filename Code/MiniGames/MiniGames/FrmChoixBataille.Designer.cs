@@ -53,6 +53,7 @@
             this.cmdChoiceBot1.TabIndex = 2;
             this.cmdChoiceBot1.Text = "Bot 1";
             this.cmdChoiceBot1.UseVisualStyleBackColor = true;
+            this.cmdChoiceBot1.Click += new System.EventHandler(this.ListChoiceBot);
             // 
             // cmdChoiceBot2
             // 
@@ -63,6 +64,7 @@
             this.cmdChoiceBot2.TabIndex = 3;
             this.cmdChoiceBot2.Text = "Bot 2";
             this.cmdChoiceBot2.UseVisualStyleBackColor = true;
+            this.cmdChoiceBot2.Click += new System.EventHandler(this.ListChoiceBot);
             // 
             // FrmChoixBataille
             // 
