@@ -55,7 +55,7 @@ namespace MiniGames
         /// </summary>
         private void CreateTableScore()
         {
-            string sql = "CREATE TABLE Score (IdScore INT PRIMARY KEY, BestTimeSolitaire INT, NbWinSolitaire INT, NbDefeatSolitaire INT, NbWinBataille INT, NbDefeatBataille INT, NbWinMorpion INT, NbDefeatMorpion INT, FkPlayer INT , FOREIGN KEY(FkPlayer) REFERENCES Player(IdPlayer))";
+            string sql = "CREATE TABLE Score (IdScore INTEGER PRIMARY KEY AUTOINCREMENT, FkPlayer INTEGER, BestTimeSolitaire INT, NbWinSolitaire INT, NbDefeatSolitaire INT, NbWinBataille INT, NbDefeatBataille INT , NbBetBataille INT, NbWinMorpion INT, NbDefeatMorpion INT, FOREIGN KEY(FkPlayer) REFERENCES Player(IdPlayer))";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
             command.ExecuteNonQuery();
         }
@@ -122,18 +122,38 @@ namespace MiniGames
 
         }
 
+        /// <summary>
+        /// Insert data in Player table
+        /// </summary>
+        /// <param name="Name"></param>
         public void InsertPlayer(string Name)
         {
             if (!NamesPlayer.Contains(Name))
             {
-                string sql = "INSERT INTO Player (UserName) VALUES ('" + Name + "')";
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                command.ExecuteNonQuery();
-            
+                string sqlPlayer = "INSERT INTO Player (UserName) VALUES ('" + Name + "')";
+                SQLiteCommand commandPlayer = new SQLiteCommand(sqlPlayer, m_dbConnection);
+                commandPlayer.ExecuteNonQuery();
+
+                string sqlIdPlayer = "SELECT IdPlayer FROM Player Where UserName = '" + Name + "'";
+                SQLiteCommand commandIdPlayer = new SQLiteCommand(sqlIdPlayer, m_dbConnection);
+                SQLiteDataReader readerIdPlayer = commandIdPlayer.ExecuteReader();
+                int IdPlayer = 0;
+                while (readerIdPlayer.Read())
+                {
+                   IdPlayer  = Convert.ToInt16(readerIdPlayer["IdPlayer"]);
+                }
+
+                string sqlScore = "INSERT INTO Score (FkPlayer, BestTimeSolitaire, NbWinSolitaire, NbDefeatSolitaire, NbWinBataille, NbDefeatBataille, NbBetBataille, NbWinMorpion, NbDefeatMorpion) VALUES (" + IdPlayer + ", 100000, 0, 0, 0, 0, 1000, 0, 0)";
+                SQLiteCommand commandScore = new SQLiteCommand(sqlScore, m_dbConnection);
+                commandScore.ExecuteNonQuery();
+
                 NamesPlayer.Add(Name);
             }
         }
 
+        /// <summary>
+        /// Verify if a player exist already
+        /// </summary>
         private void ListPlayerAlreadyExist()
         {
             string sql = "SELECT UserName FROM Player";
@@ -143,6 +163,146 @@ namespace MiniGames
             {
                 NamesPlayer.Add(reader["UserName"].ToString());
             }
+        }
+
+        /// <summary>
+        /// Insert data  for the game Morpion  in Score table
+        /// </summary>
+        /// <param name="NameWinner"></param>
+        /// <param name="NameLoser"></param>
+        public void InsertScoreMorpion(string NameWinner, string NameLoser)
+        {
+            string sqlWinner = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameWinner + "'";
+            SQLiteCommand commandWinner = new SQLiteCommand(sqlWinner, m_dbConnection);
+            SQLiteDataReader readerWinner = commandWinner.ExecuteReader();
+            int IdWinner = 0;
+            while (readerWinner.Read())
+            {
+                IdWinner = Convert.ToInt16(readerWinner["IdPlayer"]);
+            }
+
+            string sqlLoser = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameLoser + "'";
+            SQLiteCommand commandLoser = new SQLiteCommand(sqlLoser, m_dbConnection);
+            SQLiteDataReader readerLoser = commandLoser.ExecuteReader();
+            int IdLoser = 0;
+            while (readerLoser.Read())
+            {
+                IdLoser = Convert.ToInt16(readerLoser["IdPlayer"]);
+            }
+
+            string sqlScoreWinner = "UPDATE Score SET NbWinMorpion = NbWinMorpion + 1 WHERE FkPlayer = " + IdWinner;
+            SQLiteCommand commandScoreWinner = new SQLiteCommand(sqlScoreWinner, m_dbConnection);
+            commandScoreWinner.ExecuteNonQuery();
+
+            string sqlScoreLoser = "UPDATE Score SET NbDefeatMorpion = NbDefeatMorpion + 1  WHERE FkPlayer = " + IdLoser;
+            SQLiteCommand commandScoreLoser = new SQLiteCommand(sqlScoreLoser, m_dbConnection);
+            commandScoreLoser.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Insert data for the game Bataille in Score table
+        /// </summary>
+        /// <param name="NameWinner"></param>
+        /// <param name="NameLoser1"></param>
+        /// <param name="NameLoser2"></param>
+        /// <param name="NameLoser3"></param>
+        /// <param name="NbUsers"></param>
+        /// <param name="NbMinBet"></param>
+        public void InsertScoreBataille(string NameWinner, string NameLoser1, string NameLoser2, string NameLoser3, int NbUsers, int NbMinBet)
+        {
+            string sqlWinner = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameWinner + "'";
+            SQLiteCommand commandWinner = new SQLiteCommand(sqlWinner, m_dbConnection);
+            SQLiteDataReader readerWinner = commandWinner.ExecuteReader();
+            int IdWinner = 0;
+            while (readerWinner.Read())
+            {
+                IdWinner = Convert.ToInt16(readerWinner["IdPlayer"]);
+            }
+
+            string sqlScoreWinner = "UPDATE Score SET NbWinBataille = NbWinBataille + 1 WHERE FkPlayer = " + IdWinner;
+            SQLiteCommand commandScoreWinner = new SQLiteCommand(sqlScoreWinner, m_dbConnection);
+            commandScoreWinner.ExecuteNonQuery();
+
+            if (NbUsers >= 2)
+            {
+                string sqlLoser1 = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameLoser1 + "'";
+                SQLiteCommand commandLoser1 = new SQLiteCommand(sqlLoser1, m_dbConnection);
+                SQLiteDataReader readerLoser1 = commandLoser1.ExecuteReader();
+                int IdLoser1 = 0;
+                while (readerLoser1.Read())
+                {
+                    IdLoser1 = Convert.ToInt16(readerLoser1["IdPlayer"]);
+                }
+
+                string sqlScoreLoser1 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1  WHERE FkPlayer = " + IdLoser1;
+                SQLiteCommand commandScoreLoser1 = new SQLiteCommand(sqlScoreLoser1, m_dbConnection);
+                commandScoreLoser1.ExecuteNonQuery();
+
+                if (NbUsers >= 3)
+                {
+
+                    string sqlLoser2 = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameLoser2 + "'";
+                    SQLiteCommand commandLoser2 = new SQLiteCommand(sqlLoser2, m_dbConnection);
+                    SQLiteDataReader readerLoser2 = commandLoser2.ExecuteReader();
+                    int IdLoser2 = 0;
+                    while (readerLoser2.Read())
+                    {
+                        IdLoser2 = Convert.ToInt16(readerLoser2["IdPlayer"]);
+                    }
+
+                    string sqlScoreLoser2 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1  WHERE FkPlayer = " + IdLoser2;
+                    SQLiteCommand commandScoreLoser2 = new SQLiteCommand(sqlScoreLoser2, m_dbConnection);
+                    commandScoreLoser2.ExecuteNonQuery();
+
+                    if (NbUsers == 4)
+                    {
+                        string sqlLoser3 = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameLoser3 + "'";
+                        SQLiteCommand commandLoser3 = new SQLiteCommand(sqlLoser3, m_dbConnection);
+                        SQLiteDataReader readerLoser3 = commandLoser3.ExecuteReader();
+                        int IdLoser3 = 0;
+                        while (readerLoser3.Read())
+                        {
+                            IdLoser3 = Convert.ToInt16(readerLoser3["IdPlayer"]);
+                        }
+
+                        string sqlScoreLoser3 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1  WHERE FkPlayer = " + IdLoser3;
+                        SQLiteCommand commandScoreLoser3 = new SQLiteCommand(sqlScoreLoser3, m_dbConnection);
+                        commandScoreLoser3.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Insert data  for the game Solitaire  in Score table
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Time"></param>
+        /// <param name="Win"></param>
+        public void InsertScoreSolitaire(string Name, int Time, bool Win)
+        {
+            string sql = "SELECT IdPlayer FROM Player WHERE UserName = '" + Name + "'";
+            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            int IdPlayer = 0;
+            while (reader.Read())
+            {
+                IdPlayer = Convert.ToInt16(reader["IdPlayer"]);
+            }
+
+            if (Win)
+            {
+                string sqlScore = "UPDATE Score SET NbWinSolitaire = NbWinSolitaire + 1, BestTimeSolitaire = " + Time + "  WHERE FkPlayer = " + IdPlayer;
+                SQLiteCommand commandScore = new SQLiteCommand(sqlScore, m_dbConnection);
+                commandScore.ExecuteNonQuery();
+            }
+            else
+            {
+                string sqlScore = "UPDATE Score SET NbDefeatSolitaire = NbDefeatSolitaire + 1 WHERE FkPlayer = " + IdPlayer;
+                SQLiteCommand commandScore = new SQLiteCommand(sqlScore, m_dbConnection);
+                commandScore.ExecuteNonQuery();
+            }
+
         }
     }
 }

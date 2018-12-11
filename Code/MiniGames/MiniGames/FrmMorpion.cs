@@ -251,7 +251,8 @@ namespace MiniGames
         /// </summary>
         private void MessageWin()
         {
-            string Player = "";
+            string PlayerWinner = "";
+            string PlayerLoser = "";
             cmdCase1.Visible = false;
             cmdCase2.Visible = false;
             cmdCase4.Visible = false;
@@ -264,12 +265,13 @@ namespace MiniGames
 
             switch (CurrentPlayer)
             {
-                case 1: Player = lblPlayer2.Text; int Point1 = Convert.ToInt16(lblScoreJ2.Text); lblScoreJ2.Text = (Point1+1).ToString(); break;
-                case 2: Player = lblPlayer1.Text; int Point2 = Convert.ToInt16(lblScoreJ1.Text); lblScoreJ1.Text = (Point2 + 1).ToString(); break;
+                case 1: PlayerWinner = lblPlayer2.Text; PlayerLoser = lblPlayer1.Text; int Point1 = Convert.ToInt16(lblScoreJ2.Text); lblScoreJ2.Text = (Point1+1).ToString(); break;
+                case 2: PlayerWinner = lblPlayer1.Text; PlayerLoser = lblPlayer2.Text; int Point2 = Convert.ToInt16(lblScoreJ1.Text); lblScoreJ1.Text = (Point2 + 1).ToString(); break;
             }
-            
+            ConnectionDB connection = new ConnectionDB();
+            connection.InsertScoreMorpion(PlayerWinner, PlayerLoser);
             Winner = true;
-            if (MessageBox.Show("Bravo joueur " + Player + " tu as gagné \nVoulez-vous continuer ?", "Message de confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bravo joueur " + PlayerWinner + " tu as gagné \nVoulez-vous continuer ?", "Message de confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ClearedGround();
                 
