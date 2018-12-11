@@ -12,6 +12,7 @@ namespace MiniGames
 {
     public partial class FrmPlayers : Form
     {
+        ConnectionDB connection = new ConnectionDB();
         int NbUserBase;
         int NbUserMax;
         /// <summary>
@@ -103,6 +104,7 @@ namespace MiniGames
                     {
                         if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
                         {
+                            AddPlayerDB();
                             this.Close();
                         }
                         else
@@ -176,6 +178,26 @@ namespace MiniGames
                 Same = true;
             }
             return Same;
+        }
+
+        private void AddPlayerDB()
+        {
+            if(txtNameUser1.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser1.Text);
+            }
+            if (txtNameUser2.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser2.Text);
+            }
+            if (txtNameUser3.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser3.Text);
+            }
+            if (txtNameUser4.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser4.Text);
+            }
         }
     }
 }

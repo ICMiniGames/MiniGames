@@ -63,7 +63,7 @@
     <Compile Include="FrmChoixBataille.Designer.cs">
       <DependentUpon>FrmChoixBataille.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\ConnectionDB.cs" />
+    <Compile Include="ConnectionDB.cs" />
     <Compile Include="FrmMiniGames.cs">
       <SubType>Form</SubType>
     </Compile>

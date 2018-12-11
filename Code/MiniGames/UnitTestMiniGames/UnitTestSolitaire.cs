@@ -21,7 +21,7 @@ namespace MiniGames
         /// to read is correctly filled.
         /// </summary>
         [TestMethod]
-        public void TestMethodListOfArtistsSucessAmountOfArtistsObject()
+        public void TestMethodValue()
         {
             /*int expectedAmountOfArtists = 2;
             int actualAmountOfArtists = -1;

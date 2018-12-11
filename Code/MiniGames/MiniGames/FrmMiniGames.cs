@@ -12,6 +12,7 @@ namespace MiniGames
 {
     public partial class FrmMiniGames : Form
     {
+        ConnectionDB connection = new ConnectionDB();
         public FrmMiniGames()
         {
             InitializeComponent();

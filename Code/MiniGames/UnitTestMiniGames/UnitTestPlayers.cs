@@ -11,7 +11,7 @@ namespace MiniGames
     {
         #region private attributes
         MiniGames.FrmPlayers players;
-       
+        
         #endregion private attributes
 
         /// <summary>
