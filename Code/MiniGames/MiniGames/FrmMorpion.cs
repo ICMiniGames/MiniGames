@@ -13,10 +13,13 @@ namespace MiniGames
 {
     public partial class FrmMorpion : Form
     {
+        #region public attribute
+        public int NbTour = 0;                          //Variable used to count the number of turns that are playing.
+        #endregion public attribute
+
         #region private attribute
         int CurrentPlayer = 0;                          //Variable to know which player plays.
         float Distance = 32;                            //Variable containing the general distance for the grid.
-        int NbTour = 0;                                 //Variable used to count the number of turns that are playing.
         Pen P = new Pen(Color.Black, 5);                //Variable containing the color and the size of the pencil.
         Pen PG = new Pen(Color.Black, 10);              //Variable containing the color and the size of the pencil.
         Pen PGC = new Pen(Color.White, 10);             //Variable containing the color and the size of the pencil.
@@ -123,10 +126,6 @@ namespace MiniGames
             }
         }
 
-
-        #endregion public methods
-        #region private methods
-
         /// <summary>
         /// Victory case verification method.
         /// </summary>
@@ -187,6 +186,11 @@ namespace MiniGames
                 MessageWin();
             }
         }
+
+        #endregion public methods
+        #region private methods
+
+
         /// <summary>
         /// Method for choosing the location of the player's symbol.
         /// </summary>

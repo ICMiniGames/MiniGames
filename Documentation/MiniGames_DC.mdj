@@ -19,6 +19,7 @@
 					},
 					"name": "Main",
 					"visible": true,
+<<<<<<< HEAD
 					"defaultDiagram": true,
 					"ownedViews": [
 						{
@@ -989,6 +990,9 @@
 					"isFinalSpecification": false,
 					"isLeaf": false,
 					"isActive": false
+=======
+					"defaultDiagram": true
+>>>>>>> Cyril_branch
 				}
 			],
 			"visibility": "public"

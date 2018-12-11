@@ -229,8 +229,13 @@ MLD:
 
 Action de base:
 
+<<<<<<< HEAD
 |Action|Résultat|
 |-----------------|
+=======
+| Action | Résultat|
+|------- | ----------|
+>>>>>>> Cyril_branch
 |Le joueur 1 clique sur une case| - La case est remplacé par le symbole du joueur 1 **-** Au tour du deuxieme joueur|
 |Le joueur 2 clique sur une case|- La case est remplacé par le symbole du joueur 2 **-** Au tour du joueur 1|
 |Le joueur 1 clique sur une case déjà prise par le joueur 2| - Rien ne se passe **-** Le tour du joueur 1 continue tant qu'il n'a pas cliquer sur une case libre|
@@ -241,7 +246,11 @@ Action de base:
 Victoire:
 
 |Action|Résultat|
+<<<<<<< HEAD
 |---------------|
+=======
+|------- | ----------|
+>>>>>>> Cyril_branch
 |Un des deux joueurs forme une ligne avec ses symboles|Le jeu s'arrete et annonce qui est le gagnant **-** Le jeu propose au joueur si il veut rejouer ou quitter.|
 |Tout les case on été remplie mais pas de gagnant|Le jeu annonce qu'il y a égalité et propose de rejouer ou quitter|
 |Un joueur clique sur Continuer|Le jeu recommence|
@@ -250,7 +259,11 @@ Victoire:
 #### 3.5.1.2 Listes des tests.
 
 |Action|Resultat|Description suplémentaire|
+<<<<<<< HEAD
 |-----------------------------------------|
+=======
+|------- | ----------|------- | ----------|
+>>>>>>> Cyril_branch
 |Les joueurs ne peuvent pas séléctionné une case déja prise|-|-|
 |Le jeu se termine quand les trois symboles sont alignés (Dans toutes les directions possible)|-|-|
 |Le jeu se termine quand il y a match nul (Aucune ligne formée par les symboles)|-|-|

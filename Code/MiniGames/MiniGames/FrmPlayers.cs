@@ -12,6 +12,7 @@ namespace MiniGames
 {
     public partial class FrmPlayers : Form
     {
+        ConnectionDB connection = new ConnectionDB();
         int NbUserBase;
         int NbUserMax;
         /// <summary>
@@ -54,7 +55,9 @@ namespace MiniGames
         {
             List<string> listNamePlayers = new List<string>();
             listNamePlayers.Add(txtNameUser1.Text);
-            listNamePlayers.Add(txtNameUser2.Text);
+            if (txtNameUser2.Text != "") { listNamePlayers.Add(txtNameUser2.Text); }
+            if (txtNameUser3.Text != "") { listNamePlayers.Add(txtNameUser3.Text); }
+            if (txtNameUser4.Text != "") { listNamePlayers.Add(txtNameUser4.Text); }
             return listNamePlayers;
         }
 
@@ -94,11 +97,13 @@ namespace MiniGames
         /// <param name="e"></param>
         private void cmdFinish_Click(object sender, EventArgs e)
         {
+            bool NotSame = true;
             bool Same = VerifyNamePlayers();
             switch (NbUserMax)
             {
                 case 1: break; //Solitaire
                 case 2:
+<<<<<<< HEAD
                     if (NbUserMax == 2 && NbUserBase == 2)
 <<<<<<< HEAD
                     {
@@ -112,33 +117,85 @@ namespace MiniGames
                             {
                                 MessageBox.Show("Vous devez mettre des noms dans les cases visible");
                             }
+=======
+                    if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
+                    {
+                        AddPlayerDB();
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (Same)
+                        {
+                            MessageBox.Show("Vous devez mettre des noms dans les cases visible");
+>>>>>>> Cyril_branch
                         }
                     }
                     break; //Morpion
                 case 3: break; //rien
                 case 4:
+<<<<<<< HEAD
                     if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
                     {
                         this.Close();
                     }
                     break; //bataille
 =======
+=======
+                    if (cmdrUser1.Checked)
+                    {
+                        if (txtNameUser1.Text != "")
+                        {
+                            NotSame = false;
+                            AddPlayerDB();
+                            this.Close();
+                        }
+                    }
+                    if (cmdrUser2.Checked)
+>>>>>>> Cyril_branch
                     {
                         if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
                         {
+                            NotSame = false;
+                            AddPlayerDB();
                             this.Close();
                         }
-                        else
+                    }
+                    if (cmdrUser3.Checked)
+                    {
+                        if (txtNameUser1.Text != "" && txtNameUser2.Text != "" && txtNameUser3.Text != "")
                         {
-                            if (Same)
-                            {
-                                MessageBox.Show("Vous devez mettre des noms dans les cases visible");
-                            }
+                            NotSame = false;
+                            AddPlayerDB();
+                            this.Close();
                         }
                     }
+<<<<<<< HEAD
                     break; //Morpion
                 case 3: break; //rien
                 case 4: break; //bataille
+>>>>>>> Cyril_branch
+=======
+                    if (cmdrUser4.Checked)
+                    {
+                        if (txtNameUser1.Text != "" && txtNameUser2.Text != "" && txtNameUser3.Text != "" && txtNameUser4.Text != "")
+                        {
+                            NotSame = false;
+                            AddPlayerDB();
+                            this.Close();
+                        }
+                    }
+                    if (NotSame)
+                    {
+                        if (Same)
+                        {
+                            MessageBox.Show("Vous devez mettre des noms dans les cases visible");
+                        }
+                    }
+                    
+
+
+                    break; //bataille
 >>>>>>> Cyril_branch
             }
             
@@ -200,6 +257,26 @@ namespace MiniGames
                 Same = true;
             }
             return Same;
+        }
+
+        private void AddPlayerDB()
+        {
+            if(txtNameUser1.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser1.Text);
+            }
+            if (txtNameUser2.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser2.Text);
+            }
+            if (txtNameUser3.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser3.Text);
+            }
+            if (txtNameUser4.Text != "")
+            {
+                connection.InsertPlayer(txtNameUser4.Text);
+            }
         }
     }
 }
