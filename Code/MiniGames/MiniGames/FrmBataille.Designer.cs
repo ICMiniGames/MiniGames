@@ -46,6 +46,7 @@
             this.grpUser3 = new System.Windows.Forms.GroupBox();
             this.grpUser4 = new System.Windows.Forms.GroupBox();
             this.grpUser1 = new System.Windows.Forms.GroupBox();
+            this.cmdStartBet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBot1)).BeginInit();
             this.grpUser2.SuspendLayout();
@@ -102,11 +103,11 @@
             // 
             this.lblWinner.AutoSize = true;
             this.lblWinner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinner.Location = new System.Drawing.Point(299, 38);
+            this.lblWinner.Location = new System.Drawing.Point(270, 35);
             this.lblWinner.Name = "lblWinner";
-            this.lblWinner.Size = new System.Drawing.Size(245, 25);
+            this.lblWinner.Size = new System.Drawing.Size(342, 25);
             this.lblWinner.TabIndex = 5;
-            this.lblWinner.Text = "Le gagnant du pari est : ";
+            this.lblWinner.Text = "Le(s) gagnant(s) du pari est/sont : ";
             // 
             // lblPlayerChoice2
             // 
@@ -232,12 +233,25 @@
             this.grpUser1.TabStop = false;
             this.grpUser1.Text = "J 1";
             // 
+            // cmdStartBet
+            // 
+            this.cmdStartBet.BackColor = System.Drawing.Color.DarkGreen;
+            this.cmdStartBet.ForeColor = System.Drawing.Color.White;
+            this.cmdStartBet.Location = new System.Drawing.Point(380, 63);
+            this.cmdStartBet.Name = "cmdStartBet";
+            this.cmdStartBet.Size = new System.Drawing.Size(98, 43);
+            this.cmdStartBet.TabIndex = 17;
+            this.cmdStartBet.Text = "Lancer";
+            this.cmdStartBet.UseVisualStyleBackColor = false;
+            this.cmdStartBet.Click += new System.EventHandler(this.cmdStartBet_Click);
+            // 
             // FrmBataille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(856, 590);
+            this.Controls.Add(this.cmdStartBet);
             this.Controls.Add(this.grpUser1);
             this.Controls.Add(this.grpUser2);
             this.Controls.Add(this.grpUser3);
@@ -284,5 +298,6 @@
         private System.Windows.Forms.GroupBox grpUser3;
         private System.Windows.Forms.GroupBox grpUser4;
         private System.Windows.Forms.GroupBox grpUser1;
+        private System.Windows.Forms.Button cmdStartBet;
     }
 }

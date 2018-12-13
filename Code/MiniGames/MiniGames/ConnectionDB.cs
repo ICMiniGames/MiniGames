@@ -13,6 +13,8 @@ namespace MiniGames
     {
         List<string> NamesPlayer = new List<string>();
         private SQLiteConnection m_dbConnection;
+        List<Card> cards = new List<Card>();
+
         /// <summary>
         /// constructor : creates the connection to the database SQLite
         /// </summary>
@@ -306,6 +308,22 @@ namespace MiniGames
                 commandScore.ExecuteNonQuery();
             }
 
+        }
+
+
+        public List<Card> GetCard()
+        {
+            string sql = "SELECT Name, LinkImage, Symbole, Valeur FROM Card";
+            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                //ListCardName.Add(reader["Name"].ToString());
+                Card card = new Card(reader["Name"].ToString(), reader["LinkImage"].ToString(), reader["Symbole"].ToString(), Convert.ToInt16(reader["Valeur"].ToString()));
+                cards.Add(card);
+            }
+
+            return cards;
         }
     }
 }

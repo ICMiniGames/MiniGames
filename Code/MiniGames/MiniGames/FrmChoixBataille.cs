@@ -12,18 +12,30 @@ namespace MiniGames
 {
     public partial class FrmChoixBataille : Form
     {
-        List<string> ListNamePlayer;
-        public List<int> ListChoiceBotPlayer;
+        List<string> ListNamePlayer = new List<string>();
+        public List<int> ListChoiceBotPlayer = new List<int>();
+        int i = 0;
         public FrmChoixBataille(List<string> ListNamePlayer)
         {
             InitializeComponent();
             this.ListNamePlayer = ListNamePlayer;
+            lblPlayer.Text = "Au joueur : " + ListNamePlayer[i];
         }
 
         private void ListChoiceBot(object sender, EventArgs e)
         {
+            i++;
             Control Button = (Control)sender;
-            ListChoiceBotPlayer.Add(Convert.ToInt16(Button.Name.Substring(12)));
+            ListChoiceBotPlayer.Add(Convert.ToInt16(Button.Text.Substring(3)));
+            if (ListNamePlayer.Count() > i)
+            {
+                lblPlayer.Text = "Au joueur : " + ListNamePlayer[i];
+                
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }
