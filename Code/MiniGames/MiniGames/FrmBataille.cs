@@ -210,7 +210,7 @@ namespace MiniGames
 
         private void ClearGround(bool KeepPlayer)
         {
-            for(int i = 0; i < 4; i++)
+            for(int i = 0; i < ListNamePlayer.Count(); i++)
             {
                 ListWinPlayer[i] = 0;
                 ListChoiceBotPlayer[i] = 0;
