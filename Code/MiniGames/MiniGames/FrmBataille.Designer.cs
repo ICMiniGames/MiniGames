@@ -103,11 +103,10 @@
             // 
             this.lblWinner.AutoSize = true;
             this.lblWinner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinner.Location = new System.Drawing.Point(270, 35);
+            this.lblWinner.Location = new System.Drawing.Point(215, 35);
             this.lblWinner.Name = "lblWinner";
-            this.lblWinner.Size = new System.Drawing.Size(342, 25);
+            this.lblWinner.Size = new System.Drawing.Size(0, 25);
             this.lblWinner.TabIndex = 5;
-            this.lblWinner.Text = "Le(s) gagnant(s) du pari est/sont : ";
             // 
             // lblPlayerChoice2
             // 
