@@ -177,6 +177,11 @@ namespace MiniGames
                 choixBataille = new FrmChoixBataille(ListNamePlayer);
                 choixBataille.ShowDialog();
                 ListChoiceBotPlayer = choixBataille.ListChoiceBotPlayer;
+
+                lblPlayerChoice1.Text = "Le joueur " + ListNamePlayer[0] + " à parier sur le Bot " + ListChoiceBotPlayer[0];
+                if (grpUser2.Enabled) { lblPlayerChoice2.Text = "Le joueur " + ListNamePlayer[1] + " à parier sur le Bot " + ListChoiceBotPlayer[1]; }
+                if (grpUser3.Enabled) { lblPlayerChoice3.Text = "Le joueur " + ListNamePlayer[2] + " à parier sur le Bot " + ListChoiceBotPlayer[2]; }
+                if (grpUser4.Enabled) { lblPlayerChoice4.Text = "Le joueur " + ListNamePlayer[3] + " à parier sur le Bot " + ListChoiceBotPlayer[3]; }
             }
             else
             {
@@ -188,13 +193,20 @@ namespace MiniGames
                 {
                     if(ListWinPlayer[i] == 5)
                     {
+                        switch (ListChoiceBotPlayer.Count())
+                        {
+                            case 1: Loser1 = ""; Loser2 = ""; Loser3 = ""; break;
+                            case 2: if (i == 0) { Loser1 = ListNamePlayer[1]; } else { Loser1 = ListNamePlayer[0]; } break;
+                            case 3: if (i == 0) { Loser1 = ListNamePlayer[1]; Loser2 = ListNamePlayer[2]; } else if (i == 1) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[2]; } else { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; } break;
+                            case 4: if (i == 0) { Loser1 = ListNamePlayer[1]; Loser2 = ListNamePlayer[2]; Loser3 = ListNamePlayer[3]; } else if (i == 1) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[2]; Loser3 = ListNamePlayer[3]; } else if(i == 2) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; Loser3 = ListNamePlayer[3]; } else { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; Loser3 = ListNamePlayer[2]; } break;
+                        }/*
                         if (ListNamePlayer.Count() == 2) { if (ListNamePlayer[1] == "") { Loser1 = ""; } else { Loser1 = ListNamePlayer[1]; } }
                         if (ListNamePlayer.Count() == 3) { if (ListNamePlayer[2] == "") { Loser2 = ""; } else { Loser2 = ListNamePlayer[2]; } }
                         if (ListNamePlayer.Count() == 4) { if (ListNamePlayer[3] == "") { Loser3 = ""; } else { Loser3 = ListNamePlayer[3]; } }
-
+                        */
                         connection.InsertScoreBataille(ListNamePlayer[i], Loser1, Loser2, Loser3, ListChoiceBotPlayer.Count(), NbBet);
 
-                        if(MessageBox.Show("Bravo " + ListNamePlayer[i] + " tu sa gagné la partie grâce à tes paris.\nVoulez-vous continuer à jouer et continuer avec les mêmes joueurs ?", "Victoire", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if(MessageBox.Show("Bravo " + ListNamePlayer[i] + " tu as gagné(e) la partie en "+ NbBet +" paris.\nVoulez-vous continuer à jouer et continuer avec les mêmes joueurs ?", "Victoire", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             ClearGround(true);
                         }
