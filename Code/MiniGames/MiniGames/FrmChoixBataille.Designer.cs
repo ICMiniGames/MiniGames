@@ -74,10 +74,7 @@
             this.Controls.Add(this.cmdChoiceBot2);
             this.Controls.Add(this.cmdChoiceBot1);
             this.Controls.Add(this.lblPlayer);
-<<<<<<< HEAD
-=======
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
->>>>>>> Cyril_branch
             this.Name = "FrmChoixBataille";
             this.Text = "Sélection du bot gagnant";
             this.ResumeLayout(false);
