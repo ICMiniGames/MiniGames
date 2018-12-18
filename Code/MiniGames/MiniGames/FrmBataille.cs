@@ -64,7 +64,7 @@ namespace MiniGames
         /// <summary>
         /// Create lsit of card for each bot
         /// </summary>
-        public void Carder()
+        public void CreateCardList()
         {
             ListCards = connection.GetCard();
             Shuffle(ListCards);
@@ -86,7 +86,7 @@ namespace MiniGames
         {
             NbBet++;
 
-            Carder();
+            CreateCardList();
 
             while (CardBot1.Count() != 0 || CardBot2.Count() != 0)
             {
@@ -225,8 +225,7 @@ namespace MiniGames
 
         }
         #endregion public method
-
-
+        
         #region private method
         /// <summary>
         /// mix of stacks of cards

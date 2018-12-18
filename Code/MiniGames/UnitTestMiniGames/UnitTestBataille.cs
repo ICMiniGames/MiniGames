@@ -28,7 +28,7 @@ namespace MiniGames
         [TestMethod]
         public void TestMethodShuffleCard()
         {
-            frmBataille.Carder();
+            frmBataille.CreateCardList();
             Assert.AreNotEqual(frmBataille.ListCards[1].GetValeur(), frmBataille.ListCards[2].GetValeur());
         }
 
