@@ -12,9 +12,20 @@ namespace MiniGames
 {
     public partial class FrmChoixBataille : Form
     {
-        List<string> ListNamePlayer = new List<string>();
+        #region public attribut
         public List<int> ListChoiceBotPlayer = new List<int>();
+        #endregion public attribut
+
+        #region private attribut
+        List<string> ListNamePlayer = new List<string>();
         int i = 0;
+        #endregion private attribut
+
+        #region contructor
+        /// <summary>
+        /// This constructor initializes a new instance of the form of ChoixBataille.
+        /// </summary>
+        /// <param name="ListNamePlayer"></param>
         public FrmChoixBataille(List<string> ListNamePlayer)
         {
             InitializeComponent();
@@ -22,6 +33,14 @@ namespace MiniGames
             lblPlayer.Text = "Au joueur : " + ListNamePlayer[i];
         }
 
+        #endregion contructor
+        
+        #region private method
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListChoiceBot(object sender, EventArgs e)
         {
             i++;
@@ -37,5 +56,6 @@ namespace MiniGames
                 this.Close();
             }
         }
+        #endregion private method
     }
 }

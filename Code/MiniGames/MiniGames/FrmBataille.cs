@@ -33,6 +33,9 @@ namespace MiniGames
         #endregion private attribut
 
         #region constructor
+        /// <summary>
+        /// This constructor initializes a new instance of the form of Bataille.
+        /// </summary>
         public FrmBataille()
         {
             for (int i = 0; i < 4; i++) { ListWinPlayer.Add(0); }
