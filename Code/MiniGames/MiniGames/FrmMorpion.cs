@@ -39,6 +39,7 @@ namespace MiniGames
         #endregion public attribute
 
         #region constructors
+
         /// <summary>
         /// This constructor initializes a new instance of the form of Morpion.
         /// </summary>

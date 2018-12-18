@@ -36,8 +36,9 @@ namespace MiniGames
         #endregion contructor
         
         #region private method
+
         /// <summary>
-        /// 
+        /// List the choice for bet for each player.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -56,6 +57,7 @@ namespace MiniGames
                 this.Close();
             }
         }
+
         #endregion private method
     }
 }

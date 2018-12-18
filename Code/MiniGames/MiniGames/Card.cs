@@ -14,10 +14,9 @@ namespace MiniGames
         string Symbole;
         int Valeur;
         #endregion private attribut
-
-
-
+        
         #region public method
+
         /// <summary>
         /// This constructor initializes a new instance of a card.
         /// </summary>
@@ -68,6 +67,7 @@ namespace MiniGames
         {
             return Valeur;
         }
+
         #endregion public method
     }
 }
