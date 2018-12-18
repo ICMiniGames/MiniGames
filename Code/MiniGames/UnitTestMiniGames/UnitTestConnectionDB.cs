@@ -1,11 +1,18 @@
 ﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MiniGames;
 
 namespace MiniGames
 {
     [TestClass]
     public class UnitTestConnectionDB
     {
+        #region private attributes
+        MiniGames.ConnectionDB connection = new ConnectionDB();
+        private string testSqliteFileName = "TestMiniGames.sqlite";
+        #endregion private attributes
+
         /// <summary>
         /// This test method initializes variables and objects needed for the next test session.
         /// Run before each test method.
@@ -16,28 +23,39 @@ namespace MiniGames
 
         }
 
-        /// <summary>
+        /*/// <summary>
         /// This test method is designed to test the json connector when the json file
         /// to read is correctly filled.
         /// </summary>
         [TestMethod]
-        public void TestMethodListOfArtistsSucessAmountOfArtistsObject()
+        public void TestMethodCreateSQLFile()
         {
-            /*int expectedAmountOfArtists = 2;
-            int actualAmountOfArtists = -1;
+           
+            connection.VerifyFileOpen(testSqliteFileName);
 
-            //given
-            this.strWriter = new StreamWriter(this.testJsonFileName);
-            strWriter.Write("[{\"pictureName\":\"Pic1.png\",\"name\":\"Artiste1\",\"listOfSongs\":[{\"title\":\"SongA1\",\"duration\":1},{\"title\":\"SongA2\",\"duration\":2}]},{\"pictureName\":\"Pic2.png\",\"name\":\"Artiste1\",\"listOfSongs\":[{\"title\":\"SongB1\",\"duration\":3},{\"title\":\"SongB2\",\"duration\":4}]}]");
-            strWriter.Close();
-            this.testJsonConnector = new JsonConnector(this.testJsonFileName);
+            Assert.AreEqual(File.Exists("MiniGames.sqlite"), false);
+        }*/
 
-            //then
-            this.listOfArtists = this.testJsonConnector.ListOfArtists();
-            actualAmountOfArtists = this.listOfArtists.Count;
 
-            //when
-            Assert.AreEqual(expectedAmountOfArtists, actualAmountOfArtists);*/
-        }
+
+
+
+
+
+
+
+        /*/// <summary>
+        /// This test method cleanup variables and objects used for the last test session.
+        /// Run after each test method.
+        /// </summary>
+        [TestCleanup]
+        public void Cleanup()
+        {
+            this.connection = null;
+            if (File.Exists(this.testSqliteFileName))
+            {
+                File.Delete(this.testSqliteFileName);
+            }
+        }*/
     }
 }

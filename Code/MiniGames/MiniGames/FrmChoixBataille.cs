@@ -12,31 +12,30 @@ namespace MiniGames
 {
     public partial class FrmChoixBataille : Form
     {
-        FrmPlayers player = new FrmPlayers(1, 4); //Permet d'utiliser le joueur crée dans FrmPlayer.cs
-        public FrmChoixBataille()
+        List<string> ListNamePlayer = new List<string>();
+        public List<int> ListChoiceBotPlayer = new List<int>();
+        int i = 0;
+        public FrmChoixBataille(List<string> ListNamePlayer)
         {
             InitializeComponent();
-            player.ShowDialog();
+            this.ListNamePlayer = ListNamePlayer;
+            lblPlayer.Text = "Au joueur : " + ListNamePlayer[i];
         }
 
-        /// <summary>
-        /// Permet au joueur de parie sur le BOT1
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmdChoiceBot1_Click(object sender, EventArgs e)
+        private void ListChoiceBot(object sender, EventArgs e)
         {
-            
-        }
-
-        /// <summary>
-        /// Permet au joueur de parie sur le BOT2
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmdChoiceBot2_Click(object sender, EventArgs e)
-        {
-
+            i++;
+            Control Button = (Control)sender;
+            ListChoiceBotPlayer.Add(Convert.ToInt16(Button.Text.Substring(3)));
+            if (ListNamePlayer.Count() > i)
+            {
+                lblPlayer.Text = "Au joueur : " + ListNamePlayer[i];
+                
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

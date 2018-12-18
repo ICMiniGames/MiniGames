@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.cs" />
     <Compile Include="FrmBataille.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,7 +64,7 @@
     <Compile Include="FrmChoixBataille.Designer.cs">
       <DependentUpon>FrmChoixBataille.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\ConnectionDB.cs" />
+    <Compile Include="ConnectionDB.cs" />
     <Compile Include="FrmMiniGames.cs">
       <SubType>Form</SubType>
     </Compile>
