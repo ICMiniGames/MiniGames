@@ -62,6 +62,7 @@
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.pictureBox37 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -95,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox31
@@ -104,8 +106,10 @@
             this.pictureBox31.Location = new System.Drawing.Point(254, 12);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox31.TabIndex = 49;
             this.pictureBox31.TabStop = false;
+            this.pictureBox31.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox2
             // 
@@ -116,6 +120,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(73, 110);
             this.pictureBox2.TabIndex = 51;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox6
             // 
@@ -123,10 +128,11 @@
             this.pictureBox6.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.pictureBox6.Location = new System.Drawing.Point(378, 32);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox6.Size = new System.Drawing.Size(71, 108);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 52;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox7
             // 
@@ -137,6 +143,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(73, 110);
             this.pictureBox7.TabIndex = 53;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox8
             // 
@@ -147,7 +154,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(73, 110);
             this.pictureBox8.TabIndex = 54;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.pictureBox8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox13
             // 
@@ -156,8 +163,10 @@
             this.pictureBox13.Location = new System.Drawing.Point(507, 53);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 55;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox9
             // 
@@ -168,6 +177,7 @@
             this.pictureBox9.Size = new System.Drawing.Size(73, 110);
             this.pictureBox9.TabIndex = 56;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox14
             // 
@@ -178,6 +188,7 @@
             this.pictureBox14.Size = new System.Drawing.Size(73, 110);
             this.pictureBox14.TabIndex = 57;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox15
             // 
@@ -188,6 +199,7 @@
             this.pictureBox15.Size = new System.Drawing.Size(73, 110);
             this.pictureBox15.TabIndex = 58;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox19
             // 
@@ -196,8 +208,10 @@
             this.pictureBox19.Location = new System.Drawing.Point(643, 75);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 59;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox10
             // 
@@ -208,6 +222,7 @@
             this.pictureBox10.Size = new System.Drawing.Size(73, 110);
             this.pictureBox10.TabIndex = 60;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox16
             // 
@@ -218,6 +233,7 @@
             this.pictureBox16.Size = new System.Drawing.Size(73, 110);
             this.pictureBox16.TabIndex = 61;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox20
             // 
@@ -228,6 +244,7 @@
             this.pictureBox20.Size = new System.Drawing.Size(73, 110);
             this.pictureBox20.TabIndex = 62;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox21
             // 
@@ -238,6 +255,7 @@
             this.pictureBox21.Size = new System.Drawing.Size(73, 110);
             this.pictureBox21.TabIndex = 63;
             this.pictureBox21.TabStop = false;
+            this.pictureBox21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox24
             // 
@@ -246,8 +264,10 @@
             this.pictureBox24.Location = new System.Drawing.Point(775, 96);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox24.TabIndex = 64;
             this.pictureBox24.TabStop = false;
+            this.pictureBox24.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox11
             // 
@@ -258,7 +278,7 @@
             this.pictureBox11.Size = new System.Drawing.Size(73, 110);
             this.pictureBox11.TabIndex = 65;
             this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            this.pictureBox11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox17
             // 
@@ -269,6 +289,7 @@
             this.pictureBox17.Size = new System.Drawing.Size(73, 110);
             this.pictureBox17.TabIndex = 66;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox22
             // 
@@ -279,6 +300,7 @@
             this.pictureBox22.Size = new System.Drawing.Size(73, 110);
             this.pictureBox22.TabIndex = 67;
             this.pictureBox22.TabStop = false;
+            this.pictureBox22.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox25
             // 
@@ -289,6 +311,7 @@
             this.pictureBox25.Size = new System.Drawing.Size(73, 110);
             this.pictureBox25.TabIndex = 68;
             this.pictureBox25.TabStop = false;
+            this.pictureBox25.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox26
             // 
@@ -299,6 +322,7 @@
             this.pictureBox26.Size = new System.Drawing.Size(73, 110);
             this.pictureBox26.TabIndex = 69;
             this.pictureBox26.TabStop = false;
+            this.pictureBox26.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox28
             // 
@@ -307,8 +331,10 @@
             this.pictureBox28.Location = new System.Drawing.Point(906, 119);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox28.TabIndex = 70;
             this.pictureBox28.TabStop = false;
+            this.pictureBox28.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox12
             // 
@@ -319,7 +345,7 @@
             this.pictureBox12.Size = new System.Drawing.Size(73, 110);
             this.pictureBox12.TabIndex = 71;
             this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            this.pictureBox12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox18
             // 
@@ -330,7 +356,7 @@
             this.pictureBox18.Size = new System.Drawing.Size(73, 110);
             this.pictureBox18.TabIndex = 72;
             this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click_1);
+            this.pictureBox18.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox23
             // 
@@ -341,7 +367,7 @@
             this.pictureBox23.Size = new System.Drawing.Size(73, 110);
             this.pictureBox23.TabIndex = 73;
             this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
+            this.pictureBox23.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox27
             // 
@@ -352,6 +378,7 @@
             this.pictureBox27.Size = new System.Drawing.Size(73, 110);
             this.pictureBox27.TabIndex = 74;
             this.pictureBox27.TabStop = false;
+            this.pictureBox27.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox29
             // 
@@ -362,7 +389,7 @@
             this.pictureBox29.Size = new System.Drawing.Size(73, 110);
             this.pictureBox29.TabIndex = 75;
             this.pictureBox29.TabStop = false;
-            this.pictureBox29.Click += new System.EventHandler(this.pictureBox29_Click);
+            this.pictureBox29.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox30
             // 
@@ -373,7 +400,7 @@
             this.pictureBox30.Size = new System.Drawing.Size(73, 110);
             this.pictureBox30.TabIndex = 76;
             this.pictureBox30.TabStop = false;
-            this.pictureBox30.Click += new System.EventHandler(this.pictureBox30_Click);
+            this.pictureBox30.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox32
             // 
@@ -382,9 +409,10 @@
             this.pictureBox32.Location = new System.Drawing.Point(1032, 142);
             this.pictureBox32.Name = "pictureBox32";
             this.pictureBox32.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox32.TabIndex = 77;
             this.pictureBox32.TabStop = false;
-            this.pictureBox32.Click += new System.EventHandler(this.pictureBox32_Click);
+            this.pictureBox32.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
             // pictureBox1
             // 
@@ -395,6 +423,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(73, 110);
             this.pictureBox1.TabIndex = 78;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Stack_Click);
             // 
             // pictureBox34
             // 
@@ -436,12 +465,24 @@
             this.pictureBox37.TabIndex = 82;
             this.pictureBox37.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::MiniGames.Properties.Resources.DosCarte;
+            this.pictureBox3.Location = new System.Drawing.Point(1286, 142);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(73, 110);
+            this.pictureBox3.TabIndex = 83;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
+            // 
             // FrmSolitaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1371, 619);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox37);
             this.Controls.Add(this.pictureBox36);
             this.Controls.Add(this.pictureBox35);
@@ -512,6 +553,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,5 +592,6 @@
         private System.Windows.Forms.PictureBox pictureBox35;
         private System.Windows.Forms.PictureBox pictureBox36;
         private System.Windows.Forms.PictureBox pictureBox37;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -33,7 +33,7 @@
             this.txtBestTime = new System.Windows.Forms.TextBox();
             this.txtNbWinSolitaire = new System.Windows.Forms.TextBox();
             this.txtNbDefSolitaire = new System.Windows.Forms.TextBox();
-            this.txtNbDrawMorpion = new System.Windows.Forms.TextBox();
+            this.txtBetBataille = new System.Windows.Forms.TextBox();
             this.txtNbWinMorpion = new System.Windows.Forms.TextBox();
             this.txtNbDefMorpion = new System.Windows.Forms.TextBox();
             this.txtNbWinBataille = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@
             this.lstUser.Name = "lstUser";
             this.lstUser.Size = new System.Drawing.Size(232, 355);
             this.lstUser.TabIndex = 0;
+            this.lstUser.SelectedIndexChanged += new System.EventHandler(this.lstUser_SelectedIndexChanged);
             // 
             // txtBestTime
             // 
@@ -90,19 +91,19 @@
             this.txtNbDefSolitaire.TabIndex = 3;
             this.txtNbDefSolitaire.Text = "0";
             // 
-            // txtNbDrawMorpion
+            // txtBetBataille
             // 
-            this.txtNbDrawMorpion.Enabled = false;
-            this.txtNbDrawMorpion.Location = new System.Drawing.Point(6, 32);
-            this.txtNbDrawMorpion.Name = "txtNbDrawMorpion";
-            this.txtNbDrawMorpion.Size = new System.Drawing.Size(100, 20);
-            this.txtNbDrawMorpion.TabIndex = 4;
-            this.txtNbDrawMorpion.Text = "0";
+            this.txtBetBataille.Enabled = false;
+            this.txtBetBataille.Location = new System.Drawing.Point(6, 36);
+            this.txtBetBataille.Name = "txtBetBataille";
+            this.txtBetBataille.Size = new System.Drawing.Size(100, 20);
+            this.txtBetBataille.TabIndex = 4;
+            this.txtBetBataille.Text = "0";
             // 
             // txtNbWinMorpion
             // 
             this.txtNbWinMorpion.Enabled = false;
-            this.txtNbWinMorpion.Location = new System.Drawing.Point(136, 32);
+            this.txtNbWinMorpion.Location = new System.Drawing.Point(6, 40);
             this.txtNbWinMorpion.Name = "txtNbWinMorpion";
             this.txtNbWinMorpion.Size = new System.Drawing.Size(100, 20);
             this.txtNbWinMorpion.TabIndex = 5;
@@ -111,7 +112,7 @@
             // txtNbDefMorpion
             // 
             this.txtNbDefMorpion.Enabled = false;
-            this.txtNbDefMorpion.Location = new System.Drawing.Point(273, 32);
+            this.txtNbDefMorpion.Location = new System.Drawing.Point(134, 40);
             this.txtNbDefMorpion.Name = "txtNbDefMorpion";
             this.txtNbDefMorpion.Size = new System.Drawing.Size(100, 20);
             this.txtNbDefMorpion.TabIndex = 6;
@@ -147,16 +148,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Location = new System.Drawing.Point(6, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Nombre de matchs null";
+            this.label4.Text = "Nombre de pari\r\n";
             // 
             // lblNbDefMorpion
             // 
             this.lblNbDefMorpion.AutoSize = true;
-            this.lblNbDefMorpion.Location = new System.Drawing.Point(270, 16);
+            this.lblNbDefMorpion.Location = new System.Drawing.Point(131, 24);
             this.lblNbDefMorpion.Name = "lblNbDefMorpion";
             this.lblNbDefMorpion.Size = new System.Drawing.Size(99, 13);
             this.lblNbDefMorpion.TabIndex = 23;
@@ -165,7 +166,7 @@
             // lblNbWinMorpion
             // 
             this.lblNbWinMorpion.AutoSize = true;
-            this.lblNbWinMorpion.Location = new System.Drawing.Point(133, 16);
+            this.lblNbWinMorpion.Location = new System.Drawing.Point(6, 24);
             this.lblNbWinMorpion.Name = "lblNbWinMorpion";
             this.lblNbWinMorpion.Size = new System.Drawing.Size(101, 13);
             this.lblNbWinMorpion.TabIndex = 24;
@@ -224,12 +225,10 @@
             // 
             // grbMorpion
             // 
-            this.grbMorpion.Controls.Add(this.txtNbDrawMorpion);
             this.grbMorpion.Controls.Add(this.txtNbWinMorpion);
             this.grbMorpion.Controls.Add(this.txtNbDefMorpion);
             this.grbMorpion.Controls.Add(this.lblNbWinMorpion);
             this.grbMorpion.Controls.Add(this.lblNbDefMorpion);
-            this.grbMorpion.Controls.Add(this.label4);
             this.grbMorpion.Location = new System.Drawing.Point(250, 165);
             this.grbMorpion.Name = "grbMorpion";
             this.grbMorpion.Size = new System.Drawing.Size(538, 100);
@@ -239,10 +238,12 @@
             // 
             // grbBataille
             // 
+            this.grbBataille.Controls.Add(this.txtBetBataille);
             this.grbBataille.Controls.Add(this.txtNbWinBataille);
             this.grbBataille.Controls.Add(this.txtNbDefBataille);
             this.grbBataille.Controls.Add(this.lblNbWinBataille);
             this.grbBataille.Controls.Add(this.lblNbDefBataille);
+            this.grbBataille.Controls.Add(this.label4);
             this.grbBataille.Location = new System.Drawing.Point(250, 271);
             this.grbBataille.Name = "grbBataille";
             this.grbBataille.Size = new System.Drawing.Size(538, 100);
@@ -273,6 +274,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProfile";
             this.Text = "Profile";
+            this.Load += new System.EventHandler(this.FrmProfile_Load);
             this.grbSolitaire.ResumeLayout(false);
             this.grbSolitaire.PerformLayout();
             this.grbMorpion.ResumeLayout(false);
@@ -290,7 +292,7 @@
         private System.Windows.Forms.TextBox txtBestTime;
         private System.Windows.Forms.TextBox txtNbWinSolitaire;
         private System.Windows.Forms.TextBox txtNbDefSolitaire;
-        private System.Windows.Forms.TextBox txtNbDrawMorpion;
+        private System.Windows.Forms.TextBox txtBetBataille;
         private System.Windows.Forms.TextBox txtNbWinMorpion;
         private System.Windows.Forms.TextBox txtNbDefMorpion;
         private System.Windows.Forms.TextBox txtNbWinBataille;

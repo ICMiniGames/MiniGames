@@ -231,7 +231,7 @@ namespace MiniGames
         
         #region private method
         /// <summary>
-        /// mix of stacks of cards
+        /// mix of list of cards
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="stack"></param>

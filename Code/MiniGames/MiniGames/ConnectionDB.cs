@@ -12,7 +12,7 @@ namespace MiniGames
     public class ConnectionDB
     {
         #region private attribut
-        List<string> NamesPlayer = new List<string>();
+        public List<string> NamesPlayer = new List<string>();
         private SQLiteConnection m_dbConnection;
         List<Card> cards = new List<Card>();
         #endregion private attribut
@@ -100,6 +100,8 @@ namespace MiniGames
         /// <param name="NbMinBet"></param>
         public void InsertScoreBataille(string NameWinner, string NameLoser1, string NameLoser2, string NameLoser3, int NbUsers, int NbBet)
         {
+            int NbBetUpdate = 0;
+
             string sqlWinner = "SELECT IdPlayer FROM Player WHERE UserName = '" + NameWinner + "'";
             SQLiteCommand commandWinner = new SQLiteCommand(sqlWinner, m_dbConnection);
             SQLiteDataReader readerWinner = commandWinner.ExecuteReader();
@@ -109,7 +111,25 @@ namespace MiniGames
                 IdWinner = Convert.ToInt16(readerWinner["IdPlayer"]);
             }
 
-            string sqlScoreWinner = "UPDATE Score SET NbWinBataille = NbWinBataille + 1, NbBetBataille = " + NbBet + " WHERE FkPlayer = " + IdWinner;
+            string sqlBetPlayer = "SELECT NbBetBataille FROM Score WHERE FkPlayer = " + IdWinner;
+            SQLiteCommand commandBet = new SQLiteCommand(sqlBetPlayer, m_dbConnection);
+            SQLiteDataReader readerBet = commandBet.ExecuteReader();
+            int NbBetWinner = 0;
+            while (readerBet.Read())
+            {
+                NbBetWinner = Convert.ToInt16(readerBet["NbBetBataille"]);
+            }
+
+            if(NbBet < NbBetWinner)
+            {
+                NbBetUpdate = NbBet;
+            }
+            else
+            {
+                NbBetUpdate = NbBetWinner;
+            }
+
+            string sqlScoreWinner = "UPDATE Score SET NbWinBataille = NbWinBataille + 1, NbBetBataille = " + NbBetUpdate + " WHERE FkPlayer = " + IdWinner;
             SQLiteCommand commandScoreWinner = new SQLiteCommand(sqlScoreWinner, m_dbConnection);
             commandScoreWinner.ExecuteNonQuery();
 
@@ -124,7 +144,25 @@ namespace MiniGames
                     IdLoser1 = Convert.ToInt16(readerLoser1["IdPlayer"]);
                 }
 
-                string sqlScoreLoser1 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBet + "  WHERE FkPlayer = " + IdLoser1;
+                string sqlBetLoser1 = "SELECT NbBetBataille FROM Score WHERE FkPlayer = " + IdLoser1;
+                SQLiteCommand commandBetLoser1 = new SQLiteCommand(sqlBetLoser1, m_dbConnection);
+                SQLiteDataReader readerBetLoser1 = commandBet.ExecuteReader();
+                int NbBetLoser1 = 0;
+                while (readerBetLoser1.Read())
+                {
+                    NbBetLoser1 = Convert.ToInt16(readerBet["NbBetBataille"]);
+                }
+
+                if (NbBet < NbBetLoser1)
+                {
+                    NbBetUpdate = NbBet;
+                }
+                else
+                {
+                    NbBetUpdate = NbBetLoser1;
+                }
+
+                string sqlScoreLoser1 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBetUpdate + "  WHERE FkPlayer = " + IdLoser1;
                 SQLiteCommand commandScoreLoser1 = new SQLiteCommand(sqlScoreLoser1, m_dbConnection);
                 commandScoreLoser1.ExecuteNonQuery();
 
@@ -140,7 +178,25 @@ namespace MiniGames
                         IdLoser2 = Convert.ToInt16(readerLoser2["IdPlayer"]);
                     }
 
-                    string sqlScoreLoser2 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBet + "  WHERE FkPlayer = " + IdLoser2;
+                    string sqlBetLoser2 = "SELECT NbBetBataille FROM Score WHERE FkPlayer = " + IdLoser2;
+                    SQLiteCommand commandBetLoser2 = new SQLiteCommand(sqlBetLoser2, m_dbConnection);
+                    SQLiteDataReader readerBetLoser2 = commandBetLoser2.ExecuteReader();
+                    int NbBetLoser2 = 0;
+                    while (readerBetLoser2.Read())
+                    {
+                        NbBetLoser2 = Convert.ToInt16(readerBetLoser2["NbBetBataille"]);
+                    }
+
+                    if (NbBet < NbBetLoser2)
+                    {
+                        NbBetUpdate = NbBet;
+                    }
+                    else
+                    {
+                        NbBetUpdate = NbBetLoser2;
+                    }
+
+                    string sqlScoreLoser2 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBetUpdate + "  WHERE FkPlayer = " + IdLoser2;
                     SQLiteCommand commandScoreLoser2 = new SQLiteCommand(sqlScoreLoser2, m_dbConnection);
                     commandScoreLoser2.ExecuteNonQuery();
 
@@ -155,7 +211,25 @@ namespace MiniGames
                             IdLoser3 = Convert.ToInt16(readerLoser3["IdPlayer"]);
                         }
 
-                        string sqlScoreLoser3 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBet + "  WHERE FkPlayer = " + IdLoser3;
+                        string sqlBetLoser3 = "SELECT NbBetBataille FROM Score WHERE FkPlayer = " + IdLoser3;
+                        SQLiteCommand commandBetLoser3 = new SQLiteCommand(sqlBetLoser3, m_dbConnection);
+                        SQLiteDataReader readerBetLoser3 = commandBetLoser3.ExecuteReader();
+                        int NbBetLoser3 = 0;
+                        while (readerBetLoser3.Read())
+                        {
+                            NbBetLoser3 = Convert.ToInt16(readerBetLoser2["NbBetBataille"]);
+                        }
+
+                        if (NbBet < NbBetLoser3)
+                        {
+                            NbBetUpdate = NbBet;
+                        }
+                        else
+                        {
+                            NbBetUpdate = NbBetLoser3;
+                        }
+
+                        string sqlScoreLoser3 = "UPDATE Score SET NbDefeatBataille = NbDefeatBataille + 1, NbBetBataille = " + NbBetUpdate + "  WHERE FkPlayer = " + IdLoser3;
                         SQLiteCommand commandScoreLoser3 = new SQLiteCommand(sqlScoreLoser3, m_dbConnection);
                         commandScoreLoser3.ExecuteNonQuery();
                     }
@@ -214,6 +288,55 @@ namespace MiniGames
             return cards;
         }
 
+        /// <summary>
+        /// Get data from player selected in the listbox
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Dictionary<string, string> Get_Player(string name)
+        {
+
+            string sql = "SELECT IdPlayer FROM Player WHERE UserName = '" + name + "'";
+            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            int id = 0;
+
+            while (reader.Read())
+            {
+
+                id = Convert.ToInt16(reader["IdPlayer"]);
+
+
+            }
+
+            string sql2 = "SELECT BestTimeSolitaire, NbWinSolitaire, NbDefeatSolitaire, NbWinBataille, NbBetBataille, NbDefeatBataille, NbWinMorpion, NbDefeatMorpion FROM Score WHERE FkPlayer = " + id.ToString();
+            SQLiteCommand command2 = new SQLiteCommand(sql2, m_dbConnection);
+            SQLiteDataReader reader2 = command2.ExecuteReader();
+
+            Dictionary<string, string> DataFromPlayer = new Dictionary<string, string>();
+
+            while (reader2.Read())
+            {
+                //Solitaire
+                DataFromPlayer["TempsSolitaire"] = reader2["BestTimeSolitaire"].ToString();
+                DataFromPlayer["VictoireSolitaire"] = reader2["NbWinSolitaire"].ToString();
+                DataFromPlayer["DefSolitaire"] = reader2["NbDefeatSolitaire"].ToString();
+
+                //Battaile
+                DataFromPlayer["BetBat"] = reader2["NbBetBataille"].ToString();
+                DataFromPlayer["VictoireBat"] = reader2["NbWinBataille"].ToString();
+                DataFromPlayer["DefBat"] = reader2["NbDefeatBataille"].ToString();
+
+                //Morpion
+                DataFromPlayer["VictoireMorp"] = reader2["NbWinMorpion"].ToString();
+                DataFromPlayer["DefMorp"] = reader2["NbDefeatMorpion"].ToString();
+
+            }
+
+            return DataFromPlayer;
+        }
+
         #endregion public method
 
         #region private method
@@ -245,58 +368,59 @@ namespace MiniGames
         {
             string sql = "CREATE TABLE Card (IdCard INT PRIMARY KEY, Name VARCHAR(100), LinkImage VARCHAR(255), Symbole VARCHAR(50), Valeur INT)";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (1,'As','CœurAs.png','Cœur',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (2,'Deux','CœurDeux.png','Cœur',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (3,'Trois','CœurTrois.png','Cœur',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (4,'Quatre','CœurQuatre.png','Cœur',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (5,'Cinq','CœurCinq.png','Cœur',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (6,'Six','CœurSix.png','Cœur',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (7,'Sept','CœurSept.png','Cœur',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (8,'Huit','CœurHuit.png','Cœur',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (9,'Neuf','CœurNeuf.png','Cœur',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (10,'Dix','CœurDix.png','Cœur',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (11,'Valet','CœurValet.png','Cœur',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (12,'Dame','CœurDame.png','Cœur',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (13,'Roi','CœurRoi.png','Cœur',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (14,'As','PiqueAs.png','Pique',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (15,'Deux','PiqueDeux.png','Pique',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (16,'Trois','PiqueTrois.png','Pique',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (17,'Quatre','PiqueQuatre.png','Pique',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (18,'Cinq','PiqueCinq.png','Pique',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (19,'Six','PiqueSix.png','Pique',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (20,'Sept','PiqueSept.png','Pique',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (21,'Huit','PiqueHuit.png','Pique',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (22,'Neuf','PiqueNeuf.png','Pique',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (23,'Dix','PiqueDix.png','Pique',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (24,'Valet','PiqueValet.png','Pique',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (25,'Dame','PiqueDame.png','Pique',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (26,'Roi','PiqueRoi.png','Pique',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (27,'As','CarreauAs.png','Carreau',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (28,'Deux','CarreauDeux.png','Carreau',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (29,'Trois','CarreauTrois.png','Carreau',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (30,'Quatre','CarreauQuatre.png','Carreau',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (31,'Cinq','CarreauCinq.png','Carreau',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (32,'Six','CarreauSix.png','Carreau',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (33,'Sept','CarreauSept.png','Carreau',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (34,'Huit','CarreauHuit.png','Carreau',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (35,'Neuf','CarreauNeuf.png','Carreau',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (36,'Dix','CarreauDix.png','Carreau',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (37,'Valet','CarreauValet.png','Carreau',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (38,'Dame','CarreauDame.png','Carreau',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (39,'Roi','CarreauRoi.png','Carreau',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (40,'As','TrèfleAs.png','Trèfle',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (41,'Deux','TrèfleDeux.png','Trèfle',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (42,'Trois','TrèfleTrois.png','Trèfle',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (43,'Quatre','TrèfleQuatre.png','Trèfle',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (44,'Cinq','TrèfleCinq.png','Trèfle',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (45,'Six','TrèfleSix.png','Trèfle',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (46,'Sept','TrèfleSept.png','Trèfle',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (47,'Huit','TrèfleHuit.png','Trèfle',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (48,'Neuf','TrèfleNeuf.png','Trèfle',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (49,'Dix','TrèfleDix.png','Trèfle',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (50,'Valet','TrèfleValet.png','Trèfle',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (51,'Dame','TrèfleDame.png','Trèfle',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
-            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (52,'Roi','TrèfleRoi.png','Trèfle',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (1,'As','1Coeur','Coeur',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (2,'Deux','2Coeur','Coeur',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (3,'Trois','3Coeur','Coeur',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (4,'Quatre','4Coeur','Coeur',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (5,'Cinq','5Coeur','Coeur',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (6,'Six','6Coeur','Coeur',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (7,'Sept','7Coeur','Coeur',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (8,'Huit','8Coeur','Coeur',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (9,'Neuf','9Coeur','Coeur',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (10,'Dix','10Coeur','Coeur',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (11,'Valet','11Coeur','Coeur',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (12,'Dame','12Coeur','Coeur',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (13,'Roi','13Coeur','Coeur',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (14,'As','1Pique','Pique',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (15,'Deux','2Pique','Pique',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (16,'Trois','3Pique','Pique',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (17,'Quatre','4Pique','Pique',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (18,'Cinq','5Pique','Pique',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (19,'Six','6Pique','Pique',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (20,'Sept','7Pique','Pique',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (21,'Huit','8Pique','Pique',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (22,'Neuf','9Pique','Pique',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (23,'Dix','10Pique','Pique',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (24,'Valet','11Pique','Pique',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (25,'Dame','12Pique','Pique',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (26,'Roi','13Pique','Pique',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (27,'As','1Carreau','Carreau',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (28,'Deux','2Carreau','Carreau',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (29,'Trois','3Carreau','Carreau',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (30,'Quatre','4Carreau','Carreau',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (31,'Cinq','5Carreau','Carreau',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (32,'Six','6Carreau','Carreau',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (33,'Sept','7Carreau','Carreau',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (34,'Huit','8Carreau','Carreau',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (35,'Neuf','9Carreau','Carreau',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (36,'Dix','10Carreau','Carreau',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (37,'Valet','11Carreau','Carreau',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (38,'Dame','12Carreau','Carreau',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (39,'Roi','13Carreau','Carreau',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (40,'As','1Trefle','Trèfle',1)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (41,'Deux','2Trefle','Trèfle',2)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (42,'Trois','3Trefle','Trèfle',3)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (43,'Quatre','4Trefle','Trèfle',4)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (44,'Cinq','5Trefle','Trèfle',5)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (45,'Six','6Trefle','Trèfle',6)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (46,'Sept','7Trefle','Trèfle',7)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (47,'Huit','8Trefle','Trèfle',8)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (48,'Neuf','9Trefle','Trèfle',9)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (49,'Dix','10Trefle','Trèfle',10)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (50,'Valet','11Trefle','Trèfle',11)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (51,'Dame','12Trefle','Trèfle',12)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+            sql = "insert into Card (IdCard, Name, LinkImage, Symbole, Valeur) values (52,'Roi','13Trefle','Trèfle',13)"; command = new SQLiteCommand(sql, m_dbConnection); command.ExecuteNonQuery();
+
 
         }
 

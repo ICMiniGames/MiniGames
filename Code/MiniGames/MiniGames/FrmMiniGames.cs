@@ -42,6 +42,7 @@ namespace MiniGames
             //Evenement actif lors de la fermeture de jeu
             FrmSolitaire.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
+
         /// <summary>
         /// Method for open Morpion
         /// </summary>
@@ -55,6 +56,7 @@ namespace MiniGames
 
             FrmMorpion.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
+
         /// <summary>
         /// Method for open Bataille
         /// </summary>
