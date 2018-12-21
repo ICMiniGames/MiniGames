@@ -163,6 +163,16 @@ namespace MiniGames.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12Pique {
+            get {
+                object obj = ResourceManager.GetObject("_12Pique", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _12Trefle {
             get {
                 object obj = ResourceManager.GetObject("_12Trefle", resourceCulture);
