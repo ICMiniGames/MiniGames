@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MiniGames
 {
-    public class Card
+    public class Card : PictureBox
     {
         #region private attribut
-        string Name;
+        string name;
         string LinkImage;
         string Symbole;
         int Valeur;
@@ -26,10 +27,11 @@ namespace MiniGames
         /// <param name="Valeur"></param>
         public Card(string Name, string LinkImage, string Symbole, int Valeur)
         {
-            this.Name = Name;
+            this.name = Name;
             this.LinkImage = LinkImage;
             this.Symbole = Symbole;
             this.Valeur = Valeur;
+            
         }
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace MiniGames
         /// <returns></returns>
         public string GetName()
         {
-            return Name;
+            return name;
         }
 
         /// <summary>
