@@ -220,6 +220,12 @@ namespace MiniGames
 
             CardGameStack.BringToFront();
             cardVisible++;
+            if (cardVisible >= 52)
+            {
+                StackHide.Image = null;
+                StackHide.Enabled = false;
+            }
+            
 
         }
 

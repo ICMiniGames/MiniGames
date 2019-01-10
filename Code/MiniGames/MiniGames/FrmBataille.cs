@@ -30,6 +30,10 @@ namespace MiniGames
         List<int> ListChoiceBotPlayer;
         private Random rnd = new Random();
         private int NbBet = 0;
+        private int NbPlayerFive = 0;
+        private int PlayerWin1;
+        private int PlayerWin2;
+        private bool OneWinner = true;
         #endregion private attribut
 
         #region constructor
@@ -43,7 +47,7 @@ namespace MiniGames
             player = new FrmPlayers(1, 4);
             player.ShowDialog();
             ListNamePlayer = player.NamePlayer();
-            
+
             switch (player.NbNamePlayers)
             {
                 case 1: grpUser4.Visible = false; grpUser3.Visible = false; grpUser2.Visible = false; grpUser4.Enabled = false; grpUser3.Enabled = false; grpUser2.Enabled = false; break;
@@ -205,22 +209,44 @@ namespace MiniGames
                 {
                     if (ListWinPlayer[i] == 5)
                     {
-                        switch (ListChoiceBotPlayer.Count())
+                        NbPlayerFive++;
+                        if (OneWinner)
                         {
-                            case 1: Loser1 = ""; Loser2 = ""; Loser3 = ""; break;
-                            case 2: if (i == 0) { Loser1 = ListNamePlayer[1]; } else { Loser1 = ListNamePlayer[0]; } break;
-                            case 3: if (i == 0) { Loser1 = ListNamePlayer[1]; Loser2 = ListNamePlayer[2]; } else if (i == 1) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[2]; } else { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; } break;
-                            case 4: if (i == 0) { Loser1 = ListNamePlayer[1]; Loser2 = ListNamePlayer[2]; Loser3 = ListNamePlayer[3]; } else if (i == 1) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[2]; Loser3 = ListNamePlayer[3]; } else if (i == 2) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; Loser3 = ListNamePlayer[3]; } else { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; Loser3 = ListNamePlayer[2]; } break;
-                        }
-                        connection.InsertScoreBataille(ListNamePlayer[i], Loser1, Loser2, Loser3, ListChoiceBotPlayer.Count(), NbBet);
-
-                        if (MessageBox.Show("Bravo " + ListNamePlayer[i] + " tu as gagné(e) la partie en " + NbBet + " paris.\nVoulez-vous continuer à jouer et continuer avec les mêmes joueurs ?", "Victoire", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            ClearGround(true);
+                            PlayerWin1 = i;
+                            OneWinner = false;
                         }
                         else
                         {
-                            this.Close();
+                            PlayerWin2 = i;
+                        }
+
+                        if (i < ListChoiceBotPlayer.Count())
+                        {
+                            if (NbPlayerFive == 1)
+                            {
+                                switch (ListChoiceBotPlayer.Count())
+                                {
+                                    case 1: Loser1 = ""; Loser2 = ""; Loser3 = ""; break;
+                                    case 2: if (i == 0) { Loser1 = ListNamePlayer[1]; } else { Loser1 = ListNamePlayer[0]; } break;
+                                    case 3: if (i == 0) { Loser1 = ListNamePlayer[1]; Loser2 = ListNamePlayer[2]; } else if (i == 1) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[2]; } else { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; } break;
+                                    case 4: if (i == 0) { Loser1 = ListNamePlayer[1]; Loser2 = ListNamePlayer[2]; Loser3 = ListNamePlayer[3]; } else if (i == 1) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[2]; Loser3 = ListNamePlayer[3]; } else if (i == 2) { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; Loser3 = ListNamePlayer[3]; } else { Loser1 = ListNamePlayer[0]; Loser2 = ListNamePlayer[1]; Loser3 = ListNamePlayer[2]; } break;
+                                }
+                                connection.InsertScoreBataille(ListNamePlayer[i], Loser1, Loser2, Loser3, ListChoiceBotPlayer.Count(), NbBet);
+
+                                if (MessageBox.Show("Bravo " + ListNamePlayer[i] + " tu as gagné(e) la partie en " + NbBet + " paris.\nVoulez-vous continuer à jouer et continuer avec les mêmes joueurs ?", "Victoire", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    ClearGround(true);
+                                }
+                                else
+                                {
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                ListWinPlayer[PlayerWin1] = 4;
+                                ListWinPlayer[PlayerWin2] = 4;
+                            }
                         }
                     }
                 }
@@ -228,7 +254,7 @@ namespace MiniGames
 
         }
         #endregion public method
-        
+
         #region private method
         /// <summary>
         /// mix of list of cards
