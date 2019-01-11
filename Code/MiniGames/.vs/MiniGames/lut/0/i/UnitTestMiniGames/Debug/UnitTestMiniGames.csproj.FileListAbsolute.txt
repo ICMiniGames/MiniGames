@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\b\UnitTestMiniGames\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\b\UnitTestMiniGames\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\b\UnitTestMiniGames\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -9,3 +10,16 @@ C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\i\UnitTestMiniGames\Debug
 C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\i\UnitTestMiniGames\Debug\UnitTestMiniGames.csproj.CoreCompileInputs.cache
 C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\i\UnitTestMiniGames\Debug\UnitTestMiniGames.csproj.CopyComplete
 C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\i\UnitTestMiniGames\Debug\UnitTestMiniGames.dll
+=======
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\b\UnitTestMiniGames\bin\Debug\UnitTestMiniGames.dll
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\i\UnitTestMiniGames\Debug\UnitTestMiniGames.csprojAssemblyReference.cache
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\i\UnitTestMiniGames\Debug\UnitTestMiniGames.csproj.CoreCompileInputs.cache
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\i\UnitTestMiniGames\Debug\UnitTestMiniGames.csproj.CopyComplete
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\11040\i\UnitTestMiniGames\Debug\UnitTestMiniGames.dll
+>>>>>>> Cyril_branch

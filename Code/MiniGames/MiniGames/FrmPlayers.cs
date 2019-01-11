@@ -102,7 +102,20 @@ namespace MiniGames
             bool Same = VerifyNamePlayers();
             switch (NbUserMax)
             {
-                case 1: break; //Solitaire
+                case 1:
+                    if (txtNameUser1.Text != "")
+                    {
+                        AddPlayerDB();
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (Same)
+                        {
+                            MessageBox.Show("Vous devez mettre un nom dans la case visible");
+                        }
+                    }
+                    break; //Solitaire
                 case 2:
                     if (txtNameUser1.Text != "" && txtNameUser2.Text != "")
                     {
