@@ -27,7 +27,7 @@ namespace MiniGames
         int H = 00;
         int M = 00;
         int S = 0;
-        Control[,] Placement = new Control[7, 20];
+        Control[,] Placement = new Control[7, 21];
 
         
 
@@ -74,8 +74,6 @@ namespace MiniGames
             Placement[6, 4] = CardGame25;
             Placement[6, 5] = CardGame27;
             Placement[6, 6] = CardGame28;
-
-
 
         }
 
@@ -135,9 +133,11 @@ namespace MiniGames
                 yNewCard = Cursor.Position.Y - 20;
                 //xNewCard -= 200;
                 //yNewCard -= 200;
-                lblX.Text = (Cursor.Position.X - 20).ToString();
-                lblY.Text = (Cursor.Position.Y - 20).ToString();
+                int CursorX = PictureBox.Location.X; //Cursor.Position.X - 20;
+                int CursorY = PictureBox.Location.Y; //Cursor.Position.Y - 20;
 
+                lblX.Text = CursorX.ToString();
+                lblY.Text = CursorY.ToString();
             }
             else
             {
@@ -148,27 +148,46 @@ namespace MiniGames
 
         private void Card_MouseUp(object sender, MouseEventArgs e)
         {
-            
+            int PictureBoxX = 0;
+            int PictureBoxY = 0;
             bool Row = false;
             Control PictureBox = (Control)sender;
-            /*for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
             {
                 for (int y = 0; y < 20; y++)
                 {
-                    if (Placement[i, y] != null)
+                    if (Placement[i, y+1] == null && !Row)
                     {
-                        if (Placement[i, y].Location.X + 60 <= xNewCard-20 && Placement[i, y].Location.X - 60 >= xNewCard-20)
+                        if (Placement[i, y].Location.X + 60 >= PictureBox.Location.X && Placement[i, y].Location.X - 60 <= PictureBox.Location.X)
                         {
+                            
                             Row = true;
-                            xNewCard = Placement[i, y].Location.X;
-                            yNewCard = Placement[i, y].Location.Y;
-
+                            PictureBox.Location = new Point(Placement[i, y].Location.X, Placement[i, y].Location.Y+20);
+                            
+                            while(Placement[i, y] != null)
+                            {
+                                y++;
+                                PictureBoxX = i;
+                                PictureBoxY = y;
+                            }
+                                 
+                            switch (PictureBox.Location.X)
+                            {
+                                case 254: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                case 374: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                case 494: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                case 614: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                case 734: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                case 854: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                case 974: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                            }
+                            break;
+                            
                         }
                     }
                 }
-            }*/
-
-            //PictureBox.Location = new Point(xNewCard, yNewCard);
+            }
+            
             /*if (!Row)
             {
                 PictureBox.Location = new Point(xOldCard, yOldCard);
@@ -202,7 +221,6 @@ namespace MiniGames
                     case 28: CardGame27.Image = Image.FromFile(@File + ArrayCard[26] + ".png"); break;
                 }
             }*/
-
         }
 
         private void Stack_Click(object sender, EventArgs e)
@@ -225,8 +243,6 @@ namespace MiniGames
                 StackHide.Image = null;
                 StackHide.Enabled = false;
             }
-            
-
         }
 
         private void timerSolitaire_Tick(object sender, EventArgs e)

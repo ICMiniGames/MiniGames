@@ -586,6 +586,7 @@
             this.Controls.Add(this.CardGame1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSolitaire";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solitaire";
             this.Load += new System.EventHandler(this.Solitaire_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CardGame1)).EndInit();
