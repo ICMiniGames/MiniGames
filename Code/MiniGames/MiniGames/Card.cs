@@ -36,6 +36,7 @@ namespace MiniGames
 
         }
 
+
         /// <summary>
         /// Method that returns the name of a card.
         /// </summary>

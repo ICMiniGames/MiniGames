@@ -28,9 +28,8 @@ namespace MiniGames
         int M = 00;
         int S = 0;
         Control[,] Placement = new Control[7, 21];
-
-        
-
+        bool reloadStack = false;
+         
         public FrmSolitaire()
         {
             player = new FrmPlayers(1, 1);
@@ -44,7 +43,6 @@ namespace MiniGames
             {
                 ArrayCard[i] = cards[i].GetLink();
             }
-
 
             Placement[0, 0] = CardGame1;
             Placement[1, 0] = CardGame2;
@@ -141,6 +139,7 @@ namespace MiniGames
             }
             else
             {
+                PictureBox.MouseMove -= new MouseEventHandler(Card_MouseMove);
                 PictureBox.MouseMove += new MouseEventHandler(Card_MouseUp);
             }
 
@@ -150,39 +149,69 @@ namespace MiniGames
         {
             int PictureBoxX = 0;
             int PictureBoxY = 0;
+            int PictureBoxNewY = 0;
             bool Row = false;
             Control PictureBox = (Control)sender;
+            
             for (int i = 0; i < 7; i++)
             {
                 for (int y = 0; y < 20; y++)
                 {
                     if (Placement[i, y+1] == null && !Row)
                     {
-                        if (Placement[i, y].Location.X + 60 >= PictureBox.Location.X && Placement[i, y].Location.X - 60 <= PictureBox.Location.X)
+                        if (Placement[i, y] != null)
                         {
-                            
-                            Row = true;
-                            PictureBox.Location = new Point(Placement[i, y].Location.X, Placement[i, y].Location.Y+20);
-                            
-                            while(Placement[i, y] != null)
+                            if (Placement[i, y].Location.X + 60 >= PictureBox.Location.X && Placement[i, y].Location.X - 60 <= PictureBox.Location.X)
                             {
-                                y++;
-                                PictureBoxX = i;
-                                PictureBoxY = y;
+
+                                //méthode posage de carte
+
+                                for (int x = 0; x < 7; x++)
+                                {
+                                    for (int z = 0; z < 20; z++)
+                                    {
+                                        if (Placement[x, z] == PictureBox)
+                                        {
+                                            PictureBoxX = x;
+                                            PictureBoxY = z;
+                                            break;
+                                        }
+                                    }
+                                }
+                                int X = 0;
+                                int Y = 0;
+                                Row = true;
+
+                                while (Placement[i, y] != null)
+                                {
+                                    y++;
+                                    PictureBoxNewY = y;
+                                    Y = Placement[i, y-1].Location.Y;
+                                }
+
+                                if (Placement[i, y-1] == PictureBox)
+                                {
+
+                                    PictureBox.Location = new Point(xOldCard, yOldCard);
+                                }
+                                else
+                                {
+                                    PictureBox.Location = new Point(Placement[i, y - 1].Location.X, Y + 20);
+                                }
+                                switch (PictureBox.Location.X)
+                                {
+                                    case 254: Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    case 374: Placement[1, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    case 494: Placement[2, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    case 614: Placement[3, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    case 734: Placement[4, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    case 854: Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    case 974: Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                }
+                                PictureBox.MouseMove -= new MouseEventHandler(Card_MouseUp);
+                                break;
+
                             }
-                                 
-                            switch (PictureBox.Location.X)
-                            {
-                                case 254: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                case 374: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                case 494: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                case 614: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                case 734: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                case 854: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                case 974: Placement[i, y] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                            }
-                            break;
-                            
                         }
                     }
                 }
@@ -225,23 +254,47 @@ namespace MiniGames
 
         private void Stack_Click(object sender, EventArgs e)
         {
-
-            //StackVisible.Enabled = true;
-            PictureBox CardGameStack = new PictureBox();
-            CardGameStack.Name = "CardGame" + cardVisible;
-            CardGameStack.Image = Image.FromFile(File + ArrayCard[cardVisible] + ".png");
-            CardGameStack.Size = new Size(73, 110);
-            CardGameStack.SizeMode = PictureBoxSizeMode.StretchImage;
-            CardGameStack.Location = new Point(1188, 132);
-            CardGameStack.MouseDown += new MouseEventHandler(Card_MouseDown);
-            this.Controls.Add(CardGameStack);
-
-            CardGameStack.BringToFront();
-            cardVisible++;
-            if (cardVisible >= 52)
+            if (!reloadStack)
             {
-                StackHide.Image = null;
-                StackHide.Enabled = false;
+                cardVisible++;
+                //StackVisible.Enabled = true;
+                PictureBox CardGameStack = new PictureBox();
+                CardGameStack.Name = "CardGame" + cardVisible;
+                CardGameStack.Image = Image.FromFile(@File + ArrayCard[cardVisible - 1] + ".png");
+                CardGameStack.Size = new Size(73, 110);
+                CardGameStack.SizeMode = PictureBoxSizeMode.StretchImage;
+                CardGameStack.Location = new Point(1188, 132);
+                CardGameStack.MouseDown += new MouseEventHandler(Card_MouseDown);
+                this.Controls.Add(CardGameStack);
+
+                CardGameStack.BringToFront();
+
+                if (cardVisible >= 52)
+                {
+                    StackHide.Image = Image.FromFile(@File + "Reload.png");
+                    reloadStack = true;
+                    StackHide.Enabled = true;
+                }
+            }
+            else
+            {
+                foreach(Control ctrl in Controls)
+                {
+                    if(ctrl.Location.X == 1188)
+                    {
+                        if(ctrl.Location.Y == 132)
+                        {
+                            ctrl.Enabled = false;
+                            ctrl.Visible = false;
+                            cardVisible = 28;
+                            StackHide.Image = Image.FromFile(@File + "DosCarte.png");
+                            reloadStack = false;
+                        }
+                    }
+
+
+
+                }
             }
         }
 
