@@ -161,7 +161,7 @@ namespace MiniGames
                     {
                         if (Placement[i, y] != null)
                         {
-                            if (Placement[i, y].Location.X + 60 >= PictureBox.Location.X && Placement[i, y].Location.X - 60 <= PictureBox.Location.X)
+                            if (Placement[i, y].Location.X + 96 >= PictureBox.Location.X && Placement[i, y].Location.X - 24 <= PictureBox.Location.X)
                             {
 
                                 //méthode posage de carte
@@ -178,7 +178,6 @@ namespace MiniGames
                                         }
                                     }
                                 }
-                                int X = 0;
                                 int Y = 0;
                                 Row = true;
 
@@ -196,18 +195,19 @@ namespace MiniGames
                                 }
                                 else
                                 {
-                                    PictureBox.Location = new Point(Placement[i, y - 1].Location.X, Y + 20);
+                                    
+                                    switch (PictureBox.Location.X)
+                                    {
+                                        case 254: PictureBox.Location = new Point(254, Y + 20); Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                        case 374: PictureBox.Location = new Point(374, Y + 20); Placement[1, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                        case 494: PictureBox.Location = new Point(494, Y + 20); Placement[2, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                        case 614: PictureBox.Location = new Point(614, Y + 20); Placement[3, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                        case 734: PictureBox.Location = new Point(734, Y + 20); Placement[4, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                        case 854: PictureBox.Location = new Point(854, Y + 20); Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                        case 974: PictureBox.Location = new Point(974, Y + 20); Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                                    }
                                 }
-                                switch (PictureBox.Location.X)
-                                {
-                                    case 254: Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                    case 374: Placement[1, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                    case 494: Placement[2, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                    case 614: Placement[3, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                    case 734: Placement[4, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                    case 854: Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                    case 974: Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                                }
+                                
                                 PictureBox.MouseMove -= new MouseEventHandler(Card_MouseUp);
                                 break;
 

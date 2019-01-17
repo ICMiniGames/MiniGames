@@ -132,7 +132,7 @@
             // 
             this.CardGame8.BackColor = System.Drawing.Color.Transparent;
             this.CardGame8.Image = global::MiniGames.Properties.Resources.DosCarte;
-            this.CardGame8.Location = new System.Drawing.Point(374, 34);
+            this.CardGame8.Location = new System.Drawing.Point(374, 32);
             this.CardGame8.Name = "CardGame8";
             this.CardGame8.Size = new System.Drawing.Size(73, 108);
             this.CardGame8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,7 +156,7 @@
             // 
             this.CardGame9.BackColor = System.Drawing.Color.Transparent;
             this.CardGame9.Image = global::MiniGames.Properties.Resources.DosCarte;
-            this.CardGame9.Location = new System.Drawing.Point(494, 30);
+            this.CardGame9.Location = new System.Drawing.Point(494, 32);
             this.CardGame9.Name = "CardGame9";
             this.CardGame9.Size = new System.Drawing.Size(73, 110);
             this.CardGame9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -192,7 +192,7 @@
             // 
             this.CardGame10.BackColor = System.Drawing.Color.Transparent;
             this.CardGame10.Image = global::MiniGames.Properties.Resources.DosCarte;
-            this.CardGame10.Location = new System.Drawing.Point(614, 30);
+            this.CardGame10.Location = new System.Drawing.Point(614, 32);
             this.CardGame10.Name = "CardGame10";
             this.CardGame10.Size = new System.Drawing.Size(73, 110);
             this.CardGame10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,7 +300,7 @@
             // 
             this.CardGame12.BackColor = System.Drawing.Color.Transparent;
             this.CardGame12.Image = global::MiniGames.Properties.Resources.DosCarte;
-            this.CardGame12.Location = new System.Drawing.Point(854, 30);
+            this.CardGame12.Location = new System.Drawing.Point(854, 32);
             this.CardGame12.Name = "CardGame12";
             this.CardGame12.Size = new System.Drawing.Size(73, 110);
             this.CardGame12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
