@@ -613,6 +613,16 @@ namespace MiniGames.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Slot {
+            get {
+                object obj = ResourceManager.GetObject("Slot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap solitaire {
             get {
                 object obj = ResourceManager.GetObject("solitaire", resourceCulture);
