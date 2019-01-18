@@ -14,6 +14,7 @@ namespace MiniGames
         string LinkImage;
         string Symbole;
         int Valeur;
+        string CardColor;
         #endregion private attribut
         
         #region public method
@@ -25,14 +26,16 @@ namespace MiniGames
         /// <param name="LinkImage"></param>
         /// <param name="Symbole"></param>
         /// <param name="Valeur"></param>
-        public Card(string Name, string LinkImage, string Symbole, int Valeur)
+        public Card(string Name, string LinkImage, string Symbole, string CardColor,int Valeur)
         {
             this.name = Name;
             this.LinkImage = LinkImage;
             this.Symbole = Symbole;
             this.Valeur = Valeur;
-            
+            this.CardColor = CardColor;
+
         }
+
 
         /// <summary>
         /// Method that returns the name of a card.
@@ -68,6 +71,15 @@ namespace MiniGames
         public int GetValeur()
         {
             return Valeur;
+        }
+
+        /// <summary>
+        /// Method that returns the Color of a card.
+        /// </summary>
+        /// <returns></returns>
+        public string GetColor()
+        {
+            return CardColor;
         }
 
         #endregion public method
