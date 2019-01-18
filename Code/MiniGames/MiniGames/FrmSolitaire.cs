@@ -16,7 +16,7 @@ namespace MiniGames
         ConnectionDB connectionDB = new ConnectionDB();
         FrmPlayers player;
         private Random rnd = new Random();
-        string[] ArrayCard = new string[52];
+        Card[] ArrayCard = new Card[52];
         int xOldCard = 0;
         int yOldCard = 0;
         int xNewCard = 0;
@@ -42,7 +42,7 @@ namespace MiniGames
 
             for(int i = 0; i < cards.Count(); i++)
             {
-                ArrayCard[i] = cards[i].GetLink();
+                ArrayCard[i] = cards[i];
             }
 
             Placement[0, 0] = CardGame1;
@@ -79,13 +79,13 @@ namespace MiniGames
         private void Solitaire_Load(object sender, EventArgs e)
         {
             StackVisible.Enabled = false;
-            CardGame1.Image = Image.FromFile(@File + cards[0].GetLink() + ".png");
-            CardGame8.Image = Image.FromFile(@File + cards[7].GetLink() + ".png");
-            CardGame14.Image = Image.FromFile(@File + cards[13].GetLink() + ".png");
-            CardGame19.Image = Image.FromFile(@File + cards[18].GetLink() + ".png");
-            CardGame23.Image = Image.FromFile(@File + cards[23].GetLink() + ".png");
-            CardGame26.Image = Image.FromFile(@File + cards[25].GetLink() + ".png");
-            CardGame28.Image = Image.FromFile(@File + cards[27].GetLink() + ".png");
+            CardGame1.Image = Image.FromFile(@File + ArrayCard[0].GetLink() + ".png");
+            CardGame8.Image = Image.FromFile(@File + ArrayCard[7].GetLink() + ".png");
+            CardGame14.Image = Image.FromFile(@File + ArrayCard[13].GetLink() + ".png");
+            CardGame19.Image = Image.FromFile(@File + ArrayCard[18].GetLink() + ".png");
+            CardGame23.Image = Image.FromFile(@File + ArrayCard[22].GetLink() + ".png");
+            CardGame26.Image = Image.FromFile(@File + ArrayCard[25].GetLink() + ".png");
+            CardGame28.Image = Image.FromFile(@File + ArrayCard[27].GetLink() + ".png");
 
         }
 
@@ -198,44 +198,54 @@ namespace MiniGames
                         catch { }
                 }
             }
-
-            switch (X)
+            if (VerifCard((PictureBox)PictureBox, Colum, PictureBoxNewY))
             {
-                case 254: PictureBox.Location = new Point(254, Y + 20); Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                case 374: PictureBox.Location = new Point(374, Y + 20); Placement[1, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                case 494: PictureBox.Location = new Point(494, Y + 20); Placement[2, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                case 614: PictureBox.Location = new Point(614, Y + 20); Placement[3, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                case 734: PictureBox.Location = new Point(734, Y + 20); Placement[4, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                case 854: PictureBox.Location = new Point(854, Y + 20); Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
-                case 974: PictureBox.Location = new Point(974, Y + 20); Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                switch (X)
+                {
+                    case 254: PictureBox.Location = new Point(254, Y + 20); Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 374: PictureBox.Location = new Point(374, Y + 20); Placement[1, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 494: PictureBox.Location = new Point(494, Y + 20); Placement[2, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 614: PictureBox.Location = new Point(614, Y + 20); Placement[3, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 734: PictureBox.Location = new Point(734, Y + 20); Placement[4, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 854: PictureBox.Location = new Point(854, Y + 20); Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 974: PictureBox.Location = new Point(974, Y + 20); Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                        
+                }
+
+                switch (Convert.ToInt16(PictureBox.Name.Substring(8)))
+                {
+                    case 8: CardGame2.Image = Image.FromFile(@File + ArrayCard[1].GetLink() + ".png"); break;
+                    case 9: CardGame3.Image = Image.FromFile(@File + ArrayCard[2].GetLink() + ".png"); break;
+                    case 10: CardGame4.Image = Image.FromFile(@File + ArrayCard[3].GetLink() + ".png"); break;
+                    case 11: CardGame5.Image = Image.FromFile(@File + ArrayCard[4].GetLink() + ".png"); break;
+                    case 12: CardGame6.Image = Image.FromFile(@File + ArrayCard[5].GetLink() + ".png"); break;
+                    case 13: CardGame7.Image = Image.FromFile(@File + ArrayCard[6].GetLink() + ".png"); break;
+                    case 14: CardGame9.Image = Image.FromFile(@File + ArrayCard[8].GetLink() + ".png"); break;
+                    case 15: CardGame10.Image = Image.FromFile(@File + ArrayCard[9].GetLink() + ".png"); break;
+                    case 16: CardGame11.Image = Image.FromFile(@File + ArrayCard[10].GetLink() + ".png"); break;
+                    case 17: CardGame12.Image = Image.FromFile(@File + ArrayCard[11].GetLink() + ".png"); break;
+                    case 18: CardGame13.Image = Image.FromFile(@File + ArrayCard[12].GetLink() + ".png"); break;
+                    case 19: CardGame15.Image = Image.FromFile(@File + ArrayCard[14].GetLink() + ".png"); break;
+                    case 20: CardGame16.Image = Image.FromFile(@File + ArrayCard[15].GetLink() + ".png"); break;
+                    case 21: CardGame17.Image = Image.FromFile(@File + ArrayCard[16].GetLink() + ".png"); break;
+                    case 22: CardGame18.Image = Image.FromFile(@File + ArrayCard[17].GetLink() + ".png"); break;
+                    case 23: CardGame20.Image = Image.FromFile(@File + ArrayCard[19].GetLink() + ".png"); break;
+                    case 24: CardGame21.Image = Image.FromFile(@File + ArrayCard[20].GetLink() + ".png"); break;
+                    case 25: CardGame22.Image = Image.FromFile(@File + ArrayCard[21].GetLink() + ".png"); break;
+                    case 26: CardGame24.Image = Image.FromFile(@File + ArrayCard[23].GetLink() + ".png"); break;
+                    case 27: CardGame25.Image = Image.FromFile(@File + ArrayCard[24].GetLink() + ".png"); break;
+                    case 28: CardGame27.Image = Image.FromFile(@File + ArrayCard[26].GetLink() + ".png"); break;
+                }
             }
+            else
+            {
+                //remettre en place la carte
+            }
+            
 
             PictureBox.MouseMove -= new MouseEventHandler(Card_MouseUp);
             
-            switch (Convert.ToInt16(PictureBox.Name.Substring(8)))
-            {
-                case 8: CardGame2.Image = Image.FromFile(@File + ArrayCard[1] + ".png"); break;
-                case 9: CardGame3.Image = Image.FromFile(@File + ArrayCard[2] + ".png"); break;
-                case 10: CardGame4.Image = Image.FromFile(@File + ArrayCard[3] + ".png"); break;
-                case 11: CardGame5.Image = Image.FromFile(@File + ArrayCard[4] + ".png"); break;
-                case 12: CardGame6.Image = Image.FromFile(@File + ArrayCard[5] + ".png"); break;
-                case 13: CardGame7.Image = Image.FromFile(@File + ArrayCard[6] + ".png"); break;
-                case 14: CardGame9.Image = Image.FromFile(@File + ArrayCard[8] + ".png"); break;
-                case 15: CardGame10.Image = Image.FromFile(@File + ArrayCard[9] + ".png"); break;
-                case 16: CardGame11.Image = Image.FromFile(@File + ArrayCard[10] + ".png"); break;
-                case 17: CardGame12.Image = Image.FromFile(@File + ArrayCard[11] + ".png"); break;
-                case 18: CardGame13.Image = Image.FromFile(@File + ArrayCard[12] + ".png"); break;
-                case 19: CardGame15.Image = Image.FromFile(@File + ArrayCard[14] + ".png"); break;
-                case 20: CardGame16.Image = Image.FromFile(@File + ArrayCard[15] + ".png"); break;
-                case 21: CardGame17.Image = Image.FromFile(@File + ArrayCard[16] + ".png"); break;
-                case 22: CardGame18.Image = Image.FromFile(@File + ArrayCard[17] + ".png"); break;
-                case 23: CardGame20.Image = Image.FromFile(@File + ArrayCard[19] + ".png"); break;
-                case 24: CardGame21.Image = Image.FromFile(@File + ArrayCard[20] + ".png"); break;
-                case 25: CardGame22.Image = Image.FromFile(@File + ArrayCard[21] + ".png"); break;
-                case 26: CardGame24.Image = Image.FromFile(@File + ArrayCard[23] + ".png"); break;
-                case 27: CardGame25.Image = Image.FromFile(@File + ArrayCard[24] + ".png"); break;
-                case 28: CardGame27.Image = Image.FromFile(@File + ArrayCard[26] + ".png"); break;
-            }
+            
         }
 
         private void Stack_Click(object sender, EventArgs e)
@@ -246,7 +256,7 @@ namespace MiniGames
                 //StackVisible.Enabled = true;
                 PictureBox CardGameStack = new PictureBox();
                 CardGameStack.Name = "CardGame" + cardVisible;
-                CardGameStack.Image = Image.FromFile(@File + ArrayCard[cardVisible - 1] + ".png");
+                CardGameStack.Image = Image.FromFile(@File + ArrayCard[cardVisible - 1].GetLink() + ".png");
                 CardGameStack.Size = new Size(73, 110);
                 CardGameStack.SizeMode = PictureBoxSizeMode.StretchImage;
                 CardGameStack.Location = new Point(1188, 132);
@@ -299,6 +309,29 @@ namespace MiniGames
                     H++;
                 }
             }
+        }
+
+        public bool VerifCard(PictureBox p, int Colone, int Ligne)
+        {
+            string color = ArrayCard[Convert.ToInt16(p.Name.Substring(8))-1].GetColor();
+            int value = ArrayCard[Convert.ToInt16(p.Name.Substring(8))-1].GetValeur();
+
+            string colorToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8))-1].GetColor(); //problème de limite du tableau.
+            int valueToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8))-1].GetValeur();
+            
+            if (colorToVerify != color)
+            {
+                if (valueToVerify - 1 == value )
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return false;
         }
     }
 }
