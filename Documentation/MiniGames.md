@@ -68,14 +68,14 @@ Notre application est un regroupement de mini-jeux. De base l’application cont
 2. L'application devra introduire une notion de programmation avancé tel qu'une connexion a une basse de donnée ou pouvoir communiquer sur le réseau
 
 3. Implemantation de l'anayse et conception de l'application: Après validation du chef de projet,
-rédiger un documents (markdown, docx, ...) contenant un chapitre analyse et conception. Il faut prendre le template de documentation pour application comme template de base.
+rédiger un documents (markdown, docx, ...) contenant un chapitre analyse et conception. Il faut prendre le template de **documentation pour application** comme template de base.
 
 4. Implemantation de l'application: Tout en implementant, rédiger les chapitres nécessaire à cette étape.
 
 5. Phase de validation: Derrnière phase du projet qui consiste à livrer le produit final au chef de projet. Le rendu comportera:
   - l'application (tous les fichiers)
   - Documentation final contenant:
-    - toutes les phase d'analyse, de conception et d'Implemantation de l'application
+  - toutes les phase d'analyse, de conception et d'Implemantation de l'application
 
 ## 2.2	Stratégie de test
 
@@ -272,3 +272,20 @@ Victoire:
 #### 3.5.3.2 Listes des tests.
 
 # 4 Conclusion
+
+## 4.1 Objectif atteinds
+
+Tous les objectif présent dans le cahier des charges ont été atteinds. La majeur
+partie de nos objectifs ont également été atteinds.
+
+
+## 4.2 Objectif non-atteinds
+
+Nous avions comme objectif de pouvoir jouer en réseau mais malheureusement les temps que nous avions
+a disposition n'a pas suffit. La cause en est que nous avons perdu du temps sur des détails sans grande importance et donc nous avons concentrés nos efforts dans quelques points que nous aurions du
+régler à la fin du projet
+
+## 4.3 Probleme survenue
+
+
+# Conclusion du projet.
