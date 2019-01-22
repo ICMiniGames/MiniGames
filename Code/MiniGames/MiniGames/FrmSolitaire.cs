@@ -24,6 +24,7 @@ namespace MiniGames
         int[] valueX = new int[7] { 254, 374, 494, 614, 734, 854, 974 };
         string File = "C:/Projet/MiniGames/Code/MiniGames/MiniGames/bin/Debug/ImageCarte/";
         int cardVisible = 28;
+        int Emplacement0 = 12;
         int Timer = 0;
         int H = 00;
         int M = 00;
@@ -40,7 +41,15 @@ namespace MiniGames
             InitializeComponent();
             player.ShowDialog();
 
-            for(int i = 0; i < cards.Count(); i++)
+            Slot1.SendToBack();
+            Slot2.SendToBack();
+            Slot3.SendToBack();
+            Slot4.SendToBack();
+            Slot5.SendToBack();
+            Slot6.SendToBack();
+            Slot7.SendToBack();
+
+            for (int i = 0; i < cards.Count(); i++)
             {
                 ArrayCard[i] = cards[i].GetLink();
             }
@@ -173,8 +182,13 @@ namespace MiniGames
                             Y = Placement[Colum, y].Location.Y;
 
                         }
+                        else if(Placement[Colum, y] == null && y == 0)
+                        {
+                            Y = -8;
+                        }
                         else
                         {
+                            
                             PictureBoxNewY = y;
                             break;
                         }
