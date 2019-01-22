@@ -21,7 +21,7 @@ namespace MiniGames
         int yOldCard = 0;
         int xNewCard = 0;
         int yNewCard = 0;
-        int[] valueX = new int[7] { 254, 374, 494, 614, 734, 854, 974 };
+        int[] valueX = new int[8] {254, 374, 494, 614, 734, 854, 974, 21};
         string File = "C:/Projet/MiniGames/Code/MiniGames/MiniGames/bin/Debug/ImageCarte/";
         int cardVisible = 28;
         int Emplacement0 = 12;
@@ -31,7 +31,9 @@ namespace MiniGames
         int S = 0;
         Control[,] Placement = new Control[7, 21];
         bool reloadStack = false;
-         
+        int[] sloty = new int[4] { 12, 162, 312, 462 };
+        Control[,] slot = new Control[4, 13];
+        int YSlot = 0;
         public FrmSolitaire()
         {
             player = new FrmPlayers(1, 1);
@@ -143,9 +145,7 @@ namespace MiniGames
                 //yNewCard -= 200;
                 int CursorX = PictureBox.Location.X; //Cursor.Position.X - 20;
                 int CursorY = PictureBox.Location.Y; //Cursor.Position.Y - 20;
-
-                lblX.Text = CursorX.ToString();
-                lblY.Text = CursorY.ToString();
+                
             }
             else
             {
@@ -164,35 +164,44 @@ namespace MiniGames
             int X = 0;
             int Y = 0;
             bool Row = false;
-
+            bool nameCard = true;
             Control PictureBox = (Control)sender;
             
-            for(int x = 0; x < 7; x++)
+            for(int x = 0; x < 8; x++)
             {
                 
                 if(valueX[x] + 96 >= PictureBox.Location.X && valueX[x] - 24 <= PictureBox.Location.X)
                 {
                     Colum = x;
                     X = valueX[x];
-                    for (int y = 0; y < 20; y++)
+                    if (X != 21)
                     {
-                        
-                        if (Placement[Colum, y] != null)
+                        for (int y = 0; y < 20; y++)
                         {
-                            Y = Placement[Colum, y].Location.Y;
-
+                            if (Placement[Colum, y] != null)
+                            {
+                                Y = Placement[Colum, y].Location.Y;
+                            }
+                            else if (Placement[Colum, y] == null && y == 0)
+                            {
+                                Y = -8;
+                            }
+                            else
+                            {
+                                PictureBoxNewY = y;
+                                break;
+                            }
                         }
-                        else if(Placement[Colum, y] == null && y == 0)
-                        {
-                            Y = -8;
+                    }
+                    else
+                    {
+                        for (int y = 0; y < 4; y++) { 
+                            if (sloty[y] + 129 >= PictureBox.Location.Y && sloty[y] - 21 <= PictureBox.Location.Y)
+                            {
+                                Y = sloty[y];
+                                YSlot = y;
+                            }
                         }
-                        else
-                        {
-                            
-                            PictureBoxNewY = y;
-                            break;
-                        }
-                        
                     }
                 }
             }
@@ -200,20 +209,21 @@ namespace MiniGames
             {
                 for(int y = 0; y < 20; y++)
                 {
-                    try
+                    if (Placement[x, y] != null && nameCard)
                     {
                         if (Placement[x, y].Name == PictureBox.Name)
                         {
                             PictureBoxX = x;
                             PictureBoxY = y;
+                            nameCard = false;
                             break;
                         }
                     }
-                    catch { }
                 }
             }
             if (VerifCard((PictureBox)PictureBox, Colum, PictureBoxNewY))
             {
+                bool slotQ = false;
                 switch (X)
                 {
                     case 254: PictureBox.Location = new Point(254, Y + 20); Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
@@ -223,7 +233,33 @@ namespace MiniGames
                     case 734: PictureBox.Location = new Point(734, Y + 20); Placement[4, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
                     case 854: PictureBox.Location = new Point(854, Y + 20); Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
                     case 974: PictureBox.Location = new Point(974, Y + 20); Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
+                    case 21:
+                        int XSlot = 0;
+                        string symbole = "";
                         
+                        symbole = ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8)) - 1].GetSymbole();
+                         
+                        if (VerifCardSlot((PictureBox)PictureBox, YSlot, 0, symbole))
+                        {
+                            for (int i = 0; i < 13; i++)
+                            {
+                                if(slot[YSlot, i] != null)
+                                {
+                                    XSlot++;
+                                }
+                            }
+                            PictureBox.Location = new Point(21, Y);
+                            switch (Y)
+                            {
+                                case 12: slot[0, XSlot] = PictureBox;  break;
+                                case 162: slot[1, XSlot] = PictureBox; break;
+                                case 312: slot[2, XSlot] = PictureBox; break;
+                                case 462: slot[3, XSlot] = PictureBox; break;
+                            }
+                            Placement[PictureBoxX, PictureBoxY] = null;
+                        }
+                        break;
+
                 }
 
                 switch (Convert.ToInt16(PictureBox.Name.Substring(8)))
@@ -309,13 +345,13 @@ namespace MiniGames
 
         private void timerSolitaire_Tick(object sender, EventArgs e)
         {
-            S = Timer;
             string TextTimer = H+":"+M+":"+S;
             lblTime.Text = TextTimer;
+            S++;
             Timer++;
-            if(Timer >= 60)
+            if(S >= 60)
             {
-                Timer = 0;
+                S = 0;
                 M++;
                 if(M >= 60)
                 {
@@ -348,7 +384,6 @@ namespace MiniGames
             }
             catch
             {
-               
                 if (13 == value)
                 {
                     return true;
@@ -357,12 +392,46 @@ namespace MiniGames
                 {
                     return false;
                 }
-                
-
-
-
             }
             return false;
         }
+
+        public bool VerifCardSlot(PictureBox p, int Colone, int Ligne, string Symbole)
+        {
+            string color = ArrayCard[Convert.ToInt16(p.Name.Substring(8)) - 1].GetColor();
+            int value = ArrayCard[Convert.ToInt16(p.Name.Substring(8)) - 1].GetValeur();
+
+            try
+            {
+                string colorToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8)) - 1].GetColor(); //problème de limite du tableau.
+                int valueToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8)) - 1].GetValeur();
+
+                if (colorToVerify != color)
+                {
+                    if (valueToVerify - 1 == value)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch
+            {
+                if (1 == value)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+
     }
 }

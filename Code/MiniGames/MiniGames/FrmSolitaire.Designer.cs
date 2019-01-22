@@ -32,8 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolitaire));
             this.timerSolitaire = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblX = new System.Windows.Forms.Label();
-            this.lblY = new System.Windows.Forms.Label();
+            this.Slot2 = new System.Windows.Forms.PictureBox();
+            this.Slot7 = new System.Windows.Forms.PictureBox();
+            this.Slot6 = new System.Windows.Forms.PictureBox();
+            this.Slot5 = new System.Windows.Forms.PictureBox();
+            this.Slot4 = new System.Windows.Forms.PictureBox();
+            this.Slot3 = new System.Windows.Forms.PictureBox();
             this.Slot1 = new System.Windows.Forms.PictureBox();
             this.StackVisible = new System.Windows.Forms.PictureBox();
             this.SlotClover = new System.Windows.Forms.PictureBox();
@@ -69,12 +73,12 @@
             this.CardGame8 = new System.Windows.Forms.PictureBox();
             this.CardGame2 = new System.Windows.Forms.PictureBox();
             this.CardGame1 = new System.Windows.Forms.PictureBox();
-            this.Slot3 = new System.Windows.Forms.PictureBox();
-            this.Slot4 = new System.Windows.Forms.PictureBox();
-            this.Slot5 = new System.Windows.Forms.PictureBox();
-            this.Slot6 = new System.Windows.Forms.PictureBox();
-            this.Slot7 = new System.Windows.Forms.PictureBox();
-            this.Slot2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Slot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StackVisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlotClover)).BeginInit();
@@ -110,12 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CardGame8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardGame2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardGame1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot2)).BeginInit();
             this.SuspendLayout();
             // 
             // timerSolitaire
@@ -134,23 +132,77 @@
             this.lblTime.TabIndex = 84;
             this.lblTime.Text = "label1";
             // 
-            // lblX
+            // Slot2
             // 
-            this.lblX.AutoSize = true;
-            this.lblX.Location = new System.Drawing.Point(160, 100);
-            this.lblX.Name = "lblX";
-            this.lblX.Size = new System.Drawing.Size(35, 13);
-            this.lblX.TabIndex = 85;
-            this.lblX.Text = "label1";
+            this.Slot2.BackColor = System.Drawing.Color.Transparent;
+            this.Slot2.Enabled = false;
+            this.Slot2.Image = global::MiniGames.Properties.Resources.Slot;
+            this.Slot2.Location = new System.Drawing.Point(374, 12);
+            this.Slot2.Name = "Slot2";
+            this.Slot2.Size = new System.Drawing.Size(73, 110);
+            this.Slot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Slot2.TabIndex = 93;
+            this.Slot2.TabStop = false;
             // 
-            // lblY
+            // Slot7
             // 
-            this.lblY.AutoSize = true;
-            this.lblY.Location = new System.Drawing.Point(163, 128);
-            this.lblY.Name = "lblY";
-            this.lblY.Size = new System.Drawing.Size(35, 13);
-            this.lblY.TabIndex = 86;
-            this.lblY.Text = "label2";
+            this.Slot7.BackColor = System.Drawing.Color.Transparent;
+            this.Slot7.Enabled = false;
+            this.Slot7.Image = global::MiniGames.Properties.Resources.Slot;
+            this.Slot7.Location = new System.Drawing.Point(974, 12);
+            this.Slot7.Name = "Slot7";
+            this.Slot7.Size = new System.Drawing.Size(73, 110);
+            this.Slot7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Slot7.TabIndex = 92;
+            this.Slot7.TabStop = false;
+            // 
+            // Slot6
+            // 
+            this.Slot6.BackColor = System.Drawing.Color.Transparent;
+            this.Slot6.Enabled = false;
+            this.Slot6.Image = global::MiniGames.Properties.Resources.Slot;
+            this.Slot6.Location = new System.Drawing.Point(854, 12);
+            this.Slot6.Name = "Slot6";
+            this.Slot6.Size = new System.Drawing.Size(73, 110);
+            this.Slot6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Slot6.TabIndex = 91;
+            this.Slot6.TabStop = false;
+            // 
+            // Slot5
+            // 
+            this.Slot5.BackColor = System.Drawing.Color.Transparent;
+            this.Slot5.Enabled = false;
+            this.Slot5.Image = global::MiniGames.Properties.Resources.Slot;
+            this.Slot5.Location = new System.Drawing.Point(734, 12);
+            this.Slot5.Name = "Slot5";
+            this.Slot5.Size = new System.Drawing.Size(73, 110);
+            this.Slot5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Slot5.TabIndex = 90;
+            this.Slot5.TabStop = false;
+            // 
+            // Slot4
+            // 
+            this.Slot4.BackColor = System.Drawing.Color.Transparent;
+            this.Slot4.Enabled = false;
+            this.Slot4.Image = global::MiniGames.Properties.Resources.Slot;
+            this.Slot4.Location = new System.Drawing.Point(614, 12);
+            this.Slot4.Name = "Slot4";
+            this.Slot4.Size = new System.Drawing.Size(73, 110);
+            this.Slot4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Slot4.TabIndex = 89;
+            this.Slot4.TabStop = false;
+            // 
+            // Slot3
+            // 
+            this.Slot3.BackColor = System.Drawing.Color.Transparent;
+            this.Slot3.Enabled = false;
+            this.Slot3.Image = global::MiniGames.Properties.Resources.Slot;
+            this.Slot3.Location = new System.Drawing.Point(494, 12);
+            this.Slot3.Name = "Slot3";
+            this.Slot3.Size = new System.Drawing.Size(73, 110);
+            this.Slot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Slot3.TabIndex = 88;
+            this.Slot3.TabStop = false;
             // 
             // Slot1
             // 
@@ -178,7 +230,7 @@
             // SlotClover
             // 
             this.SlotClover.BackColor = System.Drawing.Color.Transparent;
-            this.SlotClover.Image = global::MiniGames.Properties.Resources.DosCarte;
+            this.SlotClover.Image = global::MiniGames.Properties.Resources.SloteClover;
             this.SlotClover.Location = new System.Drawing.Point(21, 462);
             this.SlotClover.Name = "SlotClover";
             this.SlotClover.Size = new System.Drawing.Size(73, 110);
@@ -189,7 +241,7 @@
             // SlotDiamond
             // 
             this.SlotDiamond.BackColor = System.Drawing.Color.Transparent;
-            this.SlotDiamond.Image = global::MiniGames.Properties.Resources.DosCarte;
+            this.SlotDiamond.Image = global::MiniGames.Properties.Resources.SlotDiamond;
             this.SlotDiamond.Location = new System.Drawing.Point(21, 312);
             this.SlotDiamond.Name = "SlotDiamond";
             this.SlotDiamond.Size = new System.Drawing.Size(73, 110);
@@ -200,7 +252,7 @@
             // SlotSpade
             // 
             this.SlotSpade.BackColor = System.Drawing.Color.Transparent;
-            this.SlotSpade.Image = global::MiniGames.Properties.Resources.DosCarte;
+            this.SlotSpade.Image = global::MiniGames.Properties.Resources.SlotSpide;
             this.SlotSpade.Location = new System.Drawing.Point(21, 162);
             this.SlotSpade.Name = "SlotSpade";
             this.SlotSpade.Size = new System.Drawing.Size(73, 110);
@@ -211,7 +263,7 @@
             // SlotHeart
             // 
             this.SlotHeart.BackColor = System.Drawing.Color.Transparent;
-            this.SlotHeart.Image = global::MiniGames.Properties.Resources.DosCarte;
+            this.SlotHeart.Image = global::MiniGames.Properties.Resources.SlotHeart;
             this.SlotHeart.Location = new System.Drawing.Point(21, 12);
             this.SlotHeart.Name = "SlotHeart";
             this.SlotHeart.Size = new System.Drawing.Size(73, 110);
@@ -567,78 +619,6 @@
             this.CardGame1.TabStop = false;
             this.CardGame1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Card_MouseDown);
             // 
-            // Slot3
-            // 
-            this.Slot3.BackColor = System.Drawing.Color.Transparent;
-            this.Slot3.Enabled = false;
-            this.Slot3.Image = global::MiniGames.Properties.Resources.Slot;
-            this.Slot3.Location = new System.Drawing.Point(494, 12);
-            this.Slot3.Name = "Slot3";
-            this.Slot3.Size = new System.Drawing.Size(73, 110);
-            this.Slot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Slot3.TabIndex = 88;
-            this.Slot3.TabStop = false;
-            // 
-            // Slot4
-            // 
-            this.Slot4.BackColor = System.Drawing.Color.Transparent;
-            this.Slot4.Enabled = false;
-            this.Slot4.Image = global::MiniGames.Properties.Resources.Slot;
-            this.Slot4.Location = new System.Drawing.Point(614, 12);
-            this.Slot4.Name = "Slot4";
-            this.Slot4.Size = new System.Drawing.Size(73, 110);
-            this.Slot4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Slot4.TabIndex = 89;
-            this.Slot4.TabStop = false;
-            // 
-            // Slot5
-            // 
-            this.Slot5.BackColor = System.Drawing.Color.Transparent;
-            this.Slot5.Enabled = false;
-            this.Slot5.Image = global::MiniGames.Properties.Resources.Slot;
-            this.Slot5.Location = new System.Drawing.Point(734, 12);
-            this.Slot5.Name = "Slot5";
-            this.Slot5.Size = new System.Drawing.Size(73, 110);
-            this.Slot5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Slot5.TabIndex = 90;
-            this.Slot5.TabStop = false;
-            // 
-            // Slot6
-            // 
-            this.Slot6.BackColor = System.Drawing.Color.Transparent;
-            this.Slot6.Enabled = false;
-            this.Slot6.Image = global::MiniGames.Properties.Resources.Slot;
-            this.Slot6.Location = new System.Drawing.Point(854, 12);
-            this.Slot6.Name = "Slot6";
-            this.Slot6.Size = new System.Drawing.Size(73, 110);
-            this.Slot6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Slot6.TabIndex = 91;
-            this.Slot6.TabStop = false;
-            // 
-            // Slot7
-            // 
-            this.Slot7.BackColor = System.Drawing.Color.Transparent;
-            this.Slot7.Enabled = false;
-            this.Slot7.Image = global::MiniGames.Properties.Resources.Slot;
-            this.Slot7.Location = new System.Drawing.Point(974, 12);
-            this.Slot7.Name = "Slot7";
-            this.Slot7.Size = new System.Drawing.Size(73, 110);
-            this.Slot7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Slot7.TabIndex = 92;
-            this.Slot7.TabStop = false;
-            // 
-            // Slot2
-            // 
-            this.Slot2.BackColor = System.Drawing.Color.Transparent;
-            this.Slot2.Enabled = false;
-            this.Slot2.Image = global::MiniGames.Properties.Resources.Slot;
-            this.Slot2.Location = new System.Drawing.Point(374, 12);
-            this.Slot2.Name = "Slot2";
-            this.Slot2.Size = new System.Drawing.Size(73, 110);
-            this.Slot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Slot2.TabIndex = 93;
-            this.Slot2.TabStop = false;
-            // 
             // FrmSolitaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,8 +632,6 @@
             this.Controls.Add(this.Slot4);
             this.Controls.Add(this.Slot3);
             this.Controls.Add(this.Slot1);
-            this.Controls.Add(this.lblY);
-            this.Controls.Add(this.lblX);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.StackVisible);
             this.Controls.Add(this.SlotClover);
@@ -694,6 +672,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solitaire";
             this.Load += new System.EventHandler(this.Solitaire_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Slot2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Slot3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Slot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StackVisible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlotClover)).EndInit();
@@ -729,12 +713,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CardGame8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardGame2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardGame1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Slot2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -777,8 +755,6 @@
         private System.Windows.Forms.PictureBox StackVisible;
         private System.Windows.Forms.Timer timerSolitaire;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblX;
-        private System.Windows.Forms.Label lblY;
         private System.Windows.Forms.PictureBox Slot1;
         private System.Windows.Forms.PictureBox Slot3;
         private System.Windows.Forms.PictureBox Slot4;
