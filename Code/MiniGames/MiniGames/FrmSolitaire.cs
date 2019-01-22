@@ -201,15 +201,15 @@ namespace MiniGames
                 for(int y = 0; y < 20; y++)
                 {
                     try
+                    {
+                        if (Placement[x, y].Name == PictureBox.Name)
                         {
-                            if (Placement[x, y].Name == PictureBox.Name)
-                            {
-                                PictureBoxX = x;
-                                PictureBoxY = y;
-                                break;
-                            }
+                            PictureBoxX = x;
+                            PictureBoxY = y;
+                            break;
                         }
-                        catch { }
+                    }
+                    catch { }
                 }
             }
 
