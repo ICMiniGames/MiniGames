@@ -239,7 +239,7 @@ namespace MiniGames
             }
             else
             {
-                //remettre en place la carte
+                PictureBox.Location = new Point(xOldCard, yOldCard);
             }
             
 
@@ -253,7 +253,6 @@ namespace MiniGames
             if (!reloadStack)
             {
                 cardVisible++;
-                //StackVisible.Enabled = true;
                 PictureBox CardGameStack = new PictureBox();
                 CardGameStack.Name = "CardGame" + cardVisible;
                 CardGameStack.Image = Image.FromFile(@File + ArrayCard[cardVisible - 1].GetLink() + ".png");
@@ -316,12 +315,27 @@ namespace MiniGames
             string color = ArrayCard[Convert.ToInt16(p.Name.Substring(8))-1].GetColor();
             int value = ArrayCard[Convert.ToInt16(p.Name.Substring(8))-1].GetValeur();
 
-            string colorToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8))-1].GetColor(); //problème de limite du tableau.
-            int valueToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8))-1].GetValeur();
-            
-            if (colorToVerify != color)
+            try
             {
-                if (valueToVerify - 1 == value )
+                string colorToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8)) - 1].GetColor(); //problème de limite du tableau.
+                int valueToVerify = ArrayCard[Convert.ToInt16(Placement[Colone, Ligne - 1].Name.Substring(8)) - 1].GetValeur();
+
+                if (colorToVerify != color)
+                {
+                    if (valueToVerify - 1 == value)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch
+            {
+               
+                if (13 == value)
                 {
                     return true;
                 }
@@ -329,8 +343,11 @@ namespace MiniGames
                 {
                     return false;
                 }
-            }
+                
 
+
+
+            }
             return false;
         }
     }
