@@ -298,6 +298,7 @@
             // CardGame27
             // 
             this.CardGame27.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame27.Enabled = false;
             this.CardGame27.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame27.Location = new System.Drawing.Point(974, 112);
             this.CardGame27.Name = "CardGame27";
@@ -310,6 +311,7 @@
             // CardGame25
             // 
             this.CardGame25.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame25.Enabled = false;
             this.CardGame25.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame25.Location = new System.Drawing.Point(974, 92);
             this.CardGame25.Name = "CardGame25";
@@ -322,6 +324,7 @@
             // CardGame22
             // 
             this.CardGame22.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame22.Enabled = false;
             this.CardGame22.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame22.Location = new System.Drawing.Point(974, 72);
             this.CardGame22.Name = "CardGame22";
@@ -334,6 +337,7 @@
             // CardGame18
             // 
             this.CardGame18.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame18.Enabled = false;
             this.CardGame18.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame18.Location = new System.Drawing.Point(974, 52);
             this.CardGame18.Name = "CardGame18";
@@ -346,6 +350,7 @@
             // CardGame13
             // 
             this.CardGame13.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame13.Enabled = false;
             this.CardGame13.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame13.Location = new System.Drawing.Point(974, 32);
             this.CardGame13.Name = "CardGame13";
@@ -358,6 +363,7 @@
             // CardGame7
             // 
             this.CardGame7.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame7.Enabled = false;
             this.CardGame7.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame7.Location = new System.Drawing.Point(974, 12);
             this.CardGame7.Name = "CardGame7";
@@ -382,6 +388,7 @@
             // CardGame24
             // 
             this.CardGame24.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame24.Enabled = false;
             this.CardGame24.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame24.Location = new System.Drawing.Point(854, 92);
             this.CardGame24.Name = "CardGame24";
@@ -394,6 +401,7 @@
             // CardGame21
             // 
             this.CardGame21.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame21.Enabled = false;
             this.CardGame21.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame21.Location = new System.Drawing.Point(854, 72);
             this.CardGame21.Name = "CardGame21";
@@ -406,6 +414,7 @@
             // CardGame17
             // 
             this.CardGame17.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame17.Enabled = false;
             this.CardGame17.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame17.Location = new System.Drawing.Point(854, 52);
             this.CardGame17.Name = "CardGame17";
@@ -418,6 +427,7 @@
             // CardGame12
             // 
             this.CardGame12.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame12.Enabled = false;
             this.CardGame12.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame12.Location = new System.Drawing.Point(854, 32);
             this.CardGame12.Name = "CardGame12";
@@ -430,6 +440,7 @@
             // CardGame6
             // 
             this.CardGame6.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame6.Enabled = false;
             this.CardGame6.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame6.Location = new System.Drawing.Point(854, 12);
             this.CardGame6.Name = "CardGame6";
@@ -454,6 +465,7 @@
             // CardGame20
             // 
             this.CardGame20.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame20.Enabled = false;
             this.CardGame20.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame20.Location = new System.Drawing.Point(734, 72);
             this.CardGame20.Name = "CardGame20";
@@ -466,6 +478,7 @@
             // CardGame16
             // 
             this.CardGame16.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame16.Enabled = false;
             this.CardGame16.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame16.Location = new System.Drawing.Point(734, 52);
             this.CardGame16.Name = "CardGame16";
@@ -478,6 +491,7 @@
             // CardGame11
             // 
             this.CardGame11.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame11.Enabled = false;
             this.CardGame11.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame11.Location = new System.Drawing.Point(734, 32);
             this.CardGame11.Name = "CardGame11";
@@ -490,6 +504,7 @@
             // CardGame5
             // 
             this.CardGame5.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame5.Enabled = false;
             this.CardGame5.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame5.Location = new System.Drawing.Point(734, 12);
             this.CardGame5.Name = "CardGame5";
@@ -514,6 +529,7 @@
             // CardGame15
             // 
             this.CardGame15.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame15.Enabled = false;
             this.CardGame15.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame15.Location = new System.Drawing.Point(614, 52);
             this.CardGame15.Name = "CardGame15";
@@ -526,6 +542,7 @@
             // CardGame10
             // 
             this.CardGame10.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame10.Enabled = false;
             this.CardGame10.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame10.Location = new System.Drawing.Point(614, 32);
             this.CardGame10.Name = "CardGame10";
@@ -538,6 +555,7 @@
             // CardGame4
             // 
             this.CardGame4.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame4.Enabled = false;
             this.CardGame4.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame4.Location = new System.Drawing.Point(614, 12);
             this.CardGame4.Name = "CardGame4";
@@ -562,6 +580,7 @@
             // CardGame9
             // 
             this.CardGame9.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame9.Enabled = false;
             this.CardGame9.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame9.Location = new System.Drawing.Point(494, 32);
             this.CardGame9.Name = "CardGame9";
@@ -574,6 +593,7 @@
             // CardGame3
             // 
             this.CardGame3.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame3.Enabled = false;
             this.CardGame3.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame3.Location = new System.Drawing.Point(494, 12);
             this.CardGame3.Name = "CardGame3";
@@ -598,6 +618,7 @@
             // CardGame2
             // 
             this.CardGame2.BackColor = System.Drawing.Color.Transparent;
+            this.CardGame2.Enabled = false;
             this.CardGame2.Image = global::MiniGames.Properties.Resources.DosCarte;
             this.CardGame2.Location = new System.Drawing.Point(374, 12);
             this.CardGame2.Name = "CardGame2";
