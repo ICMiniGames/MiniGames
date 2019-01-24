@@ -12,29 +12,43 @@ namespace MiniGames
 {
     public partial class FrmSolitaire : Form
     {
-        List<Card> cards = new List<Card>();
-        ConnectionDB connectionDB = new ConnectionDB();
-        FrmPlayers player;
+        #region private attribut
+
+        private List<Card> cards = new List<Card>();
+        private ConnectionDB connectionDB = new ConnectionDB();
+        private FrmPlayers player;
         private Random rnd = new Random();
-        Card[] ArrayCard = new Card[52];
-        int xOldCard = 0;
-        int yOldCard = 0;
-        int xNewCard = 0;
-        int yNewCard = 0;
-        int[] valueX = new int[8] {254, 374, 494, 614, 734, 854, 974, 21};
-        string File = "C:/Projet/MiniGames/Code/MiniGames/MiniGames/bin/Debug/ImageCarte/";
-        int cardVisible = 1;
-        int Timer = 00;
-        int H = 00;
-        int M = 00;
-        int S = 00;
-        Control[,] Placement = new Control[7, 21];
-        bool reloadStack = false;
-        int[] sloty = new int[4] { 12, 162, 312, 462 };
-        Control[,] slot = new Control[4, 13];
-        int YSlot = 0;
-        Card[] cardList = new Card[24];
-        
+        private Card[] ArrayCard = new Card[52];
+        private int Heart = 1;
+        private int Spide = 1;
+        private int Diamond = 1;
+        private int Clover = 1;
+        private int xOldCard = 0;
+        private int yOldCard = 0;
+        private int xNewCard = 0;
+        private int yNewCard = 0;
+        private int[] valueX = new int[8] {254, 374, 494, 614, 734, 854, 974, 21};
+        private string File = "C:/Projet/MiniGames/Code/MiniGames/MiniGames/bin/Debug/ImageCarte/";
+        private int cardVisible = 1;
+        private int Timer = 00;
+        private int H = 00;
+        private int M = 00;
+        private int S = 00;
+        private string seconde = "00";
+        private string minute = "00";
+        private string hour = "00";
+        private Control[,] Placement = new Control[7, 21];
+        private bool reloadStack = false;
+        private int[] sloty = new int[4] { 12, 162, 312, 462 };
+        private Control[,] slot = new Control[4, 13];
+        private int YSlot = 0;
+        private Card[] cardList = new Card[24];
+        #endregion private attribut
+
+        #region public method
+        /// <summary>
+        /// Constructor of FrmSolitaire.
+        /// </summary>
         public FrmSolitaire()
         {
             player = new FrmPlayers(1, 1);
@@ -61,7 +75,7 @@ namespace MiniGames
             {
                 cardList[i] = ArrayCard[28 + i];
             }
-
+            
             Placement[0, 0] = CardGame1;
             Placement[1, 0] = CardGame2;
             Placement[1, 1] = CardGame8;
@@ -93,6 +107,14 @@ namespace MiniGames
 
         }
 
+        #endregion public method
+
+        #region private method
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Solitaire_Load(object sender, EventArgs e)
         {
             StackVisible.Enabled = false;
@@ -121,7 +143,11 @@ namespace MiniGames
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Card_MouseDown(object sender, MouseEventArgs e)
         {
             Control PictureBox = (Control)sender;
@@ -135,6 +161,12 @@ namespace MiniGames
                 PictureBox.MouseMove += new MouseEventHandler(Card_MouseMove);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Card_MouseMove(object sender, MouseEventArgs e)
         {
             int PlacementX = 0;
@@ -161,8 +193,8 @@ namespace MiniGames
                 PictureBox.Location = this.PointToClient(new Point(Cursor.Position.X - 20, Cursor.Position.Y - 20));
                 xNewCard = Cursor.Position.X - 20;
                 yNewCard = Cursor.Position.Y - 20;
-                //int NbMultiple = 1;
-                /*for(int i = PlacementY+1; i < 21; i++)
+                /*int NbMultiple = 1;
+                for(int i = PlacementY+1; i < 21; i++)
                 {
                     if (Placement[PlacementX, i] != null) { Placement[PlacementX, i].BringToFront(); Placement[PlacementX, i].Location = this.PointToClient(new Point(xNewCard, yNewCard + (20 * NbMultiple))); NbMultiple++; }
 
@@ -183,9 +215,13 @@ namespace MiniGames
                 PictureBox.MouseMove -= new MouseEventHandler(Card_MouseMove);
                 PictureBox.MouseMove += new MouseEventHandler(Card_MouseUp);
             }
-
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Card_MouseUp(object sender, MouseEventArgs e)
         {
             int PictureBoxX = 0;
@@ -194,7 +230,6 @@ namespace MiniGames
             int Colum = 0 ;
             int X = 0;
             int Y = 0;
-            bool Row = false;
             bool nameCard = true;
             Control PictureBox = (Control)sender;
             
@@ -255,65 +290,34 @@ namespace MiniGames
             int PlacementSlot = 0;
             string symbole = "";
             bool Vrai = true;
+            int symboleCard = 0;
             switch (Y)
             {
                 case 12:
-                    symbole = "Coeur";
-                    for (int i = 0; i < 13; i++)
-                    {
-                        if(slot[0, i] == null && Vrai)
-                        {
-                            slot[0, i] = PictureBox;
-                            PlacementSlot = i;
-                            Vrai = false;
-                        }
-                    }
-                    break;
+                    if (ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8))].GetValeur() == Heart) { symbole = "Coeur"; symboleCard = 0; } else { Vrai = false; } break;
                 case 162:
-                    symbole = "Pique";
-                    for (int i = 0; i < 13; i++)
-                    {
-                        if (slot[1, i] == null && Vrai)
-                        {
-                            slot[1, i] = PictureBox;
-                            PlacementSlot = i;
-                            Vrai = false;
-                        }
-                    }
-                    break;
+                    if (ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8))].GetValeur() == Spide) { symbole = "Pique"; symboleCard = 1; } else { Vrai = false; } break;
                 case 312:
-                    symbole = "Carreau";
-                    for (int i = 0; i < 13; i++)
-                    {
-                        if (slot[2, i] == null && Vrai)
-                        {
-                            slot[2, i] = PictureBox;
-                            PlacementSlot = i;
-                            Vrai = false;
-                        }
-                    }
-                    break;
+                    if (ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8))].GetValeur() == Diamond) { symbole = "Carreau"; symboleCard = 2; } else { Vrai = false; } break;
                 case 462:
-                    symbole = "Trèfle";
-                    for (int i = 0; i < 13; i++)
-                    {
-                        if (slot[3, i] == null && Vrai)
-                        {
-                            slot[3, i] = PictureBox;
-                            PlacementSlot = i;
-                            Vrai = false;
-                        }
-                    }
-                    break;
+                    if (ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8))].GetValeur() == Clover) { symbole = "Trèfle"; symboleCard = 3; } else { Vrai = false; } break;
+            }
+            for (int i = 0; i < 13; i++)
+            {
+                if (slot[symboleCard, i] == null && Vrai)
+                {
+                    slot[symboleCard, i] = PictureBox;
+                    PlacementSlot = i;
+                    Vrai = false;
+                }
             }
             int Xpicture = 0;
             if (VerifCard((PictureBox)PictureBox, Colum, PictureBoxNewY) || VerifCardSlot((PictureBox)PictureBox, YSlot, 0, symbole, PlacementSlot))
             {
-                if (cardList.Contains(ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8))]))
+                if (cardList.Contains(ArrayCard[Convert.ToInt16(PictureBox.Name.Substring(8))]) && Convert.ToInt16(PictureBox.Name.Substring(8)) != 28)
                 {
                     cardList[Convert.ToInt16(PictureBox.Name.Substring(8)) - 29] = null;
                 }
-                bool slotQ = false;
                 switch (X)
                 {
                     case 254: Xpicture = 0; PictureBox.Location = new Point(254, Y + 20); Placement[0, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
@@ -324,52 +328,16 @@ namespace MiniGames
                     case 854: Xpicture = 5; PictureBox.Location = new Point(854, Y + 20); Placement[5, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
                     case 974: Xpicture = 6; PictureBox.Location = new Point(974, Y + 20); Placement[6, PictureBoxNewY] = PictureBox; Placement[PictureBoxX, PictureBoxY] = null; break;
                     case 21:
-
-                        for(int i = 0; i < 13; i++)
+                    PictureBox.Location = new Point(21, Y);
+                    for (int i = 0; i < 13; i++)
+                    {
+                        if(slot[YSlot, i] != null)
                         {
-                            switch (Y)
-                            {
-                                case 12:
-                                    if (slot[0, i] != null)
-                                    {
-                                        i++;
-                                    }
-                                        break;
-                                case 162:
-                                    if (slot[1, i] != null)
-                                    {
-                                        i++;
-                                    }
-                                    break;
-                                case 312:
-                                    if (slot[2, i] != null)
-                                    {
-                                        i++;
-                                    }
-                                    break;
-                                case 462:
-                                    if (slot[3, i] != null)
-                                    {
-                                        i++;
-                                    }
-                                    break;
-                            }
+                            i++;
                         }
-                        PictureBox.Location = new Point(21, Y);
-                        
-                        
-                        for (int i = 0; i < 13; i++)
-                        {
-                            if(slot[YSlot, i] != null)
-                            {
-                                i++;
-                            }
-                        }
-                        
-                        Placement[PictureBoxX, PictureBoxY] = null;
-
-                        break;
-
+                    }
+                    Placement[PictureBoxX, PictureBoxY] = null;
+                    break;
                 }
 
                 switch (Convert.ToInt16(PictureBox.Name.Substring(8)))
@@ -427,12 +395,17 @@ namespace MiniGames
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Stack_Click(object sender, EventArgs e)
         {
             if (!reloadStack)
             {
                 
-                if (cardList[cardVisible - 1] == null)
+                while (cardList[cardVisible - 1] == null)
                 {
                     cardVisible++;
                 }
@@ -474,24 +447,63 @@ namespace MiniGames
             }
         }
 
+        /// <summary>
+        /// method for count the time it takes to solve the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timerSolitaire_Tick(object sender, EventArgs e)
         {
-            string TextTimer = H+":"+M+":"+S;
-            lblTime.Text = TextTimer;
+            
+            
             S++;
+            if(S < 10)
+            {
+                seconde = "0" + S;
+            }
+            else
+            {
+                seconde = S.ToString();
+            }
             Timer++;
             if(S >= 60)
             {
                 S = 0;
                 M++;
-                if(M >= 60)
+                if (M < 10)
+                {
+                    minute = "0" + M;
+                }
+                else
+                {
+                    minute = M.ToString();
+                }
+                if (M >= 60)
                 {
                     H++;
+                    if (H < 10)
+                    {
+                        hour = "0" + H;
+                    }
+                    else
+                    {
+                        hour = H.ToString();
+                    }
                 }
             }
+            string TextTimer = hour + " : " + minute + " : " + seconde;
+            lblTime.Text = TextTimer;
+
         }
 
-        public bool VerifCard(PictureBox p, int Colone, int Ligne)
+        /// <summary>
+        /// check the cards for placement on other cards.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="Colone"></param>
+        /// <param name="Ligne"></param>
+        /// <returns></returns>
+        private bool VerifCard(PictureBox p, int Colone, int Ligne)
         {
             string color = ArrayCard[Convert.ToInt16(p.Name.Substring(8))-1].GetColor();
             int value = ArrayCard[Convert.ToInt16(p.Name.Substring(8))-1].GetValeur();
@@ -527,18 +539,27 @@ namespace MiniGames
             return false;
         }
 
-        public bool VerifCardSlot(PictureBox p, int Colone, int Ligne, string Symbole, int EmplacementCard)
+        /// <summary>
+        /// Check the cards for placement in piles by symbol.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="Colone"></param>
+        /// <param name="Ligne"></param>
+        /// <param name="Symbole"></param>
+        /// <param name="EmplacementCard"></param>
+        /// <returns></returns>
+        private bool VerifCardSlot(PictureBox p, int Colone, int Ligne, string Symbole, int EmplacementCard)
         {
             string CardSymbole = ArrayCard[Convert.ToInt16(p.Name.Substring(8)) - 1].GetSymbole();
             int value = ArrayCard[Convert.ToInt16(p.Name.Substring(8)) - 1].GetValeur();
 
             try
             {
-                int valueToVerify = ArrayCard[Convert.ToInt16(slot[Colone, EmplacementCard-1].Name.Substring(8))].GetValeur();
+                int valueToVerify = ArrayCard[Convert.ToInt16(slot[Colone, EmplacementCard-1].Name.Substring(8))-1].GetValeur();
 
                 if (Symbole == CardSymbole)
                 {
-                    if (valueToVerify - 1 == value)
+                    if (valueToVerify + 1 == value)
                     {
                         return true;
                     }
@@ -561,7 +582,6 @@ namespace MiniGames
             }
             return false;
         }
-
-
+        #endregion private method
     }
 }
