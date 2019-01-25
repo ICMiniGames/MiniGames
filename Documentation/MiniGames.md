@@ -38,10 +38,13 @@
 		- [3.5.3 Solitaire](#353-solitaire)
 			- [3.5.3.1 Use case et Sénarios.](#3531-use-case-et-snarios)
 			- [3.5.3.2 Listes des tests.](#3532-listes-des-tests)
-- [4 Réalisation](#4-ralisation)
+- [4 Conclusion](#4-conclusion)
+	- [4.1 Objectif atteinds](#41-objectif-atteinds)
+	- [4.2 Objectif non-atteinds](#42-objectif-non-atteinds)
+	- [4.3 Probleme survenue](#43-probleme-survenue)
+- [Conclusion du projet](#conclusion-du-projet)
 
 <!-- /TOC -->
-
 # 1	Introduction
 ## 1.1	Cadre et Description
 
@@ -224,7 +227,6 @@ MLD:
 
 ## 3.5 Réalisation
 ### 3.5.1 Morpion
-
 #### 3.5.1.1 Use case et Sénarios.
 
 Action de base:
@@ -259,15 +261,32 @@ Victoire:
 |Le joueur gagnant obtient un point à son score|-|-|
 |Le choix quitter le jeu ferme la fenetre du morpion|-|-|
 |Le nom des joueurs est affiché vers les bords supérieur de la fenetre|-|-|
-### 3.5.2 Bataille
 
+### 3.5.2 Bataille
 #### 3.5.2.1 Use case et Sénarios.
 
+|Action|Resultat|Description suplémentaire|
+|------- | ----------|------- | ----------|
+|Les joueurs se sont enregistré|La fenêtre de pari s'ouvre|-|
+|Les joueurs parient sur un bot|La partie se lance, avec l'affichage du jeu|-|
+|Un joueur à gagné|Une fenetre s'ouvre et indique quelle joueur à gagné|-|
 #### 3.5.2.2 Listes des tests.
 
 ### 3.5.3 Solitaire
-
 #### 3.5.3.1 Use case et Sénarios.
+
+| Action | Résultat|
+|------- | ----------|
+|Le joueur s'est enregistré| La partie se lance, affichant le plateau de jeu|
+|Le plateau s'est affiché|Les cartes sont retourné et caché selon les règle du jeu|
+|Le joueur prend une carte en maintenant le clique droit|la carte se déplace avec les curseur|
+|Le joueur "lache" la carte au dessus de rien (plateau en vert)|La carte retourne à sa possition d'origine|
+|le joueur "lache" la carte sur une autre carte|-|
+|Si la carte est posé est de couleur différent et de valeur inférieur|La carte se position au dessus|
+|-|Sinon la carte retourne à sa possition d'origine|
+|Si une carte à été possé|La carte face caché qui se trouvais en dessous de celle si se retourne|
+|Le joueur "lache" une carte sur l'emplacement de carte|La carte se positione dessus|
+|Si toutes les cartes ont été réunis|La partie se termine|
 
 #### 3.5.3.2 Listes des tests.
 
@@ -288,4 +307,4 @@ régler à la fin du projet
 ## 4.3 Probleme survenue
 
 
-# Conclusion du projet.
+# Conclusion du projet
