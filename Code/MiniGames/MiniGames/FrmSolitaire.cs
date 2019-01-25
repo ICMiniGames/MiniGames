@@ -26,9 +26,9 @@ namespace MiniGames
         private int xOldCard = 0;
         private int yOldCard = 0;
         private int xNewCard = 0;
-        private int yNewCard = 0;
-        private int[] valueX = new int[8] {254, 374, 494, 614, 734, 854, 974, 21};
-        private string File = "C:/Projet/MiniGames/Code/MiniGames/MiniGames/bin/Debug/ImageCarte/";
+        private int yNewCard = 0;   
+        private int[] valueX = new int[8] {254, 374, 494, 614, 734, 854, 974, 21};                          //coordinated of the different piles.
+        private string File = "C:/Projet/MiniGames/Code/MiniGames/MiniGames/bin/Debug/ImageCarte/";         
         private int cardVisible = 1;
         private int Timer = 00;
         private int H = 00;
@@ -39,7 +39,7 @@ namespace MiniGames
         private string hour = "00";
         private Control[,] Placement = new Control[7, 21];
         private bool reloadStack = false;
-        private int[] PositionSlotY = new int[4] { 12, 162, 312, 462 };
+        private int[] PositionSlotY = new int[4] { 12, 162, 312, 462 };                                     
         private Control[,] ArrayControlerSlot = new Control[4, 13];
         private int YSlot = 0;
         private Card[] cardList = new Card[24];
@@ -76,7 +76,7 @@ namespace MiniGames
                 cardList[i] = ArrayCard[28 + i];
             }
             
-            /*Placement[0, 0] = CardGame1;
+            Placement[0, 0] = CardGame1;
             Placement[1, 0] = CardGame2;
             Placement[1, 1] = CardGame8;
             Placement[2, 0] = CardGame3;
@@ -103,7 +103,7 @@ namespace MiniGames
             Placement[6, 3] = CardGame22;
             Placement[6, 4] = CardGame25;
             Placement[6, 5] = CardGame27;
-            Placement[6, 6] = CardGame28;*/
+            Placement[6, 6] = CardGame28;
         }
 
         #endregion constructor
