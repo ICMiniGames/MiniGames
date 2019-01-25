@@ -37,9 +37,7 @@ namespace MiniGames
             this.Hide();
             FrmSolitaire solitaire = new FrmSolitaire();
             solitaire.Show();
-            
 
-            //Evenement actif lors de la fermeture de jeu
             FrmSolitaire.ActiveForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmJeu_FormClosing);
         }
 
@@ -85,14 +83,27 @@ namespace MiniGames
         }
 
         /// <summary>
-        /// Method to close FrmMiniGames when button are activated
+        /// Method to open FrmMiniGames when the previous form is closed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FrmJeu_FormClosing(object sender, FormClosingEventArgs e)
+        public void FrmJeu_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Show();
         }
+
+        /// <summary>
+        /// Method to open FrmMiniGames when the previous form is closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmdClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         #endregion private method
+
+
     }
 }

@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolitaire));
             this.timerSolitaire = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
+            this.cmdReload = new System.Windows.Forms.Button();
+            this.cmdLeave = new System.Windows.Forms.Button();
             this.Slot2 = new System.Windows.Forms.PictureBox();
             this.Slot7 = new System.Windows.Forms.PictureBox();
             this.Slot6 = new System.Windows.Forms.PictureBox();
@@ -128,9 +130,29 @@
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(110, 12);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(70, 25);
+            this.lblTime.Size = new System.Drawing.Size(120, 25);
             this.lblTime.TabIndex = 84;
-            this.lblTime.Text = "label1";
+            this.lblTime.Text = "00 : 00 : 00";
+            // 
+            // cmdReload
+            // 
+            this.cmdReload.Image = global::MiniGames.Properties.Resources.Reload;
+            this.cmdReload.Location = new System.Drawing.Point(1110, 531);
+            this.cmdReload.Name = "cmdReload";
+            this.cmdReload.Size = new System.Drawing.Size(72, 76);
+            this.cmdReload.TabIndex = 95;
+            this.cmdReload.UseVisualStyleBackColor = true;
+            this.cmdReload.Click += new System.EventHandler(this.ReloadFrm);
+            // 
+            // cmdLeave
+            // 
+            this.cmdLeave.Image = global::MiniGames.Properties.Resources.quitter;
+            this.cmdLeave.Location = new System.Drawing.Point(1188, 531);
+            this.cmdLeave.Name = "cmdLeave";
+            this.cmdLeave.Size = new System.Drawing.Size(72, 76);
+            this.cmdLeave.TabIndex = 94;
+            this.cmdLeave.UseVisualStyleBackColor = true;
+            this.cmdLeave.Click += new System.EventHandler(this.LeaveFrm);
             // 
             // Slot2
             // 
@@ -646,6 +668,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1272, 619);
+            this.ControlBox = false;
+            this.Controls.Add(this.cmdReload);
+            this.Controls.Add(this.cmdLeave);
             this.Controls.Add(this.Slot2);
             this.Controls.Add(this.Slot7);
             this.Controls.Add(this.Slot6);
@@ -783,5 +808,7 @@
         private System.Windows.Forms.PictureBox Slot6;
         private System.Windows.Forms.PictureBox Slot7;
         private System.Windows.Forms.PictureBox Slot2;
+        private System.Windows.Forms.Button cmdLeave;
+        private System.Windows.Forms.Button cmdReload;
     }
 }

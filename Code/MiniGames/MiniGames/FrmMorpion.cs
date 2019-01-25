@@ -15,6 +15,9 @@ namespace MiniGames
     {
         #region public attribute
         public int NbTour = 0;                          //Variable used to count the number of turns that are playing.
+        public string[] TabMorpion = new string[9];    //Variable containing, in the same place, the characters equivalent to the symbol of the players.
+        public bool Winner = false;                    //Variable to know if there is a winner.
+        public bool Win = false;                       //Variable to know if there is a winner.
         #endregion public attribute
 
         #region private attribute
@@ -31,12 +34,6 @@ namespace MiniGames
         int NbCaseUsed = 0;                             //Variable containing the number of boxes that already have a character to know if there is a draw or not.
         int[,] TabButtonMorpion = new int[9, 2];        //Variable containing the location on the X and Y axis of the PictureBox.
         #endregion private attribute
-
-        #region public attribute
-        public string[] TabMorpion = new string[9];    //Variable containing, in the same place, the characters equivalent to the symbol of the players.
-        public bool Winner = false;                    //Variable to know if there is a winner.
-        public bool Win = false;                       //Variable to know if there is a winner.
-        #endregion public attribute
 
         #region constructors
 

@@ -33,6 +33,7 @@
             this.CmdMorpion = new System.Windows.Forms.Button();
             this.CmdSolitaire = new System.Windows.Forms.Button();
             this.CmdProfile = new System.Windows.Forms.Button();
+            this.cmdClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdBataille
@@ -90,11 +91,23 @@
             this.CmdProfile.UseVisualStyleBackColor = true;
             this.CmdProfile.Click += new System.EventHandler(this.CmdProfile_Click);
             // 
+            // cmdClose
+            // 
+            this.cmdClose.Location = new System.Drawing.Point(13, 12);
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.Size = new System.Drawing.Size(75, 23);
+            this.cmdClose.TabIndex = 4;
+            this.cmdClose.Text = "Fermer";
+            this.cmdClose.UseVisualStyleBackColor = true;
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
+            // 
             // FrmMiniGames
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(633, 292);
+            this.ControlBox = false;
+            this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.CmdProfile);
             this.Controls.Add(this.CmdBataille);
             this.Controls.Add(this.CmdMorpion);
@@ -112,6 +125,7 @@
         private System.Windows.Forms.Button CmdMorpion;
         private System.Windows.Forms.Button CmdBataille;
         private System.Windows.Forms.Button CmdProfile;
+        private System.Windows.Forms.Button cmdClose;
     }
 }
 

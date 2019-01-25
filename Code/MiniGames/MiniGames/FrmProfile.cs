@@ -43,8 +43,10 @@ namespace MiniGames
             {
                 lstUser.Items.Add(ListPlayer[i]);
             }
-
-            txtBestTime.Text = Player["TempsSolitaire"];
+            int Hour = Convert.ToInt16(Player["TempsSolitaire"]) / 3600;
+            int Minute = Convert.ToInt16(Player["TempsSolitaire"]) % 3600 / 60;
+            int Second = Convert.ToInt16(Player["TempsSolitaire"]) % 3600 % 60;
+            txtBestTime.Text = Hour + " : " + Minute + " : " + Second;
             txtNbWinSolitaire.Text = Player["VictoireSolitaire"];
             txtNbDefSolitaire.Text = Player["DefSolitaire"];
 
@@ -61,7 +63,10 @@ namespace MiniGames
         {
             string Joueur = lstUser.SelectedItem.ToString();
             Player = DB.Get_Player(Joueur);
-            txtBestTime.Text = Player["TempsSolitaire"];
+            int Hour = Convert.ToInt16(Player["TempsSolitaire"]) / 3600;
+            int Minute = Convert.ToInt16(Player["TempsSolitaire"]) % 3600 / 60;
+            int Second = Convert.ToInt16(Player["TempsSolitaire"]) % 3600 % 60;
+            txtBestTime.Text = Hour + " : " + Minute + " : " + Second;
             txtNbWinSolitaire.Text = Player["VictoireSolitaire"];
             txtNbDefSolitaire.Text = Player["DefSolitaire"];
 
