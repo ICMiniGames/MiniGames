@@ -54,10 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UnitTestConnectionDB.cs" />
-    <Compile Include="UnitTestChoixBataille.cs" />
-    <Compile Include="UnitTestProfile.cs" />
     <Compile Include="UnitTestPlayers.cs" />
-    <Compile Include="UnitTestSolitaire.cs" />
     <Compile Include="UnitTestBataille.cs" />
     <Compile Include="UnitTestMorpion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

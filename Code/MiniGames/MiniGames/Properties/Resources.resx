@@ -118,16 +118,193 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Morpion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\ImageJeu\Morpion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_4Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\4Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\5Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\6Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\6Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="solitaire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\ImageJeu\solitaire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bataille" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\ImageJeu\Bataille.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\1Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\10Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\5Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\9Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\13Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\12Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SlotDiamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\SlotDiamond.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\11Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\10Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\11Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\2Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\11Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\5Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\4Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\8Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\6Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\4Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DosCarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\ImageCarte\DosCarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\6Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\12Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\8Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\2Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\1Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\13Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\Slot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\9Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\4Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\5Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\7Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\3Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Morpion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageJeu\Morpion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\10Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\1Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\10Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\13Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bataille" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageJeu\Bataille.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\13Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\9Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\12Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\3Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\7Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\2Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\1Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\9Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\8Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SlotHeart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\SlotHeart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\12Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\8Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SlotSpide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\SlotSpide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\7Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3Trefle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\3Trefle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11Pique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\11Pique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7Carreau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\7Carreau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\3Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2Coeur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\2Coeur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SloteClover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageCarte\SloteClover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageJeu\quitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Reload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\ImageJeu\Reload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

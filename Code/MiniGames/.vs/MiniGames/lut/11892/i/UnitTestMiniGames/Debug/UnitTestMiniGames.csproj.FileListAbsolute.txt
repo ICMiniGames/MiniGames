@@ -1,0 +1,1 @@
+C:\Projet\MiniGames\Code\MiniGames\.vs\MiniGames\lut\0\i\UnitTestMiniGames\Debug\UnitTestMiniGames.csproj.CoreCompileInputs.cache
